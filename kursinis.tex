@@ -22,90 +22,55 @@
 \titleineng{Blockchain databases for financial data}
 \status{3 kurso 3 grupės studentas}
 \author{Matas Savickis}
-% \secondauthor{Vardonis Pavardonis}   % Pridėti antrą autorių
 \supervisor{Vytautas Valaitis, Asist., Dr.}
 \date{Vilnius – \the\year}
-
-% Nustatymai
-% \setmainfont{Palemonas}   % Pakeisti teksto šriftą į Palemonas (turi būti įdiegtas sistemoje)
-\bibliography{bibliografija}
-
 \begin{document}
 \maketitle
 
 \tableofcontents
 
+
 \sectionnonum{Įvadas}
-Kiekvieno sėkmingo verslo pagrindas yra pinigai. Vystant betkokį verslą didėją bendradarbiavimas 
-su kitomis įmonėmis ir finansinėmis įstaigomis. Iškyla poreikis sekti pinigines tranzakcijas ir įsipareigojimus 
-su kitomis įmonėmis. Praeityje tokie duomys buvo saugomi realicinėse duomenų bazėse. Nors tokiu būdų saugomi
-duomenys būna pasiekiami greitai, tačiau iškyla problema, kad tokių duomenų saugojimui yra paskiriama trečia 
-šalis ir mums tenka ja pasitikėti, kad duomenys nebus pakeisti ar ištrinti. Šią problemą padeda išspręsti ,,Blockchain" 
-technologija. Blockchain yra duomenų saugojimo būdas padedantis užtikrinti duomenų integralumą
-panaikinant poreikį priklausyti nuo trečiosios šalies. Blockchain technologija buvo sukurta Satoshi Nakamoto 2008 metais.
-Nakomoto blockchain dizainą implementavo sukurdamas kripto valiutą ,,Bitcoin" 2009 metais. Nors neiškarto buvo suprasta 
-kripto valiutų vertė per pastarajį penkmetį pasaulis patyrė kriptovaliutų bumą. Blockchain technologija taip pat buvo pritaikyta
-naujų duomenų bazių tokių kaip Hyperledger, Corda ir Bigchain kūrime. Šios duomenų bazės pasižymi pagrindiniais blockchain
-technologijos bruožais: duomenų nekeičiamumu, kriptografiniu saugumu ir decentralizacija. Šiame darbe aš sieksiu ištirti ir palyginti
-NoSQL duomenų bazes su blockchain duomenų bazėmis finansinių duomenų saugojime. Darbe bus lyginamas duomenų perdavimo greitis, 
-duomenų bazių sunaudojami kompiuteriniai ištekliai ir bazių plėtimo galimybės. Darbu bus siekiama išskirti pagrindiniai blokinių grandinių 
-ir NoSQL duomenų bažių privalumai ir trūkumai, bei pasiūlyti panaudojimo atvejus abiem duomenų bazių tipams.
+\section{First section}
+Per pastaruosius keletą metų blokų grandinių technologija susilaukė didelio žmonių susidomėjimo. 
+Šis susidomėjimas daugiausiai kilo dėl išpopulerėjusių kriptovaliutų, tokių kaip Bitcoin, Etherium, Litecoin ir daugeliu kitų 
+kurios ir yra paremtos blokų grandinių technologija. Šią technologiją sukūrė 2008 metais sukūrė Satošis Nakamoto% \cite{1}
+. 
+2009 metais Nakamoto implementavo blokų grandinių technologiją sukurdamas Bitcoin kriptovaliutą %\cite{2}
+. 
+Nors, šiuo metu, \cite{lampost94}žmonių susidomėjimas kripto valiutomis ir yra sumažėjęs %\cite{3}
+, tačiau informacinių technologijų industirja 
+mato daugiau blokų grandinių panaudojimo atveju negu tik kripto valiutos. Vienas iš blokų grandinių panaudojimo atvėjų yra 
+blokų grandinių duomenų bazės. Reliacinės ir dokumentų duomenų bazės ilgą laiką buvo pagrindinis duomenų saugojimo būdas. 
+Tačiau šios duomenų bazės turi ir savo trūkumų, saugant duomenis tradicinėsė duomenų bazėse kyla duomenų integralumo problemos %\cite{4}
+. 
+Naudojant duomenų bazes financinėms transakcijoms sekti kyla dvigumo pinigų išleidimo problema% \cite{5}
+. Naudojantis tradicinėmis duomenų bazėmis 
+taip pat kyla pasitikėjimo problema, visa duomenų prieeiga yra trečiosios šalies valdžioje, ir vartotojas turi pasitikėti, kad duomenys nebus pakeisti be jo žinios.
+Per pastaruosius kelis metus šias problemas buvo stengtasi išspręsti kuriant duomenų bazes paremtas blokų grandinių technologija.
+
+\begin{thebibliography}{999}
+
+\bibitem{lamport94}
+  Leslie Lamport,
+  \emph{\LaTeX: A Document Preparation System}.
+  Addison Wesley, Massachusetts,
+  2nd Edition,
+  1994.
+
+\end{thebibliography}
 
 
-\section{Medžiagos darbo tema dėstymo skyriai}
+%\begin{thebibliography}{9}
+%\bibitem{1} S. Nakamoto. A peer-to-peer electronic cash system. 2008.
 
-\subsection{Duomenų bazių greičiai}
-\subsection{Duomenų bazių energijos sanaudos}
-\subsection{Duomenų bazių plėtimo galimybės}
+%\bibitem{2} Bitcoin: A Peer-to-Peer Electronic Cash System https://bitcoin.org/bitcoin.pdf
 
+%\bibitem{3} https://trends.google.com/trends/explore?date=all&geo=US&q=bitcoin,Etherium,Litecoin
 
-\sectionnonum{Rezultatai ir išvados}
-Rezultatų ir išvadų dalyje turi būti aiškiai išdėstomi pagrindiniai darbo
-rezultatai (kažkas išanalizuota, kažkas sukurta, kažkas įdiegta) ir pateikiamos
-išvados (daromi nagrinėtų problemų sprendimo metodų palyginimai, teikiamos
-rekomendacijos, akcentuojamos naujovės).
+%\bibitem{4} E.B. Fernandez, R.C. Summers, and C. Wood, “Database Security and Integrity,” Addison-Wesley, February 1981. 
 
-\printbibliography[heading=bibintoc]  % Šaltinių sąraše nurodoma panaudota
-% literatūra, kitokie šaltiniai. Abėcėlės tvarka išdėstomi darbe panaudotų
-% (cituotų, perfrazuotų ar bent paminėtų) mokslo leidinių, kitokių publikacijų
-% bibliografiniai aprašai.  Šaltinių sąrašas spausdinamas iš naujo puslapio.
-% Aprašai pateikiami netransliteruoti. Šaltinių sąraše negali būti tokių
-% šaltinių, kurie nebuvo paminėti tekste.
-
-% \sectionnonum{Sąvokų apibrėžimai}
-\sectionnonum{Santrumpos}
-Sąvokų apibrėžimai ir santrumpų sąrašas sudaromas tada, kai darbo tekste
-vartojami specialūs paaiškinimo reikalaujantys terminai ir rečiau sutinkamos
-santrumpos.
-
-\appendix  % Priedai
-% Prieduose gali būti pateikiama pagalbinė, ypač darbo autoriaus savarankiškai
-% parengta, medžiaga. Savarankiški priedai gali būti pateikiami ir
-% kompaktiniame diske. Priedai taip pat numeruojami ir vadinami. Darbo tekstas
-% su priedais susiejamas nuorodomis.
-
-\section{Niauroninio tinklo struktūra}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{img/MLP}
-    \caption{Paveikslėlio pavyzdys}
-    \label{img:mlp}
-\end{figure}
+%\bibitem{5} Distributed Double Spending Prevention Jaap-Henk Hoepman
 
 
-\section{Eksperimentinio palyginimo rezultatai}
-% tablesgenerator.com - converts calculators (e.g. excel) tables to LaTeX
-\begin{table}[H]\footnotesize
-  \centering
-  \caption{Lentelės pavyzdys}
-  {\begin{tabular}{|l|c|c|} \hline
-    Algoritmas & $\bar{x}$ & $\sigma^{2}$ \\
-    \hline
-    Algoritmas A  & 1.6335    & 0.5584       \\
-    Algoritmas B  & 1.7395    & 0.5647       \\
-    \hline
-  \end{tabular}}
-  \label{tab:table example}
-\end{table}
-
-\end{document}
+%\end{document}
