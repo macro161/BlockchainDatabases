@@ -1,8 +1,6 @@
 generuoti:
 	xelatex kursinis.tex
 	biber kursinis
-	xelatex kursinis.tex
-	open kursinis.pdf || xdg-open kursinis.pdf
 
 ubuntu:
 	echo "Diegiamas LaTeX (PdfLaTeX, XeTeX ir kt.)"

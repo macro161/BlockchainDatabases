@@ -1,0 +1,140 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{Integrity}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=3352a8bd61cc4078ecf9f0966b69bb20}{%
+           family={E.B.\bibnamedelimi Fernandez},
+           familyi={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+           given={R.C.\bibnamedelimi Summers},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=5fb64cdf0873a7a8c1d3c76403bf0abb}{%
+           family={Wood},
+           familyi={W\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{e1cb0830e1d9da15e40f040f7b6d1153}
+      \strng{fullhash}{e1cb0830e1d9da15e40f040f7b6d1153}
+      \strng{bibnamehash}{e1cb0830e1d9da15e40f040f7b6d1153}
+      \strng{authorbibnamehash}{e1cb0830e1d9da15e40f040f7b6d1153}
+      \strng{authornamehash}{e1cb0830e1d9da15e40f040f7b6d1153}
+      \strng{authorfullhash}{e1cb0830e1d9da15e40f040f7b6d1153}
+      \field{labelalpha}{EW81}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Database Security and Integrity}
+      \field{year}{1981}
+    \endentry
+    \entry{Trends}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=8b36e9207c24c76e6719268e49201d94}{%
+           family={Google},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{fullhash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{bibnamehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authorbibnamehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authornamehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authorfullhash}{8b36e9207c24c76e6719268e49201d94}
+      \field{labelalpha}{Goo19}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{https://trends.google.com/trends/explore?date=all\&geo=US\&q=bitcoin,Etherium,Litecoin}
+      \field{year}{2019}
+    \endentry
+    \entry{Double}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b3961ed140fda31878fc097a5e297cb5}{%
+           family={Hoepman},
+           familyi={H\bibinitperiod},
+           given={Jaap-Henk},
+           giveni={J\bibinithyphendelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{b3961ed140fda31878fc097a5e297cb5}
+      \strng{fullhash}{b3961ed140fda31878fc097a5e297cb5}
+      \strng{bibnamehash}{b3961ed140fda31878fc097a5e297cb5}
+      \strng{authorbibnamehash}{b3961ed140fda31878fc097a5e297cb5}
+      \strng{authornamehash}{b3961ed140fda31878fc097a5e297cb5}
+      \strng{authorfullhash}{b3961ed140fda31878fc097a5e297cb5}
+      \field{labelalpha}{Hoe08}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Distributed Double Spending Prevention}
+      \field{year}{2008}
+    \endentry
+    \entry{BlockChain}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5f6f52cf6648e8089d86dc975e451ab1}{%
+           family={Nakamoto},
+           familyi={N\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{5f6f52cf6648e8089d86dc975e451ab1}
+      \strng{fullhash}{5f6f52cf6648e8089d86dc975e451ab1}
+      \strng{bibnamehash}{5f6f52cf6648e8089d86dc975e451ab1}
+      \strng{authorbibnamehash}{5f6f52cf6648e8089d86dc975e451ab1}
+      \strng{authornamehash}{5f6f52cf6648e8089d86dc975e451ab1}
+      \strng{authorfullhash}{5f6f52cf6648e8089d86dc975e451ab1}
+      \field{extraname}{1}
+      \field{labelalpha}{Nak08}
+      \field{sortinit}{N}
+      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A peer-to-peer electronic cash system}
+      \field{year}{2008}
+    \endentry
+    \entry{Bitcoin}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5f6f52cf6648e8089d86dc975e451ab1}{%
+           family={Nakamoto},
+           familyi={N\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{5f6f52cf6648e8089d86dc975e451ab1}
+      \strng{fullhash}{5f6f52cf6648e8089d86dc975e451ab1}
+      \strng{bibnamehash}{5f6f52cf6648e8089d86dc975e451ab1}
+      \strng{authorbibnamehash}{5f6f52cf6648e8089d86dc975e451ab1}
+      \strng{authornamehash}{5f6f52cf6648e8089d86dc975e451ab1}
+      \strng{authorfullhash}{5f6f52cf6648e8089d86dc975e451ab1}
+      \field{extraname}{2}
+      \field{labelalpha}{Nak09}
+      \field{sortinit}{N}
+      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bitcoin: A Peer-to-Peer Electronic Cash System}
+      \field{year}{2009}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

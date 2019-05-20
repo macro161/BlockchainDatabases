@@ -18,59 +18,52 @@
 \faculty{Matematikos ir informatikos fakultetas}
 \department{Programų sistemų katedra}
 \papertype{Kursinis darbas}
-\title{Blokų grandinių duomenų bazės finansinių duomenų kaupimui}
-\titleineng{Blockchain databases for financial data}
+\title{Blokų grandinių duomenų bazių analizė }
+\titleineng{Blockchain Database Analysis}
 \status{3 kurso 3 grupės studentas}
-\author{Matas Savickis}
-\supervisor{Vytautas Valaitis, Asist., Dr.}
+\author{Justas Tvarijonas}
+% \secondauthor{Vardonis Pavardonis}   % Pridėti antrą autorių
+\supervisor{dr. Vytautas Valaitis}
 \date{Vilnius – \the\year}
+
+% Nustatymai
+% \setmainfont{Palemonas}   % Pakeisti teksto šriftą į Palemonas (turi būti įdiegtas sistemoje)
+\bibliography{bibliografija}
+
 \begin{document}
 \maketitle
 
 \tableofcontents
 
-
 \sectionnonum{Įvadas}
-\section{First section}
 Per pastaruosius keletą metų blokų grandinių technologija susilaukė didelio žmonių susidomėjimo. 
 Šis susidomėjimas daugiausiai kilo dėl išpopulerėjusių kriptovaliutų, tokių kaip Bitcoin, Etherium, Litecoin ir daugeliu kitų 
-kurios ir yra paremtos blokų grandinių technologija. Šią technologiją sukūrė 2008 metais sukūrė Satošis Nakamoto% \cite{1}
-. 
-2009 metais Nakamoto implementavo blokų grandinių technologiją sukurdamas Bitcoin kriptovaliutą %\cite{2}
-. 
-Nors, šiuo metu, \cite{lampost94}žmonių susidomėjimas kripto valiutomis ir yra sumažėjęs %\cite{3}
-, tačiau informacinių technologijų industirja 
+kurios ir yra paremtos blokų grandinių technologija. Šią technologiją 2008 metais sukūrė Satošis Nakamoto  \cite{BlockChain}. 
+2009 metais Nakamoto implementavo blokų grandinių technologiją sukurdamas Bitcoin kriptovaliutą \cite{Bitcoin}. 
+Nors, šiuo metu, žmonių susidomėjimas kripto valiutomis ir yra sumažėjęs \cite{Trends}, tačiau informacinių technologijų industrija 
 mato daugiau blokų grandinių panaudojimo atveju negu tik kripto valiutos. Vienas iš blokų grandinių panaudojimo atvėjų yra 
 blokų grandinių duomenų bazės. Reliacinės ir dokumentų duomenų bazės ilgą laiką buvo pagrindinis duomenų saugojimo būdas. 
-Tačiau šios duomenų bazės turi ir savo trūkumų, saugant duomenis tradicinėsė duomenų bazėse kyla duomenų integralumo problemos %\cite{4}
+Tačiau šios duomenų bazės turi ir savo trūkumų, saugant duomenis tradicinėsė duomenų bazėse kyla duomenų integralumo problemos \cite{Integrity}
 . 
-Naudojant duomenų bazes financinėms transakcijoms sekti kyla dvigumo pinigų išleidimo problema% \cite{5}
+Naudojant duomenų bazes financinėms transakcijoms sekti kyla dvigumo pinigų išleidimo problema\cite{Double}
 . Naudojantis tradicinėmis duomenų bazėmis 
 taip pat kyla pasitikėjimo problema, visa duomenų prieeiga yra trečiosios šalies valdžioje, ir vartotojas turi pasitikėti, kad duomenys nebus pakeisti be jo žinios.
-Per pastaruosius kelis metus šias problemas buvo stengtasi išspręsti kuriant duomenų bazes paremtas blokų grandinių technologija.
-
-\begin{thebibliography}{999}
-
-\bibitem{lamport94}
-  Leslie Lamport,
-  \emph{\LaTeX: A Document Preparation System}.
-  Addison Wesley, Massachusetts,
-  2nd Edition,
-  1994.
-
-\end{thebibliography}
+Per pastaruosius kelis metus šias problemas
+ buvo stengtasi išspręsti kuriant duomenų bazes paremtas blokų grandinių technologija. Privačios blokų grandinių duomenų bazės užtikrina pasitikėjimą, nes kiekvienas vartotojas turi visą duomenų 
+bazės kopiją. Darant pakeitimus tokioje duomenų bazėje kiekvienas vartotojas turi sutikti su daromais pakeitimais. Blokų grandinių duomenų bazės išsprendžia duomenų integralumo ir
+dvigumo pinigų išleidimo problemą, nes kiekvienas mazgas blokų grandinėje tinkle gali palyginti savo turimus duomenis su kitais mazgais. Šiuo metu try populiariausios blokų grandinių duomenų 
+bazės yra: Corda, BigchainDB ir Hyperleadger Fabric. Nors blokų grandinės išsprendžia autoriaus išvardytas problemas, tačiau finansinėms transakcijos svarbus ir greitis. Šiuo darbu autorius 
+sieks palyginti reliacinių duomenų bazių greitį finansinėms transakcijoms skaityti ir įrašyti su trimis aukščiau išvardintomis blokų grandinių duomenų bazėmis. 
 
 
-%\begin{thebibliography}{9}
-%\bibitem{1} S. Nakamoto. A peer-to-peer electronic cash system. 2008.
-
-%\bibitem{2} Bitcoin: A Peer-to-Peer Electronic Cash System https://bitcoin.org/bitcoin.pdf
-
-%\bibitem{3} https://trends.google.com/trends/explore?date=all&geo=US&q=bitcoin,Etherium,Litecoin
-
-%\bibitem{4} E.B. Fernandez, R.C. Summers, and C. Wood, “Database Security and Integrity,” Addison-Wesley, February 1981. 
-
-%\bibitem{5} Distributed Double Spending Prevention Jaap-Henk Hoepman
+\printbibliography[heading=bibintoc]  
 
 
-%\end{document}
+
+
+
+
+
+
+
+\end{document}
