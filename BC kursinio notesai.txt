@@ -1,0 +1,17 @@
+
+Pasibraizome dabartiniu duombaziu UMLus
+Pabraizyti BC umplusi
+Turi buti kriteriaii pagrysti moksliniais straipsniais
+Parasyti bendriniu saku literalurso analize
+atsakyti klausima kas padaryta, ir kas nepadaryta
+Tikslas - surasti kuri duombaze geresne
+Issikelti uzdavinius
+Uzdavinys - turi buti apie analize(skaitytojui neidomu ka jus pasieket)
+
+Ivadas - apibrezti blockchain ir ir duombazes, mokslinis neapireztumas, sio darbo tikslas... ir uzdavinius siam darbui pasiekti
+Literaturos analize - ka padare kiti, kodel padare ir ko nepadare
+Tyrimo dalis - (duomenu bazes architektura) UML ai issikeliami kriterijai is literaturos analize, palyginti duombazes
+Simuliacija - jeigu bus laiko
+Rezultatai isvados
+Literaturos sarasas
+Priedai
