@@ -52,18 +52,77 @@ Per pastaruosius kelis metus šias problemas
  buvo stengtasi išspręsti kuriant duomenų bazes paremtas blokų grandinių technologija. Privačios blokų grandinių duomenų bazės užtikrina pasitikėjimą, nes kiekvienas vartotojas turi visą duomenų 
 bazės kopiją. Darant pakeitimus tokioje duomenų bazėje kiekvienas vartotojas turi sutikti su daromais pakeitimais ir saugo visų pakeitimų istoriją. Blokų grandinių duomenų bazės išsprendžia duomenų integralumo ir
 dvigumo pinigų išleidimo problemą, nes kiekvienas mazgas blokų grandinėje tinkle gali palyginti savo turimus duomenis su kitais mazgais. Šiuo metu try populiariausios blokų grandinių duomenų 
-bazės yra: Corda, BigchainDB ir Hyperleadger Fabric. Nors blokų grandinės išsprendžia autoriaus išvardytas problemas, tačiau finansinėms transakcijos svarbus ir greitis. Šiuo darbu autorius 
-sieks palyginti MySQL, Oracle SQL ir PostgreSQL reliacinių duomenų bazių greitį finansinėms transakcijoms skaityti ir įrašyti su Corda, BigchainDB ir Hyperleadger Fabric blokų grandinių duomenų bazėmis.
+bazės yra: Corda, BigchainDB ir Hyperleadger. Nors blokų grandinės išsprendžia autoriaus išvardytas problemas, tačiau finansinėms transakcijos svarbus ir greitis. Šiuo darbu autorius 
+sieks palyginti MySQL, Oracle SQL ir PostgreSQL reliacinių duomenų bazių greitį finansinėms transakcijoms skaityti ir įrašyti su Corda, BigchainDB ir Hyperledger Fabric blokų grandinių duomenų bazėmis.
 Darbe taip pat bus lyginama šių duomenų bazių architektūros.
 
 \section{Literatūros analizė}
-	\subsection{Corda}
 	\subsection{BigchainDB}
-	\subsection{Hyperleader Fabric}
+	\subsection{Hyperledger}
+		Hyperleadger yra atviro kodo blokų grandinės pradėtos pradėtos kurti Linux fondo. Šio projekto tikslas yra gerinti tarpindustrini bendradarbiavimą kuriant blokų grandines kurios užtikrintų 
+		patikimą, greitą ir saugų finansinių duomenų perdavimą pagrindinėse technologijų, finansų ir produkų tiekimo kompanijose \cite{LinuxHyper}. Šiame skirsnyje autorius apžvelgs 
+		atliktus Hyperledger Fabric, vienos iš Hyperledger implementacijos, greičio tyrimus, kaip šie tyrimai buvo atlikti ir kokie parametrai įtakoja Hyperledger greitį. Šiame darbe autorius apžvelgs \cite{ThailandPerf} ir \cite{IMBResearch} atliktus tyrimus.
+		
+		\subsubsection{Architektūra}
+			Hyperledger Fabric(toliau - Fabric) yra privati blokų grandinė skirta įmonių lygio aplikacijoms. 
+			Ši blokų grandinė gali vykdyti arbitrišką išmanujį kontraktą parašyta Java, Go arba NodeJS kalbomis (grandinės kodai).
+			Fabric sudaro šios esybės:
+			\begin{itemize}
+				\item{Peras - pero mazgas yra atsakingas už grandinės kodą kurį vykdant yra įgyvendinamas išmanusis kontraktas. 
+ Peras turi savyje visą tinklo informaciją(angl. Ledger). }
+				\item{Užsakymo paslauga (angl. Ordering Service) - Užsakymo paslaugos mazgas dalyvauja susitarimo(angl. consensus) 
+protokole ir padalina bloką taip, kad jį būtų galima naudoti tranzakcijom. Padalintas blokas būna persiunčiamas kitiems perams.}
+				\item{Klientas - atsakingas už transakcijos siūlymo sukūrimą, ir išsiuntimą tinklo perams. Gavus pat virtinimą iš perų vartotojas siunčia prašymą tvarkytojui, kad jis informaciją įtrauktų į bloką ir išsiūstų ją visiems tinklo perams.}
+			\end{itemize}
+
+Tranzakcijos vyksta trejomis fazėmis(1 pav.):
+			\begin{enumerate}
+				\item{Patvirtinimo fazė - simuliuojama tranzakcija su pasirinktais perais ir renkami būsenos pokyčiai}
+				\item{Užsakymo fazė - užsakomos tranzakcijos per susitarimo protokolą}
+				\item{Patvirtinimo fazė - patvirtinimas ir informacijos įdėjimas į buhalterinę knygą }
+			\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/MLP}
+    \caption{Tranzakcijų sekų diagrama}   % Antraštė įterpiama po paveikslėlio
+    \label{img:mlp}
+\end{figure}
+
+				
+		\subsubsection{Parametrai}
+
+		Mano nurodytuose moksliniuose straipsniuose (\cite{ThailandPerf} \cite{IMBResearch}) darytuose Fabric greičio tyrimuose
+		buvo išskirtas parametrų sarašas, kuriuos keičiant mokslininkai išskyrė sąrašą parametrų kuriuos keisdami jie matavo Fabric darbą. 
+		Šiame poskiryje autorius trumpai supažindins su šiais parametais ir sekančiame skyriuje pateiks tyrimų duomenis.
+			
+			\begin{itemize}
+				\item{Mazgų skaičius - didėjant mazgų skaičiui tinkle norint patvirtinti bloką trunka ilgiau laiko išsiūti jį visiems tinklo mazgams.}
+				\item{Tranzakcijų skaičius - keičiant tranzakcijų skaičiū keičiasi vėlavimas ir pralaidumas}
+				\item{Bloko dydis - tranzakcijos yra sugrupuojamos į blokus. Blokai yra siunčiami visiems tinklo perams. Užsakymo parašas 
+būna verifikuojamas kiekvienam blokui, o perdavimo patvirtinimo parašas verifikuojamas kiekvienai transakcijai, todėl keičiant bloko dydį atsiranda konmprpisas tarp palaidumo ir vėlavim}
+				\item{Patvirtinimo politika - diktuoja kiek tranzakcijų ir pasirašymų turi būti įvykdyta prieš siunčiant tranzakcijas užsakytoją. Didinant politikos sudėtingumą didės resursų sunaudojimas ir įvertinimo laikas.}
+				\item{Kanalai - izoliuoja tranzakcijas viena nuo kitos ir norint persiųsti tranzakcijas iš vieno kanalo į kitą turi būti patvirtintos, surikiuotos ir apdorotos nepriklausomai viena nuo kitos.}
+				\item{Resursų paskirstymas - kiekvienas peras vykdo grandinės kodą skirtą parašo skaičiavimams ir verifikavimo rutinoms. Keičiant procesoriaus branduolių skaičių keičiasi vykdymo greitis.}
+				\item{Būsenos duomenų bazė - Fabric naudoją dvi duomenų bazes, CouchDB ir GoLevelDB, kuriuose galima saugoti ledgerio buseną}
+			\end{itemize}
+		\subsubsection{Metrikos}
+			\begin{itemize}
+				\item{Vėlavimas}
+				\item{Pralaidumas}
+				\item{Greitis}
+			\end{itemize}
+		\subsubsection{Testavimo metodologijos}
 	\subsection{MySQL}
-	\subsection{Oracle SQL}
 	\subsection{PostgreSQL}
 \section{Tyrimas}
+
+\section{Žodynas}
+\begin{itemize}
+	\item{Grandinės kodas(angl. chaincode) - programa parašyta Go, Java arba NodeJS kalbomis kuri vykdo
+ verslo logiką sutartą tarp tinklo narių.}
+	\item{Peras(angl. peer) - tinklo dalyvis gaunantis ir siunčiantis informaciją.}
+\end{itemize}
 
 
 \printbibliography[heading=bibintoc]  
