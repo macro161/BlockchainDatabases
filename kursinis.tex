@@ -106,13 +106,22 @@ būna verifikuojamas kiekvienam blokui, o perdavimo patvirtinimo parašas verifi
 				\item{Resursų paskirstymas - kiekvienas peras vykdo grandinės kodą skirtą parašo skaičiavimams ir verifikavimo rutinoms. Keičiant procesoriaus branduolių skaičių keičiasi vykdymo greitis.}
 				\item{Būsenos duomenų bazė - Fabric naudoją dvi duomenų bazes, CouchDB ir GoLevelDB, kuriuose galima saugoti ledgerio buseną}
 			\end{itemize}
-		\subsubsection{Metrikos}
+
+		\subsubsection{Testavimo metodologijos}
+			Abiejuose autoriaus apriamose straipsniuose pralaidumas ir vėlavimas yra pagrindinės darbo metrikos. Pirmajame straipsnyje \cite{IMBResearch}  buvo simuliuojamos keturios organizacijos kurios kiekviena iš jų turi po du piersus, iš viso 8 mazgai tinkle. Kiekvienas tinklo klientas pastoviai generuoja tranzakcijas, taip pat pastoviai siųsdamas teikimo užklausas ir patvirtinimo lyginimus. Tranzakcijos yra pateikiamos asinchroniškai. Buvo naudotas jų pačių sukurtas framework'as. Buvo naudoti tokie resursai: x86 64 virtuali mašina IBM SoftLayer duomenų centre. Kiekvienai virtualiai mašinai yra alokuota 32 vCPUs  Intel(R) Xeon(R)
+CPU E5-2683 v3 @ 2.00GHz ir 32 GB atminties.  Trys kliento mašinos skirtos generuoti apkrovą buvo alokuota
+ 56 vCPU ir 128 GB RAM. Mazgai prijungti prie 3 Gbps duomenų centro tinklo. Šiame darbe mokslininkai patys kūrė testavimo frameworką. \\
+Antrajame darbe(\cite{ThailandPerf}) buvo naudota: Amazon AWS EC2
+ su Intel E5-1650 8 branduolių CPU,
+15GB RAM, 128GB SSD. Tyrimui atlikti buvo sukurta pinigų pervedimo aplikacija. Pagrindinis jos funkcionalumas buvo: sukurti paskyrą, išleisti naujus pinigus bei pervesti pinigus iš vienos paskyros į kitą. Kaip ir pirmajame straipsnyje užklausos buvo siunčiamoks asinchroniškai.
+ 
+		\subsubsection{Tyrimų rezultatai}
 			\begin{itemize}
 				\item{Vėlavimas}
 				\item{Pralaidumas}
 				\item{Greitis}
 			\end{itemize}
-		\subsubsection{Testavimo metodologijos}
+
 	\subsection{MySQL}
 	\subsection{PostgreSQL}
 \section{Tyrimas}

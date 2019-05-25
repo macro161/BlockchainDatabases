@@ -2156,6 +2156,8 @@
     <bcf:citekey order="8">IMBResearch</bcf:citekey>
     <bcf:citekey order="9">ThailandPerf</bcf:citekey>
     <bcf:citekey order="10">IMBResearch</bcf:citekey>
+    <bcf:citekey order="11">IMBResearch</bcf:citekey>
+    <bcf:citekey order="12">ThailandPerf</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="anyt/global/" type="entry" sortscheme="anyt" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

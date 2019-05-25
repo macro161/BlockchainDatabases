@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2017.10.31)  25 MAY 2019 22:10
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2017.10.31)  25 MAY 2019 23:58
 entering extended mode
 **./kursinis.tex
 (kursinis.tex
@@ -1241,7 +1241,7 @@ File: img/MLP.png Graphic file (type bmp)
 ] [7
 
 ]
-Overfull \hbox (50.98347pt too wide) in paragraph at lines 128--128
+Overfull \hbox (50.98347pt too wide) in paragraph at lines 137--137
 []\TU/texgyretermes(0)/m/n/12 Google. Https://trends.google.com/trends/explore?
 date=all&geo=us&q=bitcoin,etherium,litecoin,
  []
@@ -1249,23 +1249,17 @@ date=all&geo=us&q=bitcoin,etherium,litecoin,
 [8
 
 ] (kursinis.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-
 Package logreq Info: Writing requests to 'kursinis.run.xml'.
 \openout1 = `kursinis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23254 strings out of 427823
- 451684 string characters out of 3152321
- 963609 words of memory out of 3000000
- 26984 multiletter control sequences out of 15000+200000
+ 23253 strings out of 427823
+ 451665 string characters out of 3152321
+ 963733 words of memory out of 3000000
+ 26983 multiletter control sequences out of 15000+200000
  543198 words of font info for 88 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
- 67i,11n,96p,10499b,5866s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 67i,11n,96p,10499b,5865s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on kursinis.pdf (9 pages).
