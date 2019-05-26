@@ -57,7 +57,6 @@ sieks palyginti MySQL, Oracle SQL ir PostgreSQL reliacinių duomenų bazių grei
 Darbe taip pat bus lyginama šių duomenų bazių architektūros.
 
 \section{Literatūros analizė}
-	\subsection{BigchainDB}
 	\subsection{Hyperledger}
 		Hyperleadger yra atviro kodo blokų grandinės pradėtos pradėtos kurti Linux fondo. Šio projekto tikslas yra gerinti tarpindustrini bendradarbiavimą kuriant blokų grandines kurios užtikrintų 
 		patikimą, greitą ir saugų finansinių duomenų perdavimą pagrindinėse technologijų, finansų ir produkų tiekimo kompanijose \cite{LinuxHyper}. Šiame skirsnyje autorius apžvelgs 
@@ -89,6 +88,8 @@ Tranzakcijos vyksta trejomis fazėmis(1 pav.):
     \label{img:mlp}
 \end{figure}
 
+
+
 				
 		\subsubsection{Parametrai}
 
@@ -113,20 +114,65 @@ CPU E5-2683 v3 @ 2.00GHz ir 32 GB atminties.  Trys kliento mašinos skirtos gene
  56 vCPU ir 128 GB RAM. Mazgai prijungti prie 3 Gbps duomenų centro tinklo. Šiame darbe mokslininkai patys kūrė testavimo frameworką. \\
 Antrajame darbe(\cite{ThailandPerf}) buvo naudota: Amazon AWS EC2
  su Intel E5-1650 8 branduolių CPU,
-15GB RAM, 128GB SSD. Tyrimui atlikti buvo sukurta pinigų pervedimo aplikacija. Pagrindinis jos funkcionalumas buvo: sukurti paskyrą, išleisti naujus pinigus bei pervesti pinigus iš vienos paskyros į kitą. Kaip ir pirmajame straipsnyje užklausos buvo siunčiamoks asinchroniškai.
+15GB RAM, 128GB SSD. Tyrimui atlikti buvo sukurta pinigų pervedimo aplikacija. Pagrindinis jos funkcionalumas buvo: sukurti paskyrą, išleisti naujus pinigus bei pervesti pinigus iš vienos paskyros į kitą. Kaip ir pirmajame straipsnyje užklausos buvo siunčiamoks asinchroniškai. \\
+Pirmojo darbo \cite{IBMResearch} tikslas buvo išsiaiškinti kaip kinta Fabric darbo našumas keičiant įvairius Fabric parametrus. Antrojo darbo \cite{ThailandPerf} 
+buvo palyginti Fabric darbo našumą su Etherium darbo našumu. Nors darbų tikslas ir kompiuterinė įranga ant kurios buvo atlikti tyrimai skyrėsi, iš abiejų šių 
+darbų sužinome kaip kinta Fabric našumas kintant aukščiau išvardytiems parametrams.
  
 		\subsubsection{Tyrimų rezultatai}
-			\begin{itemize}
-				\item{Vėlavimas}
-				\item{Pralaidumas}
-				\item{Greitis}
-			\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/TwoGreitis}
+    \caption{Tranzakcijų sekų diagrama}   % Antraštė įterpiama po paveikslėlio
+    \label{img:mlp}
+\end{figure}				
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/TwoPraeinamumas}
+    \caption{Tranzakcijų sekų diagrama}   % Antraštė įterpiama po paveikslėlio
+    \label{img:mlp}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/TwoVelavimas}
+    \caption{Tranzakcijų sekų diagrama}   % Antraštė įterpiama po paveikslėlio
+    \label{img:mlp}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/One}
+    \caption{Tranzakcijų sekų diagrama}   % Antraštė įterpiama po paveikslėlio
+    \label{img:mlp}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{img/OneVelavimas}
+    \caption{Tranzakcijų sekų diagrama}   % Antraštė įterpiama po paveikslėlio
+    \label{img:mlp}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{img/PraeinamumasPolicy}
+    \caption{Tranzakcijų sekų diagrama}   % Antraštė įterpiama po paveikslėlio
+    \label{img:mlp}
+\end{figure}
 
-	\subsection{MySQL}
-	\subsection{PostgreSQL}
-\section{Tyrimas}
 
-\section{Žodynas}
+\subsubsubsection{Vėlavimas}
+					Antrajame darbe \cite{ThailandPerf} nustatytas vidutis tranzakcijų vėlavimas 
+					
+				\subsubsubsection{Pralaidumas}
+									
+
+
+			
+
+	\subsection{MySQL ir PostgreSQL}
+
+\section{Išvados}
+
+\section{Priedai}
+\subsection{Žodynas}
 \begin{itemize}
 	\item{Grandinės kodas(angl. chaincode) - programa parašyta Go, Java arba NodeJS kalbomis kuri vykdo
  verslo logiką sutartą tarp tinklo narių.}
