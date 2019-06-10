@@ -51,32 +51,40 @@ taip pat kyla pasitikėjimo problema, visa duomenų prieeiga yra trečiosios ša
 Per pastaruosius kelis metus šias problemas
  buvo stengtasi išspręsti kuriant duomenų bazes paremtas blokų grandinių technologija. Privačios blokų grandinių duomenų bazės užtikrina pasitikėjimą, nes kiekvienas vartotojas turi visą duomenų 
 bazės kopiją. Darant pakeitimus tokioje duomenų bazėje kiekvienas vartotojas turi sutikti su daromais pakeitimais ir saugo visų pakeitimų istoriją. Blokų grandinių duomenų bazės išsprendžia duomenų integralumo ir
-dvigumo pinigų išleidimo problemą, nes kiekvienas mazgas blokų grandinėje tinkle gali palyginti savo turimus duomenis su kitais mazgais. Šiuo metu try populiariausios blokų grandinių duomenų 
-bazės yra: Corda, BigchainDB ir Hyperleadger. Nors blokų grandinės išsprendžia autoriaus išvardytas problemas, tačiau finansinėms transakcijos svarbus ir greitis. Šiuo darbu autorius 
-sieks palyginti MySQL, Oracle SQL ir PostgreSQL reliacinių duomenų bazių greitį finansinėms transakcijoms skaityti ir įrašyti su Corda, BigchainDB ir Hyperledger Fabric blokų grandinių duomenų bazėmis.
-Darbe taip pat bus lyginama šių duomenų bazių architektūros.
+dvigumo pinigų išleidimo problemą, nes kiekvienas mazgas blokų grandinėje tinkle gali palyginti savo turimus duomenis su kitais mazgais. 
+Nors blokų grandinės išsprendžia autoriaus išvardytas problemas, tačiau finansinėms transakcijos svarbus ir greitis. Šiuo darbu siekia atlikti blokų grandinių duomenų bazių analizę greičio aspektu.
 
+\sectionnonum{Uždaviniai}
+	\begin{enumerate}
+		\item{Palyginti MySQL ir PostgreSQL duomenų rašymo ir skaitymo greičius su Hyperledger Fabric ir Corda blokų grandinių duomenų bazėmis}arbitrary
+		\item{Aprašyti kaip kinta duomenų perdavimo greitis keičiant blokų grandinių duomenų bazės parametrus}
+		
+		
+	\end{enumerate}
+\pagebreak
 \section{Literatūros analizė}
 	\subsection{Hyperledger}
 		Hyperleadger yra atviro kodo blokų grandinės pradėtos pradėtos kurti Linux fondo. Šio projekto tikslas yra gerinti tarpindustrini bendradarbiavimą kuriant blokų grandines kurios užtikrintų 
-		patikimą, greitą ir saugų finansinių duomenų perdavimą pagrindinėse technologijų, finansų ir produkų tiekimo kompanijose \cite{LinuxHyper}. Šiame skirsnyje autorius apžvelgs 
-		atliktus Hyperledger Fabric, vienos iš Hyperledger implementacijos, greičio tyrimus, kaip šie tyrimai buvo atlikti ir kokie parametrai įtakoja Hyperledger greitį. Šiame darbe autorius apžvelgs \cite{ThailandPerf} ir \cite{IMBResearch} atliktus tyrimus.
+		patikimą, greitą ir saugų finansinių duomenų perdavimą pagrindinėse technologijų, finansų ir produktų tiekimo kompanijose \cite{LinuxHyper}. Šiame skirsnyje bus apžvelgti 
+		Hyperledger Fabric, populiariausios Hyperledger implementacijos, greičio tyrimai, kaip šie tyrimai buvo atlikti, kokie parametrai įtakoja Hyperledger greitį ir bus pateikta tolimesnės analizės pasiūlymai. Bus apžvelgta \cite{ThailandPerf} ir \cite{IMBResearch} atlikti tyrimai.
 		
 		\subsubsection{Architektūra}
 			Hyperledger Fabric(toliau - Fabric) yra privati blokų grandinė skirta įmonių lygio aplikacijoms. 
 			Ši blokų grandinė gali vykdyti arbitrišką išmanujį kontraktą parašyta Java, Go arba NodeJS kalbomis (grandinės kodai).
 			Fabric sudaro šios esybės:
 			\begin{itemize}
-				\item{Peras - pero mazgas yra atsakingas už grandinės kodą kurį vykdant yra įgyvendinamas išmanusis kontraktas. 
- Peras turi savyje visą tinklo informaciją(angl. Ledger). }
-				\item{Užsakymo paslauga (angl. Ordering Service) - Užsakymo paslaugos mazgas dalyvauja susitarimo(angl. consensus) 
-protokole ir padalina bloką taip, kad jį būtų galima naudoti tranzakcijom. Padalintas blokas būna persiunčiamas kitiems perams.}
-				\item{Klientas - atsakingas už transakcijos siūlymo sukūrimą, ir išsiuntimą tinklo perams. Gavus pat virtinimą iš perų vartotojas siunčia prašymą tvarkytojui, kad jis informaciją įtrauktų į bloką ir išsiūstų ją visiems tinklo perams.}
+				\item{Lygiarangis - šis mazgas yra atsakingas už grandinės kodą kurį vykdant yra įgyvendinamas išmanusis kontraktas. 
+ Lygiarangis savyje turi visą tinklo informaciją(angl. Ledger). }
+				\item{Užsakymo servisas (angl. Ordering Service) - Užsakymo serviso mazgas dalyvauja susitarimo(angl. consensus) 
+protokole ir padalina bloką taip, kad jį būtų galima naudoti tranzakcijom. Padalintas blokas būna persiunčiamas kitiems lygiarangiams.}
+				\item{Klientas - atsakingas už transakcijos siūlymo sukūrimą, ir išsiuntimą tinklo lygiarangiams. Gavus patvirtinimą iš lygiarangių vartotojas siunčia prašymą tvarkytojui, kad jis informaciją įtrauktų į bloką ir išsiūstų ją visiems tinklo perams.}
 			\end{itemize}
 
-Tranzakcijos vyksta trejomis fazėmis(1 pav.):
+		\subsubsection{Tranzakcijų vykdymas}
+
+			Tranzakcijos vyksta trejomis fazėmis(1 pav.):
 			\begin{enumerate}
-				\item{Patvirtinimo fazė - simuliuojama tranzakcija su pasirinktais perais ir renkami būsenos pokyčiai}
+				\item{Patvirtinimo fazė - simuliuojama tranzakcija su pasirinktais vienarangiais ir renkami būsenos pokyčiai}
 				\item{Užsakymo fazė - užsakomos tranzakcijos per susitarimo protokolą}
 				\item{Patvirtinimo fazė - patvirtinimas ir informacijos įdėjimas į buhalterinę knygą }
 			\end{enumerate}
@@ -93,23 +101,22 @@ Tranzakcijos vyksta trejomis fazėmis(1 pav.):
 				
 		\subsubsection{Parametrai}
 
-		Mano nurodytuose moksliniuose straipsniuose (\cite{ThailandPerf} \cite{IMBResearch}) darytuose Fabric greičio tyrimuose
-		buvo išskirtas parametrų sarašas, kuriuos keičiant mokslininkai išskyrė sąrašą parametrų kuriuos keisdami jie matavo Fabric darbą. 
-		Šiame poskiryje autorius trumpai supažindins su šiais parametais ir sekančiame skyriuje pateiks tyrimų duomenis.
+		Nurodytuose moksliniuose straipsniuose (\cite{ThailandPerf} \cite{IMBResearch}) darytuose Fabric greičio tyrimuose
+		buvo išskirtas parametrų sarašas, kuriuos keisdami mokslininkai matavo Fabric darbą. 
 			
 			\begin{itemize}
-				\item{Mazgų skaičius - didėjant mazgų skaičiui tinkle norint patvirtinti bloką trunka ilgiau laiko išsiūti jį visiems tinklo mazgams.}
+				\item{Mazgų skaičius - vartotojų skaičius privačioje blokų grandinėje}
 				\item{Tranzakcijų skaičius - keičiant tranzakcijų skaičiū keičiasi vėlavimas ir pralaidumas}
 				\item{Bloko dydis - tranzakcijos yra sugrupuojamos į blokus. Blokai yra siunčiami visiems tinklo perams. Užsakymo parašas 
-būna verifikuojamas kiekvienam blokui, o perdavimo patvirtinimo parašas verifikuojamas kiekvienai transakcijai, todėl keičiant bloko dydį atsiranda konmprpisas tarp palaidumo ir vėlavim}
+būna verifikuojamas kiekvienam blokui, o perdavimo patvirtinimo parašas verifikuojamas kiekvienai transakcijai, todėl keičiant bloko dydį atsiranda kompropisas tarp palaidumo ir vėlavim}
 				\item{Patvirtinimo politika - diktuoja kiek tranzakcijų ir pasirašymų turi būti įvykdyta prieš siunčiant tranzakcijas užsakytoją. Didinant politikos sudėtingumą didės resursų sunaudojimas ir įvertinimo laikas.}
 				\item{Kanalai - izoliuoja tranzakcijas viena nuo kitos ir norint persiųsti tranzakcijas iš vieno kanalo į kitą turi būti patvirtintos, surikiuotos ir apdorotos nepriklausomai viena nuo kitos.}
-				\item{Resursų paskirstymas - kiekvienas peras vykdo grandinės kodą skirtą parašo skaičiavimams ir verifikavimo rutinoms. Keičiant procesoriaus branduolių skaičių keičiasi vykdymo greitis.}
+				\item{Resursų paskirstymas - kiekvienas lygiarangis vykdo grandinės kodą skirtą parašo skaičiavimams ir verifikavimo rutinoms. Keičiant procesoriaus branduolių skaičių keičiasi vykdymo greitis.}
 				\item{Būsenos duomenų bazė - Fabric naudoją dvi duomenų bazes, CouchDB ir GoLevelDB, kuriuose galima saugoti ledgerio buseną}
 			\end{itemize}
 
 		\subsubsection{Testavimo metodologijos}
-			Abiejuose autoriaus apriamose straipsniuose pralaidumas ir vėlavimas yra pagrindinės darbo metrikos. Pirmajame straipsnyje \cite{IMBResearch}  buvo simuliuojamos keturios organizacijos kurios kiekviena iš jų turi po du piersus, iš viso 8 mazgai tinkle. Kiekvienas tinklo klientas pastoviai generuoja tranzakcijas, taip pat pastoviai siųsdamas teikimo užklausas ir patvirtinimo lyginimus. Tranzakcijos yra pateikiamos asinchroniškai. Buvo naudotas jų pačių sukurtas framework'as. Buvo naudoti tokie resursai: x86 64 virtuali mašina IBM SoftLayer duomenų centre. Kiekvienai virtualiai mašinai yra alokuota 32 vCPUs  Intel(R) Xeon(R)
+			Abiejuose autoriaus apriamose straipsniuose pralaidumas ir vėlavimas yra pagrindinės darbo metrikos. Pirmajame straipsnyje \cite{IMBResearch}  buvo simuliuojamos keturios organizacijos kurios kiekviena iš jų turi po du lygiarangius, iš viso 8 mazgai tinkle. Kiekvienas tinklo klientas pastoviai generuoja tranzakcijas, taip pat pastoviai siųsdamas teikimo užklausas ir patvirtinimo lyginimus. Tranzakcijos yra pateikiamos asinchroniškai. Buvo naudotas jų pačių sukurtas framework'as. Buvo naudoti tokie resursai: x86 64 virtuali mašina IBM SoftLayer duomenų centre. Kiekvienai virtualiai mašinai yra alokuota 32 vCPUs  Intel(R) Xeon(R)
 CPU E5-2683 v3 @ 2.00GHz ir 32 GB atminties.  Trys kliento mašinos skirtos generuoti apkrovą buvo alokuota
  56 vCPU ir 128 GB RAM. Mazgai prijungti prie 3 Gbps duomenų centro tinklo. Šiame darbe mokslininkai patys kūrė testavimo frameworką. \\
 Antrajame darbe(\cite{ThailandPerf}) buvo naudota: Amazon AWS EC2
@@ -118,59 +125,22 @@ Antrajame darbe(\cite{ThailandPerf}) buvo naudota: Amazon AWS EC2
 Pirmojo darbo \cite{IBMResearch} tikslas buvo išsiaiškinti kaip kinta Fabric darbo našumas keičiant įvairius Fabric parametrus. Antrojo darbo \cite{ThailandPerf} 
 buvo palyginti Fabric darbo našumą su Etherium darbo našumu. Nors darbų tikslas ir kompiuterinė įranga ant kurios buvo atlikti tyrimai skyrėsi, iš abiejų šių 
 darbų sužinome kaip kinta Fabric našumas kintant aukščiau išvardytiems parametrams.
- 
-
-
-
 		\subsubsection{Tyrimų rezultatai}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{img/TwoGreitis}
-    \caption{Tranzakcijų sekų diagrama}   % Antraštė įterpiama po paveikslėlio
+    \includegraphics[scale=0.5]{img/Praein}
+    \caption{Tranzakcijų praeinamumas}   % Antraštė įterpiama po paveikslėlio
     \label{img:mlp}
 \end{figure}		
-\pagebreak
-
-\begin{figure}
-\centering
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{img/TwoPraeinamumas}
-  \captionof{figure}{A figure}
-  \label{fig:test1}
-\end{minipage}%
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{img/TwoVelavimas}
-  \captionof{figure}{Another figure}
-  \label{fig:test2}
-\end{minipage}
-
-\end{figure}
-
-\begin{figure}
-\centering
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{img/One}
-  \captionof{figure}{A figure}
-  \label{fig:test1}
-\end{minipage}%
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{img/OneVelavimas}
-  \captionof{figure}{Another figure}
-  \label{fig:test2}
-\end{minipage}
-\end{figure}
-		
-
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.7]{img/PraeinamumasPolicy}
-    \caption{Tranzakcijų sekų diagrama}   % Antraštė įterpiama po paveikslėlio
+    \includegraphics[scale=0.5]{img/Velav}
+    \caption{Tranzakcijų vėlavimas}   % Antraštė įterpiama po paveikslėlio
     \label{img:mlp}
-\end{figure}
+\end{figure}		
+
+
+
 
 
 \subsubsubsection{Vėlavimas}
@@ -191,7 +161,8 @@ darbų sužinome kaip kinta Fabric našumas kintant aukščiau išvardytiems par
 \begin{itemize}
 	\item{Grandinės kodas(angl. chaincode) - programa parašyta Go, Java arba NodeJS kalbomis kuri vykdo
  verslo logiką sutartą tarp tinklo narių.}
-	\item{Peras(angl. peer) - tinklo dalyvis gaunantis ir siunčiantis informaciją.}
+	\item{Lygiarangis(angl. peer) - tinklo dalyvis gaunantis ir siunčiantis informaciją.}
+	\item{Išmanusis kontraktas(smart contract)}
 \end{itemize}
 
 

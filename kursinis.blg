@@ -1,8 +1,20 @@
 [0] Config.pm:304> INFO - This is Biber 2.12
 [0] Config.pm:307> INFO - Logfile is 'kursinis.blg'
-[30] biber-MSWIN64:315> INFO - === 
-[53] Biber.pm:371> INFO - Reading 'kursinis.bcf'
-[142] Utils.pm:209> ERROR - Error: Found biblatex control file version 3.3, expected version 3.5.
-This means that your biber (2.12) and biblatex (3.7) versions are incompatible.
-See compat matrix in biblatex or biber PDF documentation.
-[142] Biber.pm:114> INFO - ERRORS: 1
+[21] biber-MSWIN64:315> INFO - === 
+[38] Biber.pm:371> INFO - Reading 'kursinis.bcf'
+[101] Biber.pm:889> INFO - Found 9 citekeys in bib section 0
+[111] Biber.pm:4093> INFO - Processing section 0
+[121] Biber.pm:4254> INFO - Looking for bibtex format file 'bibliografija.bib' for section 0
+[123] bibtex.pm:1523> INFO - LaTeX decoding ...
+[128] bibtex.pm:1340> INFO - Found BibTeX data source 'bibliografija.bib'
+[145] Utils.pm:193> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[145] Utils.pm:193> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
+[145] Utils.pm:193> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[145] Utils.pm:193> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
+[146] Utils.pm:193> WARN - I didn't find a database entry for 'IBMResearch' (section 0)
+[158] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[158] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[159] Biber.pm:3921> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'lt-LT'
+[164] bbl.pm:636> INFO - Writing 'kursinis.bbl' with encoding 'UTF-8'
+[166] bbl.pm:739> INFO - Output to kursinis.bbl
+[167] Biber.pm:110> INFO - WARNINGS: 5
