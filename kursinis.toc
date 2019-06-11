@@ -20,7 +20,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.1.5.}Tyrimų rezultatai}{5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.1.5.1.}Vėlavimas}{6}% 
+\contentsline {paragraph}{\numberline {1.1.5.1.}Vėlavimas}{5}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\numberline {1.1.5.2.}Pralaidumas}{6}% 
 \defcounter {refsection}{0}\relax 

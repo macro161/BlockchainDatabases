@@ -2001,15 +2001,11 @@
     <bcf:citekey order="4">Integrity</bcf:citekey>
     <bcf:citekey order="5">Double</bcf:citekey>
     <bcf:citekey order="6">LinuxHyper</bcf:citekey>
-    <bcf:citekey order="7">ThailandPerf</bcf:citekey>
+    <bcf:citekey order="7">IMBResearch</bcf:citekey>
     <bcf:citekey order="8">IMBResearch</bcf:citekey>
     <bcf:citekey order="9">ThailandPerf</bcf:citekey>
-    <bcf:citekey order="10">IMBResearch</bcf:citekey>
-    <bcf:citekey order="11">IMBResearch</bcf:citekey>
-    <bcf:citekey order="12">ThailandPerf</bcf:citekey>
-    <bcf:citekey order="13">IBMResearch</bcf:citekey>
-    <bcf:citekey order="14">ThailandPerf</bcf:citekey>
-    <bcf:citekey order="15">ThailandPerf</bcf:citekey>
+    <bcf:citekey order="10">ShaFabPerf</bcf:citekey>
+    <bcf:citekey order="11">ThailandPerf</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">

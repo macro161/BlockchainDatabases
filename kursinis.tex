@@ -11,7 +11,9 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{subfig}
+\usepackage{array}
 \usepackage{wrapfig}
+\usepackage{tabu}
 
 % Titulinio aprašas
 \university{Vilniaus universitetas}
@@ -66,7 +68,7 @@ Nors blokų grandinės išsprendžia autoriaus išvardytas problemas, tačiau fi
 	\subsection{Hyperledger}
 		Hyperleadger yra atviro kodo blokų grandinės pradėtos pradėtos kurti Linux fondo. Šio projekto tikslas yra gerinti tarpindustrini bendradarbiavimą kuriant blokų grandines kurios užtikrintų 
 		patikimą, greitą ir saugų finansinių duomenų perdavimą pagrindinėse technologijų, finansų ir produktų tiekimo kompanijose \cite{LinuxHyper}. Šiame skirsnyje bus apžvelgti 
-		Hyperledger Fabric, populiariausios Hyperledger implementacijos, greičio tyrimai, kaip šie tyrimai buvo atlikti, kokie parametrai įtakoja Hyperledger greitį ir bus pateikta tolimesnės analizės pasiūlymai. Bus apžvelgta \cite{ThailandPerf} ir \cite{IMBResearch} atlikti tyrimai.
+		Hyperledger Fabric, populiariausios Hyperledger implementacijos, architektūra, greičio tyrimai, kaip šie tyrimai buvo atlikti, kokie parametrai įtakoja Hyperledger greitį ir pateikta tolimesnės analizės pasiūlymai. 
 		
 		\subsubsection{Architektūra}
 			Hyperledger Fabric(toliau - Fabric) yra privati blokų grandinė skirta įmonių lygio aplikacijoms. 
@@ -101,8 +103,7 @@ protokole ir padalina bloką taip, kad jį būtų galima naudoti tranzakcijom. P
 				
 		\subsubsection{Parametrai}
 
-		Nurodytuose moksliniuose straipsniuose (\cite{ThailandPerf} \cite{IMBResearch}) darytuose Fabric greičio tyrimuose
-		buvo išskirtas parametrų sarašas, kuriuos keisdami mokslininkai matavo Fabric darbą. 
+Yra grupė parametrų \cite{IMBResearch} kurie įtakoja Fabric greitį 
 			
 			\begin{itemize}
 				\item{Mazgų skaičius - vartotojų skaičius privačioje blokų grandinėje}
@@ -116,15 +117,26 @@ būna verifikuojamas kiekvienam blokui, o perdavimo patvirtinimo parašas verifi
 			\end{itemize}
 
 		\subsubsection{Testavimo metodologijos}
-			Abiejuose autoriaus apriamose straipsniuose pralaidumas ir vėlavimas yra pagrindinės darbo metrikos. Pirmajame straipsnyje \cite{IMBResearch}  buvo simuliuojamos keturios organizacijos kurios kiekviena iš jų turi po du lygiarangius, iš viso 8 mazgai tinkle. Kiekvienas tinklo klientas pastoviai generuoja tranzakcijas, taip pat pastoviai siųsdamas teikimo užklausas ir patvirtinimo lyginimus. Tranzakcijos yra pateikiamos asinchroniškai. Buvo naudotas jų pačių sukurtas framework'as. Buvo naudoti tokie resursai: x86 64 virtuali mašina IBM SoftLayer duomenų centre. Kiekvienai virtualiai mašinai yra alokuota 32 vCPUs  Intel(R) Xeon(R)
-CPU E5-2683 v3 @ 2.00GHz ir 32 GB atminties.  Trys kliento mašinos skirtos generuoti apkrovą buvo alokuota
- 56 vCPU ir 128 GB RAM. Mazgai prijungti prie 3 Gbps duomenų centro tinklo. Šiame darbe mokslininkai patys kūrė testavimo frameworką. \\
-Antrajame darbe(\cite{ThailandPerf}) buvo naudota: Amazon AWS EC2
+			Šiame darbe apžvelgta trijų straipsnių duomenys, juose naudota tokia kompiuterinė įranga:
+\begin{center}
+\begin{tabular}{ | m{5em} | m{10cm}| } 
+\hline
+\cite{IMBResearch}& x86 64 virtuali mašina IBM SoftLayer duomenų centre. 
+Kiekvienai virtualiai mašinai yra alokuota 32 vCPUs  Intel(R) Xeon(R)
+CPU E5-2683 v3 @ 2.00GHz ir 32 GB atminties. Trys kliento mašinos skirtos generuoti apkrovą buvo alokuota
+ 56 vCPU ir 128 GB RAM. Mazgai prijungti prie 3 Gbps duomenų centro tinklo  \\ 
+\hline
+ \cite{ThailandPerf}& Amazon AWS EC2
  su Intel E5-1650 8 branduolių CPU,
-15GB RAM, 128GB SSD. Tyrimui atlikti buvo sukurta pinigų pervedimo aplikacija. Pagrindinis jos funkcionalumas buvo: sukurti paskyrą, išleisti naujus pinigus bei pervesti pinigus iš vienos paskyros į kitą. Kaip ir pirmajame straipsnyje užklausos buvo siunčiamoks asinchroniškai. \\
-Pirmojo darbo \cite{IBMResearch} tikslas buvo išsiaiškinti kaip kinta Fabric darbo našumas keičiant įvairius Fabric parametrus. Antrojo darbo \cite{ThailandPerf} 
-buvo palyginti Fabric darbo našumą su Etherium darbo našumu. Nors darbų tikslas ir kompiuterinė įranga ant kurios buvo atlikti tyrimai skyrėsi, iš abiejų šių 
-darbų sužinome kaip kinta Fabric našumas kintant aukščiau išvardytiems parametrams.
+15GB RAM, 128GB SSD  \\ 
+\hline
+\cite{ShaFabPerf}& HPC serveris
+su Intel(R) Xeon(R) CPU E5-2690, 2.60 GHz, 24 core
+CPU, 64 GB RAM, and running Ubuntu 16.04  \\ 
+\hline
+\end{tabular}
+\end{center}
+
 		\subsubsection{Tyrimų rezultatai}
 \begin{figure}[H]
     \centering
