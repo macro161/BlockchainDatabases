@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7050 64-bit) (preloaded format=xelatex 2019.6.10)  11 JUN 2019 11:21
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7050 64-bit) (preloaded format=xelatex 2019.6.10)  12 JUN 2019 14:06
 entering extended mode
 **./kursinis.tex
 (kursinis.tex
@@ -1219,10 +1219,10 @@ File: img/MLP.png Graphic file (type bmp)
 <img/MLP.png>
  [3]
 
-LaTeX Warning: Citation 'ShaFabPerf' on page 4 undefined on input line 133.
+LaTeX Warning: Citation 'ShaFabPerf' on page 4 undefined on input line 135.
 
 
-Overfull \hbox (8.48401pt too wide) in paragraph at lines 133--133
+Overfull \hbox (8.48401pt too wide) in paragraph at lines 135--135
 []|\TU/texgyretermes(0)/m/n/12 [[]]| 
  []
 
@@ -1241,7 +1241,7 @@ Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Overfull \hbox (50.98347pt too wide) in paragraph at lines 181--181
+Overfull \hbox (50.98347pt too wide) in paragraph at lines 192--192
 []\TU/texgyretermes(0)/m/n/12 Google. Https://trends.google.com/trends/explore?
 date=all&geo=us&q=bitcoin,etherium,litecoin,
  []
@@ -1266,11 +1266,12 @@ Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
+[6]
 
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
-[6] (kursinis.aux)
+[7] (kursinis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1295,4 +1296,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  67i,11n,96p,906b,6131s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on kursinis.pdf (7 pages).
+Output written on kursinis.pdf (8 pages).

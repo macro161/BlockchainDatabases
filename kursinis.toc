@@ -20,9 +20,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.1.5.}Tyrimų rezultatai}{5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.1.5.1.}Vėlavimas}{5}% 
+\contentsline {paragraph}{\numberline {1.1.5.1.}IBM tyrimas}{5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.1.5.2.}Pralaidumas}{6}% 
+\contentsline {paragraph}{\numberline {1.1.5.2.}Tailando ,,Kompiuterių technologijos centro" tyrimas}{6}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {1.1.5.3.}Starjah tyrimas}{6}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {1.1.5.4.}Vėlavimas}{6}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {1.1.5.5.}Pralaidumas}{6}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.2.}MySQL ir PostgreSQL}{6}% 
 \defcounter {refsection}{0}\relax 

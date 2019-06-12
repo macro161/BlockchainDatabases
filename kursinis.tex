@@ -58,8 +58,10 @@ Nors blokų grandinės išsprendžia autoriaus išvardytas problemas, tačiau fi
 
 \sectionnonum{Uždaviniai}
 	\begin{enumerate}
-		\item{Palyginti MySQL ir PostgreSQL duomenų rašymo ir skaitymo greičius su Hyperledger Fabric ir Corda blokų grandinių duomenų bazėmis}arbitrary
-		\item{Aprašyti kaip kinta duomenų perdavimo greitis keičiant blokų grandinių duomenų bazės parametrus}
+		\item{Palyginti MySQL ir PostgreSQL transakcijų praeinamumo greičius su Hyperledger Fabric ir Corda blokų grandinių duomenų bazėmis}
+		\item{Palyginti MySQL ir PostgreSQL transakcijų vėlavimą su Hyperledger Fabric ir Corda blokų grandinių duomenų bazėmis}
+		\item{Atlikti MySQL duomenų bazės greičio lyginimą su Hyperledger Fabric blokų grandinių duomenų baze}
+		\item{Išskirti esamų tyrimų trūkumus ir galimas sritis ateities darbams}
 		
 		
 	\end{enumerate}
@@ -130,7 +132,7 @@ CPU E5-2683 v3 @ 2.00GHz ir 32 GB atminties. Trys kliento mašinos skirtos gener
  su Intel E5-1650 8 branduolių CPU,
 15GB RAM, 128GB SSD  \\ 
 \hline
-\cite{ShaFabPerf}& HPC serveris
+ \cite{ShaFabPerf}& HPC serveris
 su Intel(R) Xeon(R) CPU E5-2690, 2.60 GHz, 24 core
 CPU, 64 GB RAM, and running Ubuntu 16.04  \\ 
 \hline
@@ -151,6 +153,15 @@ CPU, 64 GB RAM, and running Ubuntu 16.04  \\
     \label{img:mlp}
 \end{figure}		
 
+		\subsubsubsection{IBM tyrimas}
+			IBM atliktame tyrime \cite{IMBResearch} buvo tyriama kaip keičiant Fabric parametrus keičiasi tranzakcijų praeinamumas ir vėlavimas. Didinant tranzakcijų atvykimo kiekį nuo 20 tranzakcijų per sekundę iki 100 praeinamumas dideja tiesiškai, o nuo 100 transakcijų per sekundę praeinamumas sustojo ir nedekilo. Bloko dydis praeinamumui įtakos neturėjo. 
+\newline
+Mažiausias vėlavimas būna pasirinkus mažiausia bloko dydį. Keičiant tranzakcijų atvykimo kiekį nuo 25 iki 125 vėlavimas išlieka apie 0,3 sekundės ir tuomet smarkiai kyla iki 10 sekundžių tranzakcijų 
+atvykimo kiekį pakėlus iki 150 transakcijų. 
+\newline
+Iš šio tyrimo imsime geriausius rezultatus(2 pav. ir 3 pav.) ir vėliau lyginsime juos su tadicinėmis duomenų bazėmis. 
+		\subsubsubsection{Tailando ,,Kompiuterių technologijos centro" tyrimas}
+		\subsubsubsection{Starjah tyrimas}
 
 
 

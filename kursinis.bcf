@@ -2005,7 +2005,8 @@
     <bcf:citekey order="8">IMBResearch</bcf:citekey>
     <bcf:citekey order="9">ThailandPerf</bcf:citekey>
     <bcf:citekey order="10">ShaFabPerf</bcf:citekey>
-    <bcf:citekey order="11">ThailandPerf</bcf:citekey>
+    <bcf:citekey order="11">IMBResearch</bcf:citekey>
+    <bcf:citekey order="12">ThailandPerf</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">
