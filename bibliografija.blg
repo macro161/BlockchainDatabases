@@ -1,5 +1,5 @@
-[0] Config.pm:304> INFO - This is Biber 2.12
-[0] Config.pm:307> INFO - Logfile is 'bibliografija.blg'
-[21] biber-MSWIN64:315> INFO - === 
-[284] Utils.pm:209> ERROR - Cannot find control file 'bibliografija.bcf'! - Did latex run successfully on your .tex file before you ran biber?
-[284] Biber.pm:114> INFO - ERRORS: 1
+[0] Config.pm:354> INFO - This is Biber 2.7
+[0] Config.pm:357> INFO - Logfile is 'bibliografija.blg'
+[43] biber-MSWIN64:303> INFO - === 
+[542] Utils.pm:180> ERROR - Cannot find control file 'bibliografija.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
+[542] Biber.pm:113> INFO - ERRORS: 1

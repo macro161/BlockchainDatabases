@@ -20,10 +20,10 @@
 \faculty{Matematikos ir informatikos fakultetas}
 \department{Programų sistemų katedra}
 \papertype{Kursinis darbas}
-\title{Blokų grandinių duomenų bazių analizė }
-\titleineng{Blockchain Database Analysis}
+\title{Blokų grandinių duomenų bazės finansinių duomenų kaupimui}
+\titleineng{Blockchain databases for financial data}
 \status{3 kurso 3 grupės studentas}
-\author{Justas Tvarijonas}
+\author{Matas Savickis}
 % \secondauthor{Vardonis Pavardonis}   % Pridėti antrą autorių
 \supervisor{dr. Vytautas Valaitis}
 \date{Vilnius – \the\year}
@@ -154,23 +154,24 @@ CPU, 64 GB RAM, and running Ubuntu 16.04  \\
 \end{figure}		
 
 		\subsubsubsection{IBM tyrimas}
-			IBM atliktame tyrime \cite{IMBResearch} buvo tyriama kaip keičiant Fabric parametrus keičiasi tranzakcijų praeinamumas ir vėlavimas. Didinant tranzakcijų atvykimo kiekį nuo 20 tranzakcijų per sekundę iki 100 praeinamumas dideja tiesiškai, o nuo 100 transakcijų per sekundę praeinamumas sustojo ir nedekilo. Bloko dydis praeinamumui įtakos neturėjo. 
+			IBM atliktame tyrime \cite{IMBResearch} buvo tyriama kaip keičiant Fabric parametrus keičiasi tranzakcijų praeinamumas ir vėlavimas. Didinant tranzakcijų atvykimo kiekį nuo 20 tranzakcijų per sekundę iki 100 praeinamumas dideja tiesiškai, o nuo 100 transakcijų per sekundę praeinamumas sustojo ir nebekilo. Bloko dydis praeinamumui įtakos neturėjo. 
 \newline
 Mažiausias vėlavimas būna pasirinkus mažiausia bloko dydį. Keičiant tranzakcijų atvykimo kiekį nuo 25 iki 125 vėlavimas išlieka apie 0,3 sekundės ir tuomet smarkiai kyla iki 10 sekundžių tranzakcijų 
 atvykimo kiekį pakėlus iki 150 transakcijų. 
 \newline
 Iš šio tyrimo imsime geriausius rezultatus(2 pav. ir 3 pav.) ir vėliau lyginsime juos su MySQL ir PostgreSQL duomenų bazėmis. 
 		\subsubsubsection{Tailando ,,Kompiuterių technologijos centro" tyrimas}
-			Tailando ,,Kompiuterių technologijos centro" atliktame darbe buvo simuliuojamos pinigų siuntimas, pinigų išdavimas ir vartotojų sukūrimas. Keliant tranzakcijų skaičių iki 100 praeinamumas kilo iki 299.85 tranzakcijų per sekundę. Didinant tranzakcijų kaičių iki 1000 praeinamumas pakito nežymiai, kaip ir IBM \cite{IMBResearch} atliktame darbe, ir didinant tranzakcijų skaičių iki 10000 praeinamumas krito iki 159.76 tranzakcijų per sekundę
+			Tailando ,,Kompiuterių technologijos centro" atliktame darbe buvo simuliuojamos pinigų siuntimas, pinigų išdavimas ir vartotojų sukūrimas. Keliant tranzakcijų skaičių iki 100 praeinamumas kilo iki 299.85 tranzakcijų per sekundę. Didinant tranzakcijų kaičių iki 1000 praeinamumas pakito nežymiai, kaip ir IBM \cite{IMBResearch} atliktame darbe, ir didinant tranzakcijų skaičių iki 10000 praeinamumas krito iki 159.76 tranzakcijų per sekundę. 
+Didinant tranzakcijas nuo 1 iki 100 vėlavimas kilo nežymiai, nuo 0.09 iki 0.17. Padidinuos tranzakcijas nuo 100 iki 10000 staiga pakilo vėlavimas net iki 34.08 sekundžių.
 		\subsubsubsection{Sharjah tyrimas}
-			Sharjah universiteto mokslininku atliktas tyr
+			Sharjah universiteto mokslininkų tyrime \cite{ShaFabPerf} Fabric 0.6 ir Fabric 1.0 tranzakcijų praeinamumas ir vėlavimas. Nuo 10 iki 100 tranzakcijų praeinamumas kilo nuo 40 tranzakcijų per sekundę iki 165 tranzakcijų per sekundę, toliau didinant tranzakcijų skaičių praeinamumas nebekito. Toks rezultatas gautas naudojant Fabric 1.0 versija ir praeinamumas geresnis negu Fabric 0.6 versijos. 
+Didinant tranzakcijų skaičių nuo 10 iki 1000 vėlavimas pakilo nežymiai, nuo 0.1 sekundės iki 1 sekundės, tačiau padidinus tranzakcijų skaičių iki 10000 pastebėtas didelis vėlavimo pašokimas iki 10 sekundžių.
+Šio darbo metodologija buvo paremta jau minėtu Tailando mokslininkų darbu \cite{ThailandPerf}
 
-
-
-\subsubsubsection{Vėlavimas}
-					Antrajame darbe \cite{ThailandPerf} nustatytas vidutis tranzakcijų vėlavimas 
-					
-				\subsubsubsection{Pralaidumas}
+\subsubsubsection{Rezultatu apibendrinimas}
+Iš aukščiau aptartų darbų(\cite{IMBResearch}, \cite{ThailandPerf}, \cite{ShaFabPerf}) pastebima tendencija, kad didinant tranzakcijų skaičių iki 100 praeinamumas kilo tiesiškai, o didinant transakcijų skaičių toliau praeinamumas nebekilo arba net krito(\cite{ThailandPerf}).
+\newline
+Didinant tranzakcijas nuo 1 iki 1000 vėlavimas praktiškai nekyla, ir tada nuo 1000 iki 10000 vėlavimas smarkiai šoktelėja. 
 									
 
 
