@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2017.10.31)  12 JUN 2019 18:50
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2017.10.31)  15 JUN 2019 16:54
 entering extended mode
 **./kursinis.tex
 (kursinis.tex
@@ -1280,10 +1280,10 @@ File: img/MLP.png Graphic file (type bmp)
 <img/MLP.png>
  [3]
 
-LaTeX Warning: Citation 'ShaFabPerf' on page 4 undefined on input line 135.
+LaTeX Warning: Citation 'ShaFabPerf' on page 4 undefined on input line 134.
 
 
-Overfull \hbox (8.48401pt too wide) in paragraph at lines 135--135
+Overfull \hbox (8.48401pt too wide) in paragraph at lines 134--134
 []|\TU/texgyretermes(0)/m/n/12 [[]]| 
  []
 
@@ -1294,13 +1294,13 @@ File: img/Velav.png Graphic file (type bmp)
 <img/Velav.png>
  [5]
 
-LaTeX Warning: Citation 'ShaFabPerf' on page 6 undefined on input line 167.
+LaTeX Warning: Citation 'ShaFabPerf' on page 6 undefined on input line 166.
 
 
-LaTeX Warning: Citation 'ShaFabPerf' on page 6 undefined on input line 172.
+LaTeX Warning: Citation 'ShaFabPerf' on page 6 undefined on input line 171.
 
 [6]
-Overfull \hbox (50.98347pt too wide) in paragraph at lines 194--194
+Overfull \hbox (50.98347pt too wide) in paragraph at lines 203--203
 []\TU/texgyretermes(0)/m/n/12 Google. Https://trends.google.com/trends/explore?
 date=all&geo=us&q=bitcoin,etherium,litecoin,
  []

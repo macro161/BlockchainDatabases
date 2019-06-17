@@ -28,7 +28,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\numberline {1.1.5.4.}Rezultatu apibendrinimas}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.}MySQL ir PostgreSQL}{7}
+\contentsline {subsection}{\numberline {1.2.}Apache Cassandra}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.2.1.}Testavimo metodologija}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.2.2.}Tyrimų rezultatai}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {1.2.2.1.}Blekinge technologijų instituto tyrimas}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {1.2.2.2.}Coimbra politechnikos instituto tyrimas}{7}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.}Išvados}{7}
 \defcounter {refsection}{0}\relax 
