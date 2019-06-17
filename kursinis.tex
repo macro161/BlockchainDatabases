@@ -180,14 +180,57 @@ Didinant tranzakcijas nuo 1 iki 1000 vėlavimas praktiškai nekyla, ir tada nuo 
 	Apache Cassandra yra atviro kodo, paskirstyta NoSQL duomenų bazė kuri palaiko klasterizaciją bei asinchroninį be valdančiojo kompiuterio duomenų replikavimą. Šios Cassandra galimybės yra panašios į blokinių grandinių duomenų bazių galimybes, todėl šiame skyriuje apžvelgsime jau padarytus 
 Cassandra duomenų bazės našumo tyrimus. 
 
+
+
 	\subsubsection{Testavimo metodologija}
-		
+		\begin{center}
+		\begin{tabular}{ | m{5em} | m{10cm}| } 
+		\hline
+		\cite{BITCass}& Testai buvo atlikti su trimis HP serveriais DL380
+G7 iš viso su 16 branduolių (naudojant HyperThreading) ir 64 GB RAM ir HDD 400
+GB. Red Hat Enterprise Linux Server 7.3 (Maipo) (Kernel
+Linux 3.10.0-514.e17.x86 64) ir Cassandra 3.11.0 yra įdiegta į visus kompiuterius, taip pat ir virtualias mašinas. Ta pati Cassandra versija naudojama ir apkrovos generavimui. 
+Konteinerių testavimui naudota,
+Docker versija 1.12.6. Virtualioms mašinoms naudota VMware ESXi 6.0.0.\\ 
+\hline
+		\cite{BITCass}&  Testai buvo leid=iami naudojant
+Ubuntu Server 12.04 32bit Virtual Machine leid=iant ant VMware Player.
+ Virtuali mašina turėjo 2GB RAM ir priimančioji mašina turėjo vieno mazgo Core 2 Quad 2.40
+GHz su 4GB RAM ir Windows 7 operacine sistema. Duombazių versijos: MongoDB version 2.4.3
+ir Cassandra version 1.2.4. \\ 
+		\hline
+\end{tabular}
+\end{center}
 	\subsubsection{Tyrimų rezultatai}
+		\begin{figure}[H]
+		    \centering
+		    \includegraphics[scale=0.5]{img/CasTh}
+		    \caption{Tranzakcijų vėlavimas}   % Antraštė įterpiama po paveikslėlio
+		    \label{img:mlp}
+		\end{figure}
+		\begin{figure}[H]
+		    \centering
+		    \includegraphics[scale=0.5]{img/CasLat}
+		    \caption{Tranzakcijų vėlavimas}   % Antraštė įterpiama po paveikslėlio
+		    \label{img:mlp}
+		\end{figure}
+		\begin{figure}[H]
+		    \centering
+		    \includegraphics[scale=0.5]{img/CasTp}
+		    \caption{Tranzakcijų vėlavimas}   % Antraštė įterpiama po paveikslėlio
+		    \label{img:mlp}
+		\end{figure}
 		\subsubsubsection{Blekinge technologijų instituto tyrimas}
+ 			Blekinge technologjų instituto atliktame tyrime \cite{BITCass} buvo atliktas Cassandra duomenų bazės našumo palyginimas lyginant duomenų bazę  veikiančia konteineriuose ir virtualioje mašinoje. Buvo lyginama tranzakcijų praeinamumas ir vėlavimas keičiant klasterių skaičių. Įvairioje apkrovoje virtualios mašinos praeinamumas laikėsi apie 100000 tranzakcijų per sekundę, rašymo apkrovoje apie 75000 tranzakcijų per sekundę, skaitymo apkrovoje apie 120000 tranzakcijų per sekundę.
+Įvairioje apkrovoje konteinerių praeinamumas buvo apie 127000 tranzakcijų per sekundę, rašymo apkrovoje apie 95000 tranzakcijų per sekundę, o skaitymo aprovoje apie 180000 kranzakcijų per sekundę. Virtualiose mašinose didinant klasterių skaičių padidėjo praeinamumas didėjo su rašymo apkrova ir mažėjo su skaitymo apkrova. Tas pats buvo pastebėta ir konteineriuose.
+\newline
+Tyrime mažiausias vėlavimas buvo naudojant vieną Cassandrą klasterį su 40000 tranzakcijų apkrova, o didžiausias vėlavimas buvo pastebėtas naudojant keturis Cassandra klasterius veikiančius ant virtualių pašinų naudojant 120000 tranzakcijų apkrovą. 
+Viso tyrimo metu buvo pastebėtas vėlavimas intervale nuo 1 iki 11 milisekundžių.
+			
 		\subsubsubsection{Coimbra politechnikos instituto tyrimas}
 
 
-
+\section{Simuliacija}
 \section{Išvados}
 
 \section{Priedai}
