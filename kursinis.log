@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7050 64-bit) (preloaded format=xelatex 2019.6.10)  17 JUN 2019 15:35
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7050 64-bit) (preloaded format=xelatex 2019.6.10)  17 JUN 2019 16:56
 entering extended mode
 **./kursinis.tex
 (kursinis.tex
@@ -1074,6 +1074,12 @@ LaTeX Warning: Label `img:mlp' multiply defined.
 
 LaTeX Warning: Label `img:mlp' multiply defined.
 
+
+LaTeX Warning: Label `img:mlp' multiply defined.
+
+
+LaTeX Warning: Label `img:mlp' multiply defined.
+
 )
 \openout1 = `kursinis.aux'.
 
@@ -1323,9 +1329,17 @@ LaTeX Warning: Citation 'BITCass' on page 8 undefined on input line 224.
 
 [8]
 
-LaTeX Warning: Empty bibliography on input line 246.
+LaTeX Warning: Citation 'MonCas' on page 9 undefined on input line 231.
 
-[9] (kursinis.aux)
+File: img/CasHypLat.png Graphic file (type bmp)
+<img/CasHypLat.png>
+File: img/CasHypTp.png Graphic file (type bmp)
+<img/CasHypTp.png>
+[9]
+
+LaTeX Warning: Empty bibliography on input line 265.
+
+[10] (kursinis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1342,12 +1356,12 @@ Package logreq Info: Writing requests to 'kursinis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26116 strings out of 427669
- 509278 string characters out of 3143125
+ 26124 strings out of 427669
+ 509428 string characters out of 3143125
  1015118 words of memory out of 3000000
- 29914 multiletter control sequences out of 15000+200000
+ 29920 multiletter control sequences out of 15000+200000
  545272 words of font info for 91 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  67i,11n,96p,906b,2665s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on kursinis.pdf (10 pages).
+Output written on kursinis.pdf (11 pages).

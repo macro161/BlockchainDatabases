@@ -61,7 +61,7 @@ Nors blokų grandinės išsprendžia autoriaus išvardytas problemas, tačiau fi
 		\item{Palyginti Cassandra NoSQL transakcijų praeinamumo greičius su Hyperledger Fabric blokų grandinių duomenų baze}
 		\item{Palyginti Cassandra NoSQL transakcijų vėlavimą su Hyperledger Fabric blokų grandinių duomenų bazėmis}
 		\item{Išskirti esamų tyrimų trūkumus ir galimas sritis ateities darbams}
-		
+		\item{Atlikti simuliaciją lyginančia Cassandra NoSQL praeinamumą ir vėlavimą su Hyperledger Fabric grandinių duomenų baze}
 		
 	\end{enumerate}
 \pagebreak
@@ -193,9 +193,9 @@ Linux 3.10.0-514.e17.x86 64) ir Cassandra 3.11.0 yra įdiegta į visus kompiuter
 Konteinerių testavimui naudota,
 Docker versija 1.12.6. Virtualioms mašinoms naudota VMware ESXi 6.0.0.\\ 
 \hline
-		\cite{BITCass}&  Testai buvo leid=iami naudojant
-Ubuntu Server 12.04 32bit Virtual Machine leid=iant ant VMware Player.
- Virtuali mašina turėjo 2GB RAM ir priimančioji mašina turėjo vieno mazgo Core 2 Quad 2.40
+		\cite{BITCass}&  Testai buvo leidžiami naudojant
+Ubuntu Server 12.04 32bit Virtual Machine leidžiant ant VMware Player.
+ Virtuali mašina turėjo 2GB RAM ir priimančioji mašina turi vieno mazgo Core 2 Quad 2.40
 GHz su 4GB RAM ir Windows 7 operacine sistema. Duombazių versijos: MongoDB version 2.4.3
 ir Cassandra version 1.2.4. \\ 
 		\hline
@@ -228,8 +228,30 @@ Tyrime mažiausias vėlavimas buvo naudojant vieną Cassandrą klasterį su 4000
 Viso tyrimo metu buvo pastebėtas vėlavimas intervale nuo 1 iki 11 milisekundžių.
 			
 		\subsubsubsection{Coimbra politechnikos instituto tyrimas}
+			Coimbra politechnikos instituto atliktame tyrime \cite{MonCas} buvo lyginamos Cassandra ir MongoDB duomenų bazės. 
+Lyginimas buvo atliktas naudojant tik vieną mazgą todėl buvo lygintas tik įrašų(tranzakcijų) praeinamumas su skirtingomis apkrovomis. 
+Šio darbo tikslui žiūrėsime tik į rezultatus gautus apie Cassandra duomenų bazę. Pastebėta, kad didinant apkrovą tranzakcijų praeinamumas padidėjo. 
+Didžiausias praeinamumas buvo pasiektas kai buvo atlikta tik vieno tipo, o ne miksuotos duomenų operacijos.
+Aukšiausias duomenų pakeitimo praeinamumas buvo 700000 tranzakcijų per sekundę, o skaitymo praeinamumas buvo 35000 tranzakcijų per sekundę.
+Mažiausias duomenų praeinamumas buvo pastebėtas su mažesnia apkrova.
+Žemiausias duomenų pakeitimo praeinamumas buvo 100000 tranzakcijų per sekundę, o žemiausias skaitymo praeinamumas buvo 2325 tranzakcijų per sekundę.
+	\subsection{Literatūros apibendrinimas}
+		\begin{figure}[H]
+		    \centering
+		    \includegraphics[scale=0.5]{img/CasHypLat}
+		    \caption{Tranzakcijų vėlavimas}   % Antraštė įterpiama po paveikslėlio
+		    \label{img:mlp}
+		\end{figure}
+		\begin{figure}[H]
+		    \centering
+		    \includegraphics[scale=0.5]{img/CasHypTp}
+		    \caption{Tranzakcijų vėlavimas}   % Antraštė įterpiama po paveikslėlio
+		    \label{img:mlp}
+		\end{figure}
 
-
+Apžvelgtuose darbuose buvo matuojamos Apache Cassandra ir Hyperledger Fabric duomenų bazių praeinamumas ir vėlavimas.
+Palyginus rezultatus buvo aiškiai matoma, kad Cassandra praeinamumas buvo didesnis ir vėlavimas mažesnis. 
+Net ir palyginus prasčiausią Cassandra praeinamumo rezultatą (2325 tranzakcijų per sekundę) ir geriausią Fabric rezultatą (300 tranzakcijų per sekundę) Cassandra duomenų bazės praeinamumas buvo geresnis 775 procentais. Lygynant prasčiausią Cassandra ir geriausią Fabric vėlavimo rezultatą Cassandra vėlavavimas buvo 1078 procentų mažesnis negu Fabric.
 \section{Simuliacija}
 \section{Išvados}
 

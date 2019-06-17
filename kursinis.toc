@@ -38,10 +38,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\numberline {1.2.2.2.}Coimbra politechnikos instituto tyrimas}{9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.}Simuliacija}{9}% 
+\contentsline {subsection}{\numberline {1.3.}Literatūros apibendrinimas}{9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.}Išvados}{9}% 
+\contentsline {section}{\numberline {2.}Simuliacija}{10}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.}Priedai}{9}% 
+\contentsline {section}{\numberline {3.}Išvados}{10}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.}Žodynas}{9}% 
+\contentsline {section}{\numberline {4.}Priedai}{10}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.}Žodynas}{10}% 
