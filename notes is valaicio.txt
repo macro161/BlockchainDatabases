@@ -1,0 +1,8 @@
+1 psl angliskas pavadinimas visi zodziai is didziosios
+3 psl skyryba. Ne tradcines duomenu bazes o kazkaip kitaip pervadinti 
+3 psl darba tikslas
+Isskirti daugiau kriteriju(Patikimumas...) pagristi moksliniais straipsniais
+Pradzioje pasakyti kodel naudojau situos casandra ir hyperledger
+
+
+testas -> iteracija per teksta -> aprasyti kitas duombazes(kodel)
