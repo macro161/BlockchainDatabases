@@ -172,7 +172,38 @@ Iš aukščiau aptartų darbų(\cite{IMBResearch}, \cite{ThailandPerf}, \cite{Sh
 \newline
 Didinant tranzakcijas nuo 1 iki 1000 vėlavimas praktiškai nekyla, ir tada nuo 1000 iki 10000 vėlavimas smarkiai šoktelėja. 
 									
-
+\subsubsection{Palyginimas pagal CAP teoremą}
+	\subsubsubsection{CAP teorema}
+		Eric A. Brewer 2000 \cite{CAP} metais pristatė savo teoremą sakančia, kad tinklinis servisas negali užtikrinti trijų savybių vienu metu:
+		\begin{itemize}
+			\item{Neprieštaringumas(Consistency) - kiekviena skaitymo užklausa gauna naujausią informaciją arba klaidos pranešimą.}
+			\item{Pasiekiamumas(Availability) - kiekviena užklauso gauna atsakymą, be garantijos, kad atsakyme bus naujausias įrašas. }
+			\item{Skaidinių toleravimas(Partition tolerance) - sistema nesustoja funkcionuoti jeigu būna prarandamas arbitrišką skaičių žinučių}
+		\end{itemize}
+		Šios teoremos įrodymas pateikiamas Seth Gilbert ir Nancy Lynch straipsnyje \cite{CAPP}
+		\linebreak
+		Kuriant paskirstytasias sistemas, pagal panaudojimo atvejį, svarbu pasirinkti kuriuos du principus tenkins kuriama paskirstytoji sistema.
+		Sekančiame skirsnyje bus apžvelgiama Hyperledger Fabric ir Cassandra atitikimas pagal CAP teoremą
+	\subsubsubsection{Hyperledger Fabric pagal CAP teoremą}
+		Romos ir Southampton universitetų mokslininkų darbe \cite{BCCAP} buvo tiriama kaip skirtingi susitarimo algoritmai įtakoja Etherium blokų grandinę
+		pagal CAP teoremą. Šiame darbe CAP buvo pateiktas kitos, labiau blokų grandines atitinkantis CAP teoremos apibrėžimas:
+	
+		\begin{itemize}
+			\item{Neprieštaringumas(Consistency) - blokų grandinė yra neprieštaringa, jeigu yra išvengta išsišakojimų. Neprieštaringumas yra pasiekiamas 
+					susitarimo algoritmų. Jeigu neprieštaringumas nebūna pasiekiamas turime nurodyti, ar jis bus pasiektas vėliau(galiausiai neprieštaringas) ar nebus pasiektas niekada(prieštaringas) }
+			\item{Pasiekiamumas(Availability) - blokų grandinė yra pasiekiama, jeigu klientų pateiktos tranzakcijos yra apdorojamos ir galiausiai patvirtinamos ir visam laikui pridedamos prie grandinės}
+			\item{Skaidinių toleravimas(Partition tolerance) - kai įvyksta tinklo skaidymasis, valdžia yra paskirstoma į atskiras grupes taip, kad skirtingos grupės negali komunikuoti tarpusavyje. Blokų grandinė turi toleruoti 1. Periodus kai tinklas veikia asinchroniškai 2. Atitinkama skaičių Bizantinių valdžių siekiančių sutrigdyti pasiekiamumą ir neprieštaringumą.}
+		\end{itemize}
+		Naudojantis šiais CAP apibrėžimais sekančiuose skyriuose bus įvertinta Hyperledger fabric blokų grandinių duomenų bazė.
+		\subsubsubsection{Hyperledger neprieštaringumas}
+		\subsubsubsection{Hyperledger pasiekiamumas}
+		\subsubsubsection{Hyperledger skaidinių toleravimas}
+		\subsubsubsection{Cassandra neprieštaringumas}
+			Kai duomenys yra rašomi į duomenų bazę užtrunka laiko duomenys pateks į visus tinklo mazgus. Kaikurie mazgai gali būtų nepasiekiami. Cassandra yra ,,galiausiai neprieštaringa" duomenų baze, nėra užtikrinta, kad duomenys kurie yra skaitomi yra naujausios versijos visame tinkle. 
+Cassandra duomenų bazėje yra įgyvendintas pasirenkamasis pasiekiamumas kai klientas pats gali nurodyti kokios lygio neprieštaringumo jis nori skaitant duomenis(mazgų skaičius kurie turi identiškus duomenis) ir rašant duomenis(į kiek mazgų bus įrašyti duomenys). Cassandra duomenų bazėje nėra užtikrinamas neprieštaringumas, nes jeigu kažkuris mazgas yra nepasiekiamas vykdant skaitymą arba rašymą ir jį pasiekti būtina siekiant užtikrinti neprieštaringuma operacija neįvyks 
+		\subsubsubsection{Cassandra pasiekiamumas}
+			Rašant duomenis į Cassandra duomenų bazę yra padaromos kelios kopijos ir išsiunčiamos skirtingies klasterio mazgams. Tai yra užtikrinamas, kad jeigu mazgas tampa nebepasiekiamu duomenys nebūna prarandami.\cite{CasDesk} Duomenų replikavimo lygį galima nurodyti kuriant duomenų bazę. 
+		\subsubsubsection{Cassandra skaidinių toleravimas}  
 
 			
 
@@ -238,6 +269,9 @@ Mažiausias duomenų praeinamumas buvo pastebėtas su mažesnia apkrova.
 \newline
 Pagrindinis šių tyrimų palyginimo trūkumas yra tai, kad visi šiame darbe apžvelgti tyrimai buvo atlikti su skirtingo galimgumo sistemomis ir skirtingomis duomenų bazių konfigūracijomis. 
 Ieškant litratūros šiam darbui kilo sunkumų surasti tyrimų kuriuose su ta pačia ar panašia kompiuterine įranga ir duomenų bazių konfigūracijomis tiesiogiai būtų lyginamos blokų grandinių duomenų bazės su NoSQL duomenų bazėmis. Sekančiame skirsnyje bus atliekamos Fabric ir Cassandra našumo tyrimas.
+	
+	\subsubsection{Palyginimas pagal CAP teoremą}
+
 	\subsection{Literatūros apibendrinimas}
 		\begin{figure}[H]
 		    \centering

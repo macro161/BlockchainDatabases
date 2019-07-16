@@ -28,24 +28,44 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\numberline {1.1.5.4.}Rezultatu apibendrinimas}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.}Apache Cassandra}{6}
+\contentsline {subsubsection}{\numberline {1.1.6.}Palyginimas pagal CAP teoremą}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.1.}Testavimo metodologija}{7}
+\contentsline {paragraph}{\numberline {1.1.6.1.}CAP teorema}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.2.}Tyrimų rezultatai}{7}
+\contentsline {paragraph}{\numberline {1.1.6.2.}Hyperledger Fabric pagal CAP teoremą}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.2.2.1.}Blekinge technologijų instituto tyrimas}{8}
+\contentsline {paragraph}{\numberline {1.1.6.3.}Hyperledger neprieštaringumas}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.2.2.2.}Coimbra politechnikos instituto tyrimas}{9}
+\contentsline {paragraph}{\numberline {1.1.6.4.}Hyperledger pasiekiamumas}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.}Literatūros apibendrinimas}{9}
+\contentsline {paragraph}{\numberline {1.1.6.5.}Hyperledger skaidinių toleravimas}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.}Simuliacija}{10}
+\contentsline {paragraph}{\numberline {1.1.6.6.}Cassandra neprieštaringumas}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.}Išvados}{10}
+\contentsline {paragraph}{\numberline {1.1.6.7.}Cassandra pasiekiamumas}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.}Priedai}{10}
+\contentsline {paragraph}{\numberline {1.1.6.8.}Cassandra skaidinių toleravimas}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.}Žodynas}{10}
+\contentsline {subsection}{\numberline {1.2.}Apache Cassandra}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literatūra}{10}
+\contentsline {subsubsection}{\numberline {1.2.1.}Testavimo metodologija}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.2.2.}Tyrimų rezultatai}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {1.2.2.1.}Blekinge technologijų instituto tyrimas}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{\numberline {1.2.2.2.}Coimbra politechnikos instituto tyrimas}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.2.3.}Palyginimas pagal CAP teoremą}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.}Literatūros apibendrinimas}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.}Simuliacija}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.}Išvados}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.}Priedai}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.}Žodynas}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Literatūra}{12}
