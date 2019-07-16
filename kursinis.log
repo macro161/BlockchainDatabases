@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2017.10.31)  16 JUL 2019 20:41
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2017.10.31)  16 JUL 2019 20:56
 entering extended mode
 **./kursinis.tex
 (kursinis.tex
@@ -1330,29 +1330,35 @@ Nancy Lynch straipsnyje [[]]
 
 LaTeX Warning: Citation 'BCCAP' on page 7 undefined on input line 188.
 
+
+LaTeX Warning: Citation 'CasDesk' on page 7 undefined on input line 203.
+
 [7]
 
 LaTeX Warning: Citation 'CasDesk' on page 8 undefined on input line 205.
 
+
+LaTeX Warning: Citation 'CasDesk' on page 8 undefined on input line 207.
+
+[8]
 File: img/CasTh.png Graphic file (type bmp)
 <img/CasTh.png>
 File: img/CasLat.png Graphic file (type bmp)
 <img/CasLat.png>
-[8]
 File: img/CasTp.png Graphic file (type bmp)
 <img/CasTp.png>
- [9]
+ [9] [10]
 File: img/CasHypLat.png Graphic file (type bmp)
 <img/CasHypLat.png>
 File: img/CasHypTp.png Graphic file (type bmp)
 <img/CasHypTp.png>
- [10] [11]
-Overfull \hbox (50.98347pt too wide) in paragraph at lines 305--305
+ [11]
+Overfull \hbox (50.98347pt too wide) in paragraph at lines 306--306
 []\TU/texgyretermes(0)/m/n/12 Google. Https://trends.google.com/trends/explore?
 date=all&geo=us&q=bitcoin,etherium,litecoin,
  []
 
-[12] (kursinis.aux)
+[12] [13] (kursinis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1371,10 +1377,10 @@ Package logreq Info: Writing requests to 'kursinis.run.xml'.
 Here is how much of TeX's memory you used:
  24043 strings out of 427823
  462782 string characters out of 3152321
- 977768 words of memory out of 3000000
+ 977784 words of memory out of 3000000
  27758 multiletter control sequences out of 15000+200000
  543198 words of font info for 88 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
  67i,11n,96p,10499b,5867s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on kursinis.pdf (13 pages).
+Output written on kursinis.pdf (14 pages).

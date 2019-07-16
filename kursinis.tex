@@ -200,10 +200,11 @@ Didinant tranzakcijas nuo 1 iki 1000 vėlavimas praktiškai nekyla, ir tada nuo 
 		\subsubsubsection{Hyperledger skaidinių toleravimas}
 		\subsubsubsection{Cassandra neprieštaringumas}
 			Kai duomenys yra rašomi į duomenų bazę užtrunka laiko duomenys pateks į visus tinklo mazgus. Kaikurie mazgai gali būtų nepasiekiami. Cassandra yra ,,galiausiai neprieštaringa" duomenų baze, nėra užtikrinta, kad duomenys kurie yra skaitomi yra naujausios versijos visame tinkle. 
-Cassandra duomenų bazėje yra įgyvendintas pasirenkamasis pasiekiamumas kai klientas pats gali nurodyti kokios lygio neprieštaringumo jis nori skaitant duomenis(mazgų skaičius kurie turi identiškus duomenis) ir rašant duomenis(į kiek mazgų bus įrašyti duomenys). Cassandra duomenų bazėje nėra užtikrinamas neprieštaringumas, nes jeigu kažkuris mazgas yra nepasiekiamas vykdant skaitymą arba rašymą ir jį pasiekti būtina siekiant užtikrinti neprieštaringuma operacija neįvyks 
+Cassandra duomenų bazėje yra įgyvendintas pasirenkamasis pasiekiamumas kai klientas pats gali nurodyti kokios lygio neprieštaringumo jis nori skaitant duomenis(mazgų skaičius kurie turi identiškus duomenis) ir rašant duomenis(į kiek mazgų bus įrašyti duomenys). Cassandra duomenų bazėje nėra užtikrinamas neprieštaringumas, nes jeigu kažkuris mazgas yra nepasiekiamas vykdant skaitymą arba rašymą ir jį pasiekti būtina siekiant užtikrinti neprieštaringuma operacija neįvyks. \cite{CasDesk}
 		\subsubsubsection{Cassandra pasiekiamumas}
 			Rašant duomenis į Cassandra duomenų bazę yra padaromos kelios kopijos ir išsiunčiamos skirtingies klasterio mazgams. Tai yra užtikrinamas, kad jeigu mazgas tampa nebepasiekiamu duomenys nebūna prarandami.\cite{CasDesk} Duomenų replikavimo lygį galima nurodyti kuriant duomenų bazę. 
-		\subsubsubsection{Cassandra skaidinių toleravimas}  
+		\subsubsubsection{Cassandra skaidinių toleravimas} 
+			Cassandra duomenų bazė tenkina skaidinių toleravimo principa, nustojus veikti tam tikram skaičiui mazgų tinkle sistemos veikimas nenutrūksta. \cite{CasDesk} 
 
 			
 
