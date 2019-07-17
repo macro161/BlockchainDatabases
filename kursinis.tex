@@ -54,23 +54,24 @@ Per pastaruosius kelis metus šias problemas
  buvo stengtasi išspręsti kuriant duomenų bazes paremtas blokų grandinių technologija. Privačios blokų grandinių duomenų bazės užtikrina pasitikėjimą, nes kiekvienas vartotojas turi visą duomenų 
 bazės kopiją. Darant pakeitimus tokioje duomenų bazėje kiekvienas vartotojas turi sutikti su daromais pakeitimais ir saugo visų pakeitimų istoriją. Blokų grandinių duomenų bazės išsprendžia duomenų integralumo ir
 dvigumo pinigų išleidimo problemą, nes kiekvienas mazgas blokų grandinėje tinkle gali palyginti savo turimus duomenis su kitais mazgais. 
-Nors blokų grandinės išsprendžia autoriaus išvardytas problemas, tačiau finansinėms transakcijos svarbus ir greitis. Šiuo darbu siekia atlikti blokų grandinių duomenų bazių analizę greičio aspektu.
+Nors blokų grandinės išsprendžia išvardytas problemas, tačiau finansiniams duomenims taip pat svarbu greitis, duomenų pasiekiamumas ir sistemos galimybė išlikti funkcionaliai po tam tikrų trigdžių. 
+Yra nemaža aibė blokinių grandinių duomenų bazių(R3 Corda, BigChain DB), bei didelis pasirinkimas NoSQL duomenų bazių(Mongo DB, Redis, Neo4j) tačiau šiam darbui buvo pasirinktos
+Hyperledger Fabric ir Apache Cassandra, nes šios duomenų bazės yra daugiausiai naudojamos finansiniams duomenims saugoti. Šiuo darbu tikslas yra palyginti Hyperledger Fabric ir Apache Cassandra tranzakcijų greičius, bei įvertinti kuriuos CAP teoremos punktus atitinka minėtos duomenų bazės
 
 \sectionnonum{Uždaviniai}
 	\begin{enumerate}
-		\item{Palyginti Cassandra NoSQL transakcijų praeinamumo greičius su Hyperledger Fabric blokų grandinių duomenų baze}
-		\item{Palyginti Cassandra NoSQL transakcijų vėlavimą su Hyperledger Fabric blokų grandinių duomenų bazėmis}
+		\item{Palyginti Apache Cassandra transakcijų praeinamumo greičius su Hyperledger Fabric blokų grandinių duomenų baze}
+		\item{Palyginti Apache Cassandra transakcijų vėlavimą su Hyperledger Fabric blokų grandinių duomenų bazėmis}
 		\item{Išskirti esamų tyrimų trūkumus ir galimas sritis ateities darbams}
-		\item{Atlikti simuliaciją lyginančia Cassandra NoSQL praeinamumą ir vėlavimą su Hyperledger Fabric grandinių duomenų baze}
+		\item{Palyginti Apache Cassandra su Hyperledger Fabric pagal CAP teoremos punktus}
 		
 	\end{enumerate}
 \pagebreak
-\section{Literatūros analizė}
-	\subsection{Hyperledger}
+\section{Duomenų bazių greičių tyrimų literatūros analizė}
+	\subsection{Hyperledger Fabric}
 		Hyperleadger yra atviro kodo blokų grandinės pradėtos pradėtos kurti Linux fondo. Šio projekto tikslas yra gerinti tarpindustrini bendradarbiavimą kuriant blokų grandines kurios užtikrintų 
 		patikimą, greitą ir saugų finansinių duomenų perdavimą pagrindinėse technologijų, finansų ir produktų tiekimo kompanijose \cite{LinuxHyper}. Šiame skirsnyje bus apžvelgti 
 		Hyperledger Fabric, populiariausios Hyperledger implementacijos, architektūra, greičio tyrimai, kaip šie tyrimai buvo atlikti, kokie parametrai įtakoja Hyperledger greitį ir pateikta tolimesnės analizės pasiūlymai. 
-		
 		\subsubsection{Architektūra}
 			Hyperledger Fabric(toliau - Fabric) yra privati blokų grandinė skirta įmonių lygio aplikacijoms. 
 			Ši blokų grandinė gali vykdyti arbitrišką išmanujį kontraktą parašyta Java, Go arba NodeJS kalbomis (grandinės kodai).
@@ -82,9 +83,7 @@ Nors blokų grandinės išsprendžia autoriaus išvardytas problemas, tačiau fi
 protokole ir padalina bloką taip, kad jį būtų galima naudoti tranzakcijom. Padalintas blokas būna persiunčiamas kitiems lygiarangiams.}
 				\item{Klientas - atsakingas už transakcijos siūlymo sukūrimą, ir išsiuntimą tinklo lygiarangiams. Gavus patvirtinimą iš lygiarangių vartotojas siunčia prašymą tvarkytojui, kad jis informaciją įtrauktų į bloką ir išsiūstų ją visiems tinklo perams.}
 			\end{itemize}
-
-		\subsubsection{Tranzakcijų vykdymas}
-
+		\subsubsection{Tranzakcijų valdymas}
 			Tranzakcijos vyksta trejomis fazėmis(1 pav.):
 			\begin{enumerate}
 				\item{Patvirtinimo fazė - simuliuojama tranzakcija su pasirinktais vienarangiais ir renkami būsenos pokyčiai}
@@ -92,19 +91,14 @@ protokole ir padalina bloką taip, kad jį būtų galima naudoti tranzakcijom. P
 				\item{Patvirtinimo fazė - patvirtinimas ir informacijos įdėjimas į buhalterinę knygą }
 			\end{enumerate}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{img/MLP}
-    \caption{Tranzakcijų sekų diagrama}   % Antraštė įterpiama po paveikslėlio
-    \label{img:mlp}
-\end{figure}
-
-
-
-				
+			\begin{figure}[H]
+			    \centering
+			    \includegraphics[scale=0.5]{img/MLP}
+			    \caption{Tranzakcijų sekų diagrama}   % Antraštė įterpiama po paveikslėlio
+			    \label{img:mlp}
+			\end{figure}
 		\subsubsection{Parametrai}
-
-Yra grupė parametrų \cite{IMBResearch} kurie įtakoja Fabric greitį 
+			Yra grupė parametrų \cite{IMBResearch} kurie įtakoja Fabric greitį 
 			
 			\begin{itemize}
 				\item{Mazgų skaičius - vartotojų skaičius privačioje blokų grandinėje}
@@ -116,124 +110,82 @@ būna verifikuojamas kiekvienam blokui, o perdavimo patvirtinimo parašas verifi
 				\item{Resursų paskirstymas - kiekvienas lygiarangis vykdo grandinės kodą skirtą parašo skaičiavimams ir verifikavimo rutinoms. Keičiant procesoriaus branduolių skaičių keičiasi vykdymo greitis.}
 				\item{Būsenos duomenų bazė - Fabric naudoją dvi duomenų bazes, CouchDB ir GoLevelDB, kuriuose galima saugoti ledgerio buseną}
 			\end{itemize}
-
-		\subsubsection{Testavimo metodologijos}
+		\subsubsection{Testavimo metodologija}
 			Šiame darbe apžvelgta trijų straipsnių duomenys, juose naudota tokia kompiuterinė įranga:
-\begin{center}
-\begin{tabular}{ | m{5em} | m{10cm}| } 
-\hline
-\cite{IMBResearch}& x86 64 virtuali mašina IBM SoftLayer duomenų centre. 
-Kiekvienai virtualiai mašinai yra alokuota 32 vCPUs  Intel(R) Xeon(R)
-CPU E5-2683 v3 @ 2.00GHz ir 32 GB atminties. Trys kliento mašinos skirtos generuoti apkrovą buvo alokuota
- 56 vCPU ir 128 GB RAM. Mazgai prijungti prie 3 Gbps duomenų centro tinklo  \\ 
-\hline
- \cite{ThailandPerf}& Amazon AWS EC2
- su Intel E5-1650 8 branduolių CPU,
-15GB RAM, 128GB SSD  \\ 
-\hline
- \cite{ShaFabPerf}& HPC serveris
-su Intel(R) Xeon(R) CPU E5-2690, 2.60 GHz, 24 core
-CPU, 64 GB RAM, and running Ubuntu 16.04  \\ 
-\hline
-\end{tabular}
-\end{center}
+			\begin{center}
+				\begin{tabular}{ | m{5em} | m{10cm}| } 
+					\hline
+					\cite{IMBResearch}& x86 64 virtuali mašina IBM SoftLayer duomenų centre. 
+					Kiekvienai virtualiai mašinai yra alokuota 32 vCPUs  Intel(R) Xeon(R)
+					CPU E5-2683 v3 @ 2.00GHz ir 32 GB atminties. Trys kliento mašinos skirtos generuoti apkrovą buvo alokuota
+					 56 vCPU ir 128 GB RAM. Mazgai prijungti prie 3 Gbps duomenų centro tinklo  \\ 
+					\hline
+					 \cite{ThailandPerf}& Amazon AWS EC2
+					 su Intel E5-1650 8 branduolių CPU,
+					15GB RAM, 128GB SSD  \\ 
+					\hline
+					 \cite{ShaFabPerf}& HPC serveris
+					su Intel(R) Xeon(R) CPU E5-2690, 2.60 GHz, 24 core
+					CPU, 64 GB RAM, and running Ubuntu 16.04  \\ 
+					\hline
+				\end{tabular}
+			\end{center}
 
 		\subsubsection{Tyrimų rezultatai}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{img/Praein}
-    \caption{Tranzakcijų praeinamumas}   % Antraštė įterpiama po paveikslėlio
-    \label{img:mlp}
-\end{figure}		
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{img/Velav}
-    \caption{Tranzakcijų vėlavimas}   % Antraštė įterpiama po paveikslėlio
-    \label{img:mlp}
-\end{figure}		
-
-		\subsubsubsection{IBM tyrimas}
+			\begin{figure}[H]
+			    \centering
+			    \includegraphics[scale=0.5]{img/Praein}
+			    \caption{Tranzakcijų praeinamumas}   % Antraštė įterpiama po paveikslėlio
+			    \label{img:mlp}
+			\end{figure}		
+			\begin{figure}[H]
+			    \centering
+			    \includegraphics[scale=0.5]{img/Velav}
+			    \caption{Tranzakcijų vėlavimas}   % Antraštė įterpiama po paveikslėlio
+			    \label{img:mlp}
+			\end{figure}		
+		\subsubsection{IBM tyrimo rezultatai}
 			IBM atliktame tyrime \cite{IMBResearch} buvo tyriama kaip keičiant Fabric parametrus keičiasi tranzakcijų praeinamumas ir vėlavimas. Didinant tranzakcijų atvykimo kiekį nuo 20 tranzakcijų per sekundę iki 100 praeinamumas dideja tiesiškai, o nuo 100 transakcijų per sekundę praeinamumas sustojo ir nebekilo. Bloko dydis praeinamumui įtakos neturėjo. 
-\newline
-Mažiausias vėlavimas būna pasirinkus mažiausia bloko dydį. Keičiant tranzakcijų atvykimo kiekį nuo 25 iki 125 vėlavimas išlieka apie 0,3 sekundės ir tuomet smarkiai kyla iki 10 sekundžių tranzakcijų 
-atvykimo kiekį pakėlus iki 150 transakcijų. 
-\newline
-Iš šio tyrimo imsime geriausius rezultatus(2 pav. ir 3 pav.) ir vėliau lyginsime juos su MySQL ir PostgreSQL duomenų bazėmis. 
-		\subsubsubsection{Tailando ,,Kompiuterių technologijos centro" tyrimas}
-			Tailando ,,Kompiuterių technologijos centro" atliktame darbe buvo simuliuojamos pinigų siuntimas, pinigų išdavimas ir vartotojų sukūrimas. Keliant tranzakcijų skaičių iki 100 praeinamumas kilo iki 299.85 tranzakcijų per sekundę. Didinant tranzakcijų kaičių iki 1000 praeinamumas pakito nežymiai, kaip ir IBM \cite{IMBResearch} atliktame darbe, ir didinant tranzakcijų skaičių iki 10000 praeinamumas krito iki 159.76 tranzakcijų per sekundę. 
-Didinant tranzakcijas nuo 1 iki 100 vėlavimas kilo nežymiai, nuo 0.09 iki 0.17. Padidinuos tranzakcijas nuo 100 iki 10000 staiga pakilo vėlavimas net iki 34.08 sekundžių.
-		\subsubsubsection{Sharjah tyrimas}
-			Sharjah universiteto mokslininkų tyrime \cite{ShaFabPerf} Fabric 0.6 ir Fabric 1.0 tranzakcijų praeinamumas ir vėlavimas. Nuo 10 iki 100 tranzakcijų praeinamumas kilo nuo 40 tranzakcijų per sekundę iki 165 tranzakcijų per sekundę, toliau didinant tranzakcijų skaičių praeinamumas nebekito. Toks rezultatas gautas naudojant Fabric 1.0 versija ir praeinamumas geresnis negu Fabric 0.6 versijos. 
-Didinant tranzakcijų skaičių nuo 10 iki 1000 vėlavimas pakilo nežymiai, nuo 0.1 sekundės iki 1 sekundės, tačiau padidinus tranzakcijų skaičių iki 10000 pastebėtas didelis vėlavimo pašokimas iki 10 sekundžių.
-Šio darbo metodologija buvo paremta jau minėtu Tailando mokslininkų darbu \cite{ThailandPerf}
-
-\subsubsubsection{Rezultatu apibendrinimas}
-Iš aukščiau aptartų darbų(\cite{IMBResearch}, \cite{ThailandPerf}, \cite{ShaFabPerf}) pastebima tendencija, kad didinant tranzakcijų skaičių iki 100 praeinamumas kilo tiesiškai, o didinant transakcijų skaičių toliau praeinamumas nebekilo arba net krito(\cite{ThailandPerf}).
-\newline
-Didinant tranzakcijas nuo 1 iki 1000 vėlavimas praktiškai nekyla, ir tada nuo 1000 iki 10000 vėlavimas smarkiai šoktelėja. 
-									
-\subsubsection{Palyginimas pagal CAP teoremą}
-	\subsubsubsection{CAP teorema}
-		Eric A. Brewer 2000 \cite{CAP} metais pristatė savo teoremą sakančia, kad tinklinis servisas negali užtikrinti trijų savybių vienu metu:
-		\begin{itemize}
-			\item{Neprieštaringumas(Consistency) - kiekviena skaitymo užklausa gauna naujausią informaciją arba klaidos pranešimą.}
-			\item{Pasiekiamumas(Availability) - kiekviena užklauso gauna atsakymą, be garantijos, kad atsakyme bus naujausias įrašas. }
-			\item{Skaidinių toleravimas(Partition tolerance) - sistema nesustoja funkcionuoti jeigu būna prarandamas arbitrišką skaičių žinučių}
-		\end{itemize}
-		Šios teoremos įrodymas pateikiamas Seth Gilbert ir Nancy Lynch straipsnyje \cite{CAPP}
-		\linebreak
-		Kuriant paskirstytasias sistemas, pagal panaudojimo atvejį, svarbu pasirinkti kuriuos du principus tenkins kuriama paskirstytoji sistema.
-		Sekančiame skirsnyje bus apžvelgiama Hyperledger Fabric ir Cassandra atitikimas pagal CAP teoremą
-	\subsubsubsection{Hyperledger Fabric pagal CAP teoremą}
-		Romos ir Southampton universitetų mokslininkų darbe \cite{BCCAP} buvo tiriama kaip skirtingi susitarimo algoritmai įtakoja Etherium blokų grandinę
-		pagal CAP teoremą. Šiame darbe CAP buvo pateiktas kitos, labiau blokų grandines atitinkantis CAP teoremos apibrėžimas:
-	
-		\begin{itemize}
-			\item{Neprieštaringumas(Consistency) - blokų grandinė yra neprieštaringa, jeigu yra išvengta išsišakojimų. Neprieštaringumas yra pasiekiamas 
-					susitarimo algoritmų. Jeigu neprieštaringumas nebūna pasiekiamas turime nurodyti, ar jis bus pasiektas vėliau(galiausiai neprieštaringas) ar nebus pasiektas niekada(prieštaringas) }
-			\item{Pasiekiamumas(Availability) - blokų grandinė yra pasiekiama, jeigu klientų pateiktos tranzakcijos yra apdorojamos ir galiausiai patvirtinamos ir visam laikui pridedamos prie grandinės}
-			\item{Skaidinių toleravimas(Partition tolerance) - kai įvyksta tinklo skaidymasis, valdžia yra paskirstoma į atskiras grupes taip, kad skirtingos grupės negali komunikuoti tarpusavyje. Blokų grandinė turi toleruoti 1. Periodus kai tinklas veikia asinchroniškai 2. Atitinkama skaičių Bizantinių valdžių siekiančių sutrigdyti pasiekiamumą ir neprieštaringumą.}
-		\end{itemize}
-		Naudojantis šiais CAP apibrėžimais sekančiuose skyriuose bus įvertinta Hyperledger fabric blokų grandinių duomenų bazė.
-		\subsubsubsection{Hyperledger neprieštaringumas}
-		\subsubsubsection{Hyperledger pasiekiamumas}
-		\subsubsubsection{Hyperledger skaidinių toleravimas}
-		\subsubsubsection{Cassandra neprieštaringumas}
-			Kai duomenys yra rašomi į duomenų bazę užtrunka laiko duomenys pateks į visus tinklo mazgus. Kaikurie mazgai gali būtų nepasiekiami. Cassandra yra ,,galiausiai neprieštaringa" duomenų baze, nėra užtikrinta, kad duomenys kurie yra skaitomi yra naujausios versijos visame tinkle. 
-Cassandra duomenų bazėje yra įgyvendintas pasirenkamasis pasiekiamumas kai klientas pats gali nurodyti kokios lygio neprieštaringumo jis nori skaitant duomenis(mazgų skaičius kurie turi identiškus duomenis) ir rašant duomenis(į kiek mazgų bus įrašyti duomenys). Cassandra duomenų bazėje nėra užtikrinamas neprieštaringumas, nes jeigu kažkuris mazgas yra nepasiekiamas vykdant skaitymą arba rašymą ir jį pasiekti būtina siekiant užtikrinti neprieštaringuma operacija neįvyks. \cite{CasDesk}
-		\subsubsubsection{Cassandra pasiekiamumas}
-			Rašant duomenis į Cassandra duomenų bazę yra padaromos kelios kopijos ir išsiunčiamos skirtingies klasterio mazgams. Tai yra užtikrinamas, kad jeigu mazgas tampa nebepasiekiamu duomenys nebūna prarandami.\cite{CasDesk} Duomenų replikavimo lygį galima nurodyti kuriant duomenų bazę. 
-		\subsubsubsection{Cassandra skaidinių toleravimas} 
-			Cassandra duomenų bazė tenkina skaidinių toleravimo principa, nustojus veikti tam tikram skaičiui mazgų tinkle sistemos veikimas nenutrūksta. \cite{CasDesk} 
-
-			
-
+			\newline
+			Mažiausias vėlavimas būna pasirinkus mažiausia bloko dydį. Keičiant tranzakcijų atvykimo kiekį nuo 25 iki 125 vėlavimas išlieka apie 0,3 sekundės ir tuomet smarkiai kyla iki 10 sekundžių tranzakcijų 
+			atvykimo kiekį pakėlus iki 150 transakcijų. 
+			\newline
+			Iš šio tyrimo imsime geriausius rezultatus(2 pav. ir 3 pav.) ir vėliau lyginsime juos su MySQL ir PostgreSQL duomenų bazėmis. 
+		\subsubsection{Tailando ,,Kompiuterių technologijos centro" tyrimo rezultatai}
+			Tailando ,,Kompiuterių technologijos centro" atliktame darbe buvo simuliuojamos pinigų siuntimas, pinigų išdavimas ir vartotojų sukūrimas. Keliant tranzakcijų skaičių iki 100 praeinamumas kilo iki 299.85 tranzakcijų per sekundę. Didinant tranzakcijų kaičių iki 1000 praeinamumas pakito nežymiai, kaip ir IBM \cite{IMBResearch} atliktame darbe, ir didinant tranzakcijų skaičių iki 					10000 praeinamumas krito iki 159.76 tranzakcijų per sekundę. 
+			Didinant tranzakcijas nuo 1 iki 100 vėlavimas kilo nežymiai, nuo 0.09 iki 0.17. Padidinuos tranzakcijas nuo 100 iki 10000 staiga pakilo vėlavimas net iki 34.08 sekundžių.
+		\subsubsection{Sharjah universiteto tyrimo rezultatai}
+			Sharjah universiteto mokslininkų tyrime \cite{ShaFabPerf} Fabric 0.6 ir Fabric 1.0 tranzakcijų praeinamumas ir vėlavimas. Nuo 10 iki 100 tranzakcijų praeinamumas kilo nuo 40 tranzakcijų per sekundę iki 165 tranzakcijų per sekundę, toliau didinant tranzakcijų skaičių praeinamumas nebekito. Toks rezultatas gautas naudojant Fabric 1.0 versija ir praeinamumas geresnis negu 					Fabric 0.6 versijos. 
+			Didinant tranzakcijų skaičių nuo 10 iki 1000 vėlavimas pakilo nežymiai, nuo 0.1 sekundės iki 1 sekundės, tačiau padidinus tranzakcijų skaičių iki 10000 pastebėtas didelis vėlavimo pašokimas iki 10 sekundžių.
+			Šio darbo metodologija buvo paremta jau minėtu Tailando mokslininkų darbu \cite{ThailandPerf}
+		\subsubsection{Tyrimų rezultatų apibendrinimas}
+			Iš aukščiau aptartų darbų(\cite{IMBResearch}, \cite{ThailandPerf}, \cite{ShaFabPerf}) pastebima tendencija, kad didinant tranzakcijų skaičių iki 100 praeinamumas kilo tiesiškai, o didinant transakcijų skaičių toliau praeinamumas nebekilo arba net krito(\cite{ThailandPerf}).
+			\newline
+			Didinant tranzakcijas nuo 1 iki 1000 vėlavimas praktiškai nekyla, ir tada nuo 1000 iki 10000 vėlavimas smarkiai šoktelėja. 
 	\subsection{Apache Cassandra}
-	Apache Cassandra yra atviro kodo, paskirstyta NoSQL duomenų bazė kuri palaiko klasterizaciją bei asinchroninį be valdančiojo kompiuterio duomenų replikavimą. Šios Cassandra galimybės yra panašios į blokinių grandinių duomenų bazių galimybes, todėl šiame skyriuje apžvelgsime jau padarytus 
-Cassandra duomenų bazės našumo tyrimus. 
-
-
-
-	\subsubsection{Testavimo metodologija}
+		Apache Cassandra yra atviro kodo, paskirstyta NoSQL duomenų bazė kuri palaiko klasterizaciją bei asinchroninį be valdančiojo kompiuterio duomenų replikavimą. Šios Cassandra 				galimybės yra panašios į blokinių grandinių duomenų bazių galimybes, todėl šiame skyriuje apžvelgsime jau padarytus 
+		Cassandra duomenų bazės našumo tyrimus. 
+		\subsubsection{Testavimo metodologija}
+			
 		\begin{center}
 		\begin{tabular}{ | m{5em} | m{10cm}| } 
 		\hline
 		\cite{BITCass}& Testai buvo atlikti su trimis HP serveriais DL380
-G7 iš viso su 16 branduolių (naudojant HyperThreading) ir 64 GB RAM ir HDD 400
-GB. Red Hat Enterprise Linux Server 7.3 (Maipo) (Kernel
-Linux 3.10.0-514.e17.x86 64) ir Cassandra 3.11.0 yra įdiegta į visus kompiuterius, taip pat ir virtualias mašinas. Ta pati Cassandra versija naudojama ir apkrovos generavimui. 
-Konteinerių testavimui naudota,
-Docker versija 1.12.6. Virtualioms mašinoms naudota VMware ESXi 6.0.0.\\ 
-\hline
-		\cite{BITCass}&  Testai buvo leidžiami naudojant
-Ubuntu Server 12.04 32bit Virtual Machine leidžiant ant VMware Player.
- Virtuali mašina turėjo 2GB RAM ir priimančioji mašina turi vieno mazgo Core 2 Quad 2.40
-GHz su 4GB RAM ir Windows 7 operacine sistema. Duombazių versijos: MongoDB version 2.4.3
-ir Cassandra version 1.2.4. \\ 
+		G7 iš viso su 16 branduolių (naudojant HyperThreading) ir 64 GB RAM ir HDD 400
+		GB. Red Hat Enterprise Linux Server 7.3 (Maipo) (Kernel
+		Linux 3.10.0-514.e17.x86 64) ir Cassandra 3.11.0 yra įdiegta į visus kompiuterius, taip pat ir virtualias mašinas. Ta pati Cassandra versija naudojama ir apkrovos generavimui. 
+		Konteinerių testavimui naudota,
+		Docker versija 1.12.6. Virtualioms mašinoms naudota VMware ESXi 6.0.0.\\ 
 		\hline
-\end{tabular}
-\end{center}
-	\subsubsection{Tyrimų rezultatai}
+		\cite{BITCass}&  Testai buvo leidžiami naudojant
+		Ubuntu Server 12.04 32bit Virtual Machine leidžiant ant VMware Player.
+ 		Virtuali mašina turėjo 2GB RAM ir priimančioji mašina turi vieno mazgo Core 2 Quad 2.40
+		GHz su 4GB RAM ir Windows 7 operacine sistema. Duombazių versijos: MongoDB version 2.4.3
+		ir Cassandra version 1.2.4. \\ 
+		\hline
+		\end{tabular}
+		\end{center}
+
 		\begin{figure}[H]
 		    \centering
 		    \includegraphics[scale=0.5]{img/CasTh}
@@ -252,28 +204,24 @@ ir Cassandra version 1.2.4. \\
 		    \caption{Tranzakcijų vėlavimas}   % Antraštė įterpiama po paveikslėlio
 		    \label{img:mlp}
 		\end{figure}
-		\subsubsubsection{Blekinge technologijų instituto tyrimas}
- 			Blekinge technologjų instituto atliktame tyrime \cite{BITCass} buvo atliktas Cassandra duomenų bazės našumo palyginimas lyginant duomenų bazę  veikiančia konteineriuose ir virtualioje mašinoje. Buvo lyginama tranzakcijų praeinamumas ir vėlavimas keičiant klasterių skaičių. Įvairioje apkrovoje virtualios mašinos praeinamumas laikėsi apie 100000 tranzakcijų per sekundę, rašymo apkrovoje apie 75000 tranzakcijų per sekundę, skaitymo apkrovoje apie 120000 tranzakcijų per sekundę.
-Įvairioje apkrovoje konteinerių praeinamumas buvo apie 127000 tranzakcijų per sekundę, rašymo apkrovoje apie 95000 tranzakcijų per sekundę, o skaitymo aprovoje apie 180000 kranzakcijų per sekundę. Virtualiose mašinose didinant klasterių skaičių padidėjo praeinamumas didėjo su rašymo apkrova ir mažėjo su skaitymo apkrova. Tas pats buvo pastebėta ir konteineriuose.
-\newline
-Tyrime mažiausias vėlavimas buvo naudojant vieną Cassandrą klasterį su 40000 tranzakcijų apkrova, o didžiausias vėlavimas buvo pastebėtas naudojant keturis Cassandra klasterius veikiančius ant virtualių pašinų naudojant 120000 tranzakcijų apkrovą. 
-Viso tyrimo metu buvo pastebėtas vėlavimas intervale nuo 1 iki 11 milisekundžių.
-			
-		\subsubsubsection{Coimbra politechnikos instituto tyrimas}
+		\subsubsection{Blekinge technologijų instituto tyrimo rezultatai}
+			Blekinge technologjų instituto atliktame tyrime \cite{BITCass} buvo atliktas Cassandra duomenų bazės našumo palyginimas lyginant duomenų bazę  veikiančia konteineriuose ir 				virtualioje mašinoje. Buvo lyginama tranzakcijų praeinamumas ir vėlavimas keičiant klasterių skaičių. Įvairioje apkrovoje virtualios mašinos praeinamumas laikėsi apie 100000 					tranzakcijų per sekundę, rašymo apkrovoje apie 75000 tranzakcijų per sekundę, skaitymo apkrovoje apie 120000 tranzakcijų per sekundę.
+			Įvairioje apkrovoje konteinerių praeinamumas buvo apie 127000 tranzakcijų per sekundę, rašymo apkrovoje apie 95000 tranzakcijų per sekundę, o skaitymo aprovoje apie 					180000 kranzakcijų per sekundę. Virtualiose mašinose didinant klasterių skaičių padidėjo praeinamumas didėjo su rašymo apkrova ir mažėjo su skaitymo apkrova. Tas pats 					buvo pastebėta ir konteineriuose.
+			\newline
+			Tyrime mažiausias vėlavimas buvo naudojant vieną Cassandrą klasterį su 40000 tranzakcijų apkrova, o didžiausias vėlavimas buvo pastebėtas naudojant keturis Cassandra 					klasterius veikiančius ant virtualių pašinų naudojant 120000 tranzakcijų apkrovą. 
+			Viso tyrimo metu buvo pastebėtas vėlavimas intervale nuo 1 iki 11 milisekundžių.
+		\subsubsection{Coimbra politechnikos instituto tyrimo rezultatai.}
 			Coimbra politechnikos instituto atliktame tyrime \cite{MonCas} buvo lyginamos Cassandra ir MongoDB duomenų bazės. 
-Lyginimas buvo atliktas naudojant tik vieną mazgą todėl buvo lygintas tik įrašų(tranzakcijų) praeinamumas su skirtingomis apkrovomis. 
-Šio darbo tikslui žiūrėsime tik į rezultatus gautus apie Cassandra duomenų bazę. Pastebėta, kad didinant apkrovą tranzakcijų praeinamumas padidėjo. 
-Didžiausias praeinamumas buvo pasiektas kai buvo atlikta tik vieno tipo, o ne miksuotos duomenų operacijos.
-Aukšiausias duomenų pakeitimo praeinamumas buvo 700000 tranzakcijų per sekundę, o skaitymo praeinamumas buvo 35000 tranzakcijų per sekundę.
-Mažiausias duomenų praeinamumas buvo pastebėtas su mažesnia apkrova.
-Žemiausias duomenų pakeitimo praeinamumas buvo 100000 tranzakcijų per sekundę, o žemiausias skaitymo praeinamumas buvo 2325 tranzakcijų per sekundę.
-\newline
-Pagrindinis šių tyrimų palyginimo trūkumas yra tai, kad visi šiame darbe apžvelgti tyrimai buvo atlikti su skirtingo galimgumo sistemomis ir skirtingomis duomenų bazių konfigūracijomis. 
-Ieškant litratūros šiam darbui kilo sunkumų surasti tyrimų kuriuose su ta pačia ar panašia kompiuterine įranga ir duomenų bazių konfigūracijomis tiesiogiai būtų lyginamos blokų grandinių duomenų bazės su NoSQL duomenų bazėmis. Sekančiame skirsnyje bus atliekamos Fabric ir Cassandra našumo tyrimas.
-	
-	\subsubsection{Palyginimas pagal CAP teoremą}
-
-	\subsection{Literatūros apibendrinimas}
+			Lyginimas buvo atliktas naudojant tik vieną mazgą todėl buvo lygintas tik įrašų(tranzakcijų) praeinamumas su skirtingomis apkrovomis. 
+			Šio darbo tikslui žiūrėsime tik į rezultatus gautus apie Cassandra duomenų bazę. Pastebėta, kad didinant apkrovą tranzakcijų praeinamumas padidėjo. 
+			Didžiausias praeinamumas buvo pasiektas kai buvo atlikta tik vieno tipo, o ne miksuotos duomenų operacijos.
+			Aukšiausias duomenų pakeitimo praeinamumas buvo 700000 tranzakcijų per sekundę, o skaitymo praeinamumas buvo 35000 tranzakcijų per sekundę.
+			Mažiausias duomenų praeinamumas buvo pastebėtas su mažesnia apkrova.
+			Žemiausias duomenų pakeitimo praeinamumas buvo 100000 tranzakcijų per sekundę, o žemiausias skaitymo praeinamumas buvo 2325 tranzakcijų per sekundę.
+			\newline
+			Pagrindinis šių tyrimų palyginimo trūkumas yra tai, kad visi šiame darbe apžvelgti tyrimai buvo atlikti su skirtingo galimgumo sistemomis ir skirtingomis duomenų bazių 						konfigūracijomis. 
+			Ieškant litratūros šiam darbui kilo sunkumų surasti tyrimų kuriuose su ta pačia ar panašia kompiuterine įranga ir duomenų bazių konfigūracijomis tiesiogiai būtų lyginamos blokų 					grandinių duomenų bazės su NoSQL duomenų bazėmis. Sekančiame skirsnyje bus atliekamos Fabric ir Cassandra našumo tyrimas.
+	\subsection{Grečių tyrimų apibendrinima}
 		\begin{figure}[H]
 		    \centering
 		    \includegraphics[scale=0.5]{img/CasHypLat}
@@ -287,11 +235,81 @@ Ieškant litratūros šiam darbui kilo sunkumų surasti tyrimų kuriuose su ta p
 		    \label{img:mlp}
 		\end{figure}
 
-Apžvelgtuose darbuose buvo matuojamos Apache Cassandra ir Hyperledger Fabric duomenų bazių praeinamumas ir vėlavimas.
-Palyginus rezultatus buvo aiškiai matoma, kad Cassandra praeinamumas buvo didesnis ir vėlavimas mažesnis. 
-Net ir palyginus prasčiausią Cassandra praeinamumo rezultatą (2325 tranzakcijų per sekundę) ir geriausią Fabric rezultatą (300 tranzakcijų per sekundę) Cassandra duomenų bazės praeinamumas buvo geresnis 775 procentais. Lygynant prasčiausią Cassandra ir geriausią Fabric vėlavimo rezultatą Cassandra vėlavavimas buvo 1078 procentų mažesnis negu Fabric.
-\section{Simuliacija}
-\section{Išvados}
+		Apžvelgtuose darbuose buvo matuojamos Apache Cassandra ir Hyperledger Fabric duomenų bazių praeinamumas ir vėlavimas.
+		Palyginus rezultatus buvo aiškiai matoma, kad Cassandra praeinamumas buvo didesnis ir vėlavimas mažesnis. 
+		Net ir palyginus prasčiausią Cassandra praeinamumo rezultatą (2325 tranzakcijų per sekundę) ir geriausią Fabric rezultatą (300 tranzakcijų per sekundę) Cassandra duomenų bazės 				praeinamumas buvo geresnis 775 procentais. Lygynant prasčiausią Cassandra ir geriausią Fabric vėlavimo rezultatą Cassandra vėlavavimas buvo 1078 procentų mažesnis negu 				Fabric.
+\pagebreak
+
+\section{Duomenų bazių palyginimas pagal CAP teoremą}
+	\subsection{CAP teorema}
+		Eric A. Brewer 2000 \cite{CAP} metais pristatė savo teoremą sakančia, kad tinklinis servisas negali užtikrinti trijų savybių vienu metu:
+		\begin{itemize}
+			\item{Neprieštaringumas(Consistency) - kiekviena skaitymo užklausa gauna naujausią informaciją arba klaidos pranešimą.}
+			\item{Pasiekiamumas(Availability) - kiekviena užklauso gauna atsakymą, be garantijos, kad atsakyme bus naujausias įrašas. }
+			\item{Skaidinių toleravimas(Partition tolerance) - sistema nesustoja funkcionuoti jeigu būna prarandamas arbitrišką skaičių žinučių}
+		\end{itemize}
+		Šios teoremos įrodymas pateikiamas Seth Gilbert ir Nancy Lynch straipsnyje \cite{CAPP}
+		\linebreak
+		Kuriant paskirstytasias sistemas, pagal panaudojimo atvejį, svarbu pasirinkti kuriuos du principus tenkins kuriama paskirstytoji sistema.
+		Sekančiame skirsnyje bus apžvelgiama Hyperledger Fabric ir Cassandra atitikimas pagal CAP teoremą
+	\subsection{Hyperledger Fabric pagal CAP teoremą}
+		Romos ir Southampton universitetų mokslininkų darbe \cite{BCCAP} buvo tiriama kaip skirtingi susitarimo algoritmai įtakoja Etherium blokų grandinę
+		pagal CAP teoremą. Šiame darbe CAP buvo pateiktas kitos, labiau blokų grandines atitinkantis CAP teoremos apibrėžimas:
+	
+		\begin{itemize}
+			\item{Neprieštaringumas(Consistency) - blokų grandinė yra neprieštaringa, jeigu yra išvengta išsišakojimų. Neprieštaringumas yra pasiekiamas 
+					susitarimo algoritmų. Jeigu neprieštaringumas nebūna pasiekiamas turime nurodyti, ar jis bus pasiektas vėliau(galiausiai neprieštaringas) ar nebus pasiektas niekada(prieštaringas) }
+			\item{Pasiekiamumas(Availability) - blokų grandinė yra pasiekiama, jeigu klientų pateiktos tranzakcijos yra apdorojamos ir galiausiai patvirtinamos ir visam laikui pridedamos prie grandinės}
+			\item{Skaidinių toleravimas(Partition tolerance) - kai įvyksta tinklo skaidymasis, valdžia yra paskirstoma į atskiras grupes taip, kad skirtingos grupės negali komunikuoti tarpusavyje. Blokų grandinė turi toleruoti 1. Periodus kai tinklas veikia asinchroniškai 2. Atitinkama skaičių Bizantinių valdžių siekiančių sutrigdyti pasiekiamumą ir neprieštaringumą.}
+		\end{itemize}
+		Naudojantis šiais CAP apibrėžimais sekančiuose skyriuose bus įvertinta Hyperledger fabric blokų grandinių duomenų bazė.
+	\subsection{Hyperledger Fabric neprieštaringumas}
+		Hyperledger Fabric yra vadinamas ,,galiausiai neprieštaringas", nes norint įrašyti tranzakciją į blokų grandinę užtrunka laiko ją patvirtinti. Klientas sudaro savo tranzakciją ir išsiunčia ją patvirtinimo perą, patvirtinimo peras simuliuoja tranzakcijos pridėjimą į grandinę siekdamas užtikrinti pridėjimo teisingumą. Jeigu simuliacija įvyko sėkmingai tuomet tranzakciją gauna patvirtinimo parašą ir keliauja atgal pas klientą, kuris išsiunčia jau patvirtiną tranzakciją į rykiavimo servisą kuris išsiunčia naują grandinės buseną visiems tinklo perams. Per laiko tarpą, kuris praeina nuo kliento tranzakcijos išsiuntimo patvirtinimo perams iki laiko kol rykiavimo servisas visiems tinklo perams išsiunčia naują grandinės būseną kiti tinklo kientai gali atlikti savo tranzakcijas nežinodami, kad kiti klientai taip pat darbo tranzakciją. Duomenų neprieštaringumą užtikrina rykiavimo servisas naudodamas susitarimo algoritmą todėl galiausiai visi tinklo perai gaus atnaujint informaciją, tačiau nebus užtikrinta, kad grandinė kurią gavo peras yra pačios naujausios versijos. \cite{HypDoc}
+	\subsection{Hyperledger Fabric pasiekiamumas}
+		Pasiekiamumą Fabric užtikrina pasiekiamumas laikydama grandinės kopijas visuose peruose, todėl klientas visados galės atlikti tranzakcijas į blokų grandinę. \cite{HypDoc}
+	\subsection{Hyperledger Fabric skaidinių toleravimas}
+		Skaidinių toleravimas yra užtikrintas visą tinklą paskirsčius ant daugelio mazgų. Tinklas išlieka veikiantis, net ir tam tikras mazgų skaičius dingtų, vartotojai vistiek galėtų siųsti tranzakcijas į kitus mazgus\cite{HypDoc}
+	\subsection{Cassandra neprieštaringumas}
+		Kai duomenys yra rašomi į duomenų bazę užtrunka laiko duomenys pateks į visus tinklo mazgus. Kaikurie mazgai gali būtų nepasiekiami. Cassandra yra ,,galiausiai neprieštaringa" duomenų baze, nėra užtikrinta, kad duomenys kurie yra skaitomi yra naujausios versijos visame tinkle. 
+Cassandra duomenų bazėje yra įgyvendintas pasirenkamasis pasiekiamumas kai klientas pats gali nurodyti kokios lygio neprieštaringumo jis nori skaitant duomenis(mazgų skaičius kurie turi identiškus duomenis) ir rašant duomenis(į kiek mazgų bus įrašyti duomenys). Cassandra duomenų bazėje nėra užtikrinamas neprieštaringumas, nes jeigu kažkuris mazgas yra nepasiekiamas vykdant skaitymą arba rašymą ir jį pasiekti būtina siekiant užtikrinti neprieštaringuma operacija neįvyks. \cite{CasDesk}
+	\subsection{Cassandra pasiekiamumas}
+		Rašant duomenis į Cassandra duomenų bazę yra padaromos kelios kopijos ir išsiunčiamos skirtingies klasterio mazgams. Tai yra užtikrinamas, kad jeigu mazgas tampa nebepasiekiamu duomenys nebūna prarandami.\cite{CasDesk} Duomenų replikavimo lygį galima nurodyti kuriant duomenų bazę. 
+	\subsection{Cassandra skaidinių toleravimas}
+		Cassandra duomenų bazė tenkina skaidinių toleravimo principa, nustojus veikti tam tikram skaičiui mazgų tinkle sistemos veikimas nenutrūksta. \cite{CasDesk} 
+	\subsection{Apibendrinimas}
+		\begin{figure}[H]
+		    \centering
+		    \includegraphics[scale=1]{img/CAP}
+		    \caption{Tranzakcijų vėlavimas}   % Antraštė įterpiama po paveikslėlio
+		    \label{img:mlp}
+		\end{figure}
+
+		Hyperledger Fabric ir Apache Cassandra duomenų bazės įgyvendina pasiekiamumo ir particijų toleravimo kriterijus CAP teoremoje. Kuriant Cassandra duomenų bazę yra galimybė 
+pakeisti konfigūracija taip, kad rašymo operacija būtų laiko sėkminga tik tuomet, kai visiems klasterio mazgams yra padaroma replika, panašiai ir skaitant galima skaityti informacija iš visų tinklo mazgų ir pasirinkti tą informaciją, kuri yra didžiojoje daugumoje mazgų. Pasirinkus tokią konfigūraciją Cassandra labiau pradeda atitikti neprieštaringumo ir particijų toleravimo savybes tačiau tokia konfigūracija reikalauja paaukoti  tranzakcijų greitį. Hyperledger Fabric nesuteikia tokios konfigūravimo galimybės.
+
+\pagebreak
+\section{Rezultatai ir išvados}
+	\subsection{Rezultatai}
+		\begin{enumerate}
+			\item{Šiame darbe buvo palygintas Cassandra ir Hyperledger Fabric tranzakcijų praeinamumas ir vėlavimas}
+			\item{Aprašytas tranzakcijų praeinamumo ir vėlavimo priklausomybė nuo mazgų skaičiaus tinkle}
+			\item{Išskirti Hyperledger Fabric parametrai kuriuos keičiant keičiasi sistemos veikimo greitis}
+			\item{Įvertinta Cassandra ir Hyperledger architektūros atitikimas CAP teoremos principus}
+		\end{enumerate}
+	\subsection{Išvados}
+		\begin{enumerate}
+			\item{Yra trūkumas tyrimų lyginančių blokų grandinių duomenų bazių greičius su paskirstytom duomenų bazės}
+			\item{Numatytoji Cassandra ir Hyperledger Fabric duomenų bazių implementacija, CAP teoremoje, atitinka pasiekiamumo ir particijų toleracimo principus}
+			\item{Cassandra konfigūracija yra lankstesnė ir leidžia kuriant duomenų bazę padidinti duomenų neprieštaringumą sumažinus tranzakcijų įvykdymo greitį}
+			\item{Cassandra duomebų bazė yra ženkliai greitesnė(iš apželgtų straipsių bent 7 kartus) negu Hyperledger Fabric }
+		\end{enumerate}
+	\subsection{Rekomendacijos ateities darbams}
+		\begin{enumerate}
+			\item{Atlikti Cassandra ir Hyperledger Fabric praeinamumo ir vėlavimo tyrimą atlikti naudojant tą pačią kompiuterinę rangą}
+			\item{Atlikti Cassandra praeinamumos ir vėlavimo tyrimą keičiant konfigūraciją link tranzakcijų neprieštaringumo pusės ir lyginti lėtėjantį greitį su Hyperledger Fabric greičiu}
+		\end{enumerate}
+
+\pagebreak
 
 \section{Priedai}
 \subsection{Žodynas}
@@ -304,13 +322,5 @@ Net ir palyginus prasčiausią Cassandra praeinamumo rezultatą (2325 tranzakcij
 
 
 \printbibliography[heading=bibintoc]  
-
-
-
-
-
-
-
-
 
 \end{document}
