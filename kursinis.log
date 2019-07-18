@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2017.10.31)  18 JUL 2019 17:36
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2017.10.31)  18 JUL 2019 19:41
 entering extended mode
 **./kursinis.tex
 (kursinis.tex
@@ -1279,13 +1279,13 @@ Package biblatex Info: Automatic encoding selection.
 \openout4 = `kursinis.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'kursinis.bbl' not found.
-No file kursinis.bbl.
+Package biblatex Info: ... file 'kursinis.bbl' found.
+(kursinis.bbl)
 Package biblatex Info: Reference section=0 on input line 35.
 Package biblatex Info: Reference segment=0 on input line 35.
 \c@lstlisting=\count431
 LaTeX Font Info:    Try loading font information for U+msa on input line 36.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 36.
@@ -1497,8 +1497,8 @@ Package logreq Info: Writing requests to 'kursinis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24022 strings out of 427823
- 462002 string characters out of 3152321
+ 24024 strings out of 427823
+ 462026 string characters out of 3152321
  980673 words of memory out of 3000000
  27736 multiletter control sequences out of 15000+200000
  543198 words of font info for 88 fonts, out of 3000000 for 9000
