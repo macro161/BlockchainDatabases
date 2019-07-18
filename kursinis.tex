@@ -134,13 +134,13 @@ būna verifikuojamas kiekvienam blokui, o perdavimo patvirtinimo parašas verifi
 		\subsubsection{Tyrimų rezultatai}
 			\begin{figure}[H]
 			    \centering
-			    \includegraphics[scale=0.5]{img/Praein}
+			    \includegraphics[scale=0.6]{img/Praein}
 			    \caption{Tranzakcijų praeinamumas}   % Antraštė įterpiama po paveikslėlio
 			    \label{img:mlp}
 			\end{figure}		
 			\begin{figure}[H]
 			    \centering
-			    \includegraphics[scale=0.5]{img/Velav}
+			    \includegraphics[scale=0.6]{img/Velav}
 			    \caption{Tranzakcijų vėlavimas}   % Antraštė įterpiama po paveikslėlio
 			    \label{img:mlp}
 			\end{figure}		
@@ -165,6 +165,41 @@ būna verifikuojamas kiekvienam blokui, o perdavimo patvirtinimo parašas verifi
 	\subsection{Apache Cassandra}
 		Apache Cassandra yra atviro kodo, paskirstyta NoSQL duomenų bazė kuri palaiko klasterizaciją bei asinchroninį be valdančiojo kompiuterio duomenų replikavimą. Šios Cassandra 				galimybės yra panašios į blokinių grandinių duomenų bazių galimybes, todėl šiame skyriuje apžvelgsime jau padarytus 
 		Cassandra duomenų bazės našumo tyrimus. 
+
+		\subsubsection{Architektūra}
+			Apache Cassandra yra atviro kodo tarpusavio paskirstytoji duomenų bazė. Cassandra laikosi tarpusavio paskirstymo modelio. Laikantis šio modelio kiekvienas tinklo mazgas turi tą pačią struktūrą kas palengvina Cassandra praplėtimą. 
+		\linebreak
+		Cassandra duomenų struktūrą sudaro: 
+		\begin{itemize}
+			\item{Stulpelis - jį sudaro pavadinimas ir reikšmė}
+			\item{Laiko žyma - rodanti kada poaskutini karta sulpelis buvo pakeistas}
+			\item{Eilės raktas - unikalus eilės indentifikatorius}
+			\item{Eilių šeima - vieta kurioje yra panašių stulpelių aibės}
+			\item{Raktų erdvė - atitikmuo duomenų bazei realicinėse duomenų bazęse}
+		\end{itemize}
+		\begin{figure}[H]
+		    \centering
+		    \includegraphics[scale=0.5]{img/CasArch}
+		    \caption{Tranzakcijų vėlavimas}   % Antraštė įterpiama po paveikslėlio
+		    \label{img:mlp}
+		\end{figure}
+
+`		Replikavimas - darant užklauskas galima pasirinkti replikavimo faktorių. Replikavimo faktorius nurodo per kiek klasterio mazgų užklausos duomenys bus kopijuojami. Didesnis replikavimo reiškia, kad duomenys klasteryje bus lengviau pasiekiami. Turint duomenis tik viename mazge ir praradūs ryšį su tuoi mazgu duomenys tinkle dings. Tačiau nustačius aukšta replikavimo faktorių Cassandra užtrunka daugiau laiko koodrinuoti duomenis tinkle. 
+		\linebreak
+		Particionavimas - nusako kaip duomenys bus paskirstyti mazduogse. Šis funkcionalumas leidžia nurodyti kaip eilių raktai bus saugomi kas įtakoja kaip bus atliekamos užklausos į duomenų bazę.
+		\linebreak
+		Paskalos - Cassandra naudoja ,,paskalų" protokolą kurio pagalba visi tinklo mazgai žino informaciją apie kitus tinklo mazgus. Mazgai seka informacija apie tai ar su kažkuriuo mazgu buvo užmegztas ryšys arba ar mazgas dingo iš tinklo. Jeigu mazgas dingsta iš tinklo kiti mazgai laiko įrašus savyje pasakančius kokius duomenis reiks nusiųsti dingusiam mazgui kai jis vėl atsiras tinkle. Paskalų algoritmas išsiunčia ,,širdies dūšio" žinutę kas sekundę, kad sužinotų visų mazgų būseną.
+		\begin{figure}[H]
+		    \centering
+		    \includegraphics[scale=0.6]{img/Gos}
+		    \caption{Tranzakcijų vėlavimas}   % Antraštė įterpiama po paveikslėlio
+		    \label{img:mlp}
+		\end{figure}
+
+		Patvarumas Cassandra duomenų bazėje yra užtikrinamas naudojant patvirtinimų žurnalą kaip sistemos atstatymo mechanizmą. Įrašai nebus pripažinti tinkle kol jie nebus įrašyti į patvirtinimų žurnalą. Po to kai įrašas atsiranda žurnale jis yra perduodamas į vietinę atmintį(memtable) ir kai tų įrašų kiekis pasiekia tam tikra ribą jie yra perkeliami į diską SSTable formatu.
+		\linebreak
+		Įrašai Cassandra duomenų bazėje yra labai greiti, nes atliekant rašymo užklauso nėra poreikio atlikti disko skaitymo ir paieškų. Šis funkcionalumas yra pasiekiamas naudojant memtable ir SSTable. Realicinėse duomenų bazęse atlikti rašymą reikalauja daugiau resursų negu Cassandra duomenų bazėje.
+
 		\subsubsection{Testavimo metodologija}
 			
 		\begin{center}
