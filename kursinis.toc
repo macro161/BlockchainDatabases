@@ -72,4 +72,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.}Žodynas}{17}% 
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.}Padėka}{17}% 
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{Literatūra}{17}% 

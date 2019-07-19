@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7050 64-bit) (preloaded format=xelatex 2019.6.10)  19 JUL 2019 14:05
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7050 64-bit) (preloaded format=xelatex 2019.6.10)  19 JUL 2019 14:24
 entering extended mode
 **./kursinis.tex
 (kursinis.tex
@@ -1319,7 +1319,7 @@ Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 
 
 Package biblatex Warning: No driver for entry type 'mic'.
-(biblatex)                Using fallback driver on input line 365.
+(biblatex)                Using fallback driver on input line 368.
 
 
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
@@ -1337,12 +1337,13 @@ Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
+[17]
 
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Overfull \hbox (59.99147pt too wide) in paragraph at lines 365--365
+Overfull \hbox (59.99147pt too wide) in paragraph at lines 368--368
 []\TU/texgyretermes(0)/m/n/12 Google. Https://trends.google.com/trends/explore?
 date=all&geo=us&q=bitcoin,etherium,litecoin,
  []
@@ -1355,7 +1356,6 @@ Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
-[17]
 
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
@@ -1399,6 +1399,6 @@ Here is how much of TeX's memory you used:
  29981 multiletter control sequences out of 15000+200000
  545272 words of font info for 91 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
- 67i,12n,96p,1163b,6131s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 67i,12n,96p,1163b,6127s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on kursinis.pdf (19 pages).
