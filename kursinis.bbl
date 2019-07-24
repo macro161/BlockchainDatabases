@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.0 $
+% $ biblatex bbl format version 2.8 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,7 +18,7 @@
 
 
 \refsection{0}
-  \datalist[entry]{anyt/global//global/global}
+  \sortlist[entry]{anyt/global/}
     \entry{MonCas}{misc}{}
       \name{author}{2}{}{%
         {{hash=c2624c5cc1bd7e48ad17fd28eb5a16f5}{%
@@ -34,13 +34,11 @@
       }
       \strng{namehash}{08f7fe034f9c6876a76b7bcfe14270d0}
       \strng{fullhash}{08f7fe034f9c6876a76b7bcfe14270d0}
-      \strng{bibnamehash}{08f7fe034f9c6876a76b7bcfe14270d0}
-      \strng{authorbibnamehash}{08f7fe034f9c6876a76b7bcfe14270d0}
       \strng{authornamehash}{08f7fe034f9c6876a76b7bcfe14270d0}
       \strng{authorfullhash}{08f7fe034f9c6876a76b7bcfe14270d0}
       \field{labelalpha}{AB13}
       \field{sortinit}{A}
-      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{NoSQL Databases: MongoDB vs Cassandra}
@@ -59,13 +57,11 @@
       }
       \strng{namehash}{f6572da53387abecf29d51ef458a1620}
       \strng{fullhash}{f6572da53387abecf29d51ef458a1620}
-      \strng{bibnamehash}{f6572da53387abecf29d51ef458a1620}
-      \strng{authorbibnamehash}{f6572da53387abecf29d51ef458a1620}
       \strng{authornamehash}{f6572da53387abecf29d51ef458a1620}
       \strng{authorfullhash}{f6572da53387abecf29d51ef458a1620}
       \field{labelalpha}{AF16}
       \field{sortinit}{A}
-      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Distributed ledger technology and opportunities in correspondent banking}
@@ -114,13 +110,11 @@
       }
       \strng{namehash}{f3b3f8a05f622460110fed072475f0ef}
       \strng{fullhash}{652af7609ba89d573d81da02743d3179}
-      \strng{bibnamehash}{f3b3f8a05f622460110fed072475f0ef}
-      \strng{authorbibnamehash}{f3b3f8a05f622460110fed072475f0ef}
       \strng{authornamehash}{f3b3f8a05f622460110fed072475f0ef}
       \strng{authorfullhash}{652af7609ba89d573d81da02743d3179}
       \field{labelalpha}{ASA\textsuperscript {+}18}
       \field{sortinit}{A}
-      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{PBFT vs proof-of-authority: applying the CAP theorem to permissioned blockchain}
@@ -128,21 +122,19 @@
     \endentry
     \entry{CAP}{mic}{}
       \name{author}{1}{}{%
-        {{hash=0bd1f649dbf7110fe95ba1833204085d}{%
+        {{hash=325b88a8d9e075b51b846c7b62022fa2}{%
            family={Brewer},
            familyi={B\bibinitperiod},
            given={Eric\bibnamedelima A.},
            giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
       }
-      \strng{namehash}{0bd1f649dbf7110fe95ba1833204085d}
-      \strng{fullhash}{0bd1f649dbf7110fe95ba1833204085d}
-      \strng{bibnamehash}{0bd1f649dbf7110fe95ba1833204085d}
-      \strng{authorbibnamehash}{0bd1f649dbf7110fe95ba1833204085d}
-      \strng{authornamehash}{0bd1f649dbf7110fe95ba1833204085d}
-      \strng{authorfullhash}{0bd1f649dbf7110fe95ba1833204085d}
+      \strng{namehash}{325b88a8d9e075b51b846c7b62022fa2}
+      \strng{fullhash}{325b88a8d9e075b51b846c7b62022fa2}
+      \strng{authornamehash}{325b88a8d9e075b51b846c7b62022fa2}
+      \strng{authorfullhash}{325b88a8d9e075b51b846c7b62022fa2}
       \field{labelalpha}{Bre00}
       \field{sortinit}{B}
-      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Towards robust distributed systems. (Invited Talk) Principles of Distributed Computing, Portland, Oregon,}
@@ -156,13 +148,11 @@
       }
       \strng{namehash}{f27b3fbae588f0ca9afcfdcc88641892}
       \strng{fullhash}{f27b3fbae588f0ca9afcfdcc88641892}
-      \strng{bibnamehash}{f27b3fbae588f0ca9afcfdcc88641892}
-      \strng{authorbibnamehash}{f27b3fbae588f0ca9afcfdcc88641892}
       \strng{authornamehash}{f27b3fbae588f0ca9afcfdcc88641892}
       \strng{authorfullhash}{f27b3fbae588f0ca9afcfdcc88641892}
       \field{labelalpha}{Dat17}
       \field{sortinit}{D}
-      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{sortinithash}{d10b5413de1f3d197b20897dd0d565bb}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Modernizing banks with Datastax Enterprise}
@@ -170,31 +160,29 @@
     \endentry
     \entry{Integrity}{misc}{}
       \name{author}{3}{}{%
-        {{hash=4c0cc7b65422c87fed7220ceb5822892}{%
+        {{hash=2c6ac968002ca1df4a154f9f3911f0c6}{%
            family={Fernandez},
            familyi={F\bibinitperiod},
            given={E.B.},
            giveni={E\bibinitperiod}}}%
-        {{hash=a7ae4b12c7493085eb9a9a9f4bee7f24}{%
+        {{hash=b4e6617a9d5c22043cb9a1c52eddbecc}{%
            family={Summers},
            familyi={S\bibinitperiod},
            given={R.C.},
            giveni={R\bibinitperiod}}}%
-        {{hash=5fb64cdf0873a7a8c1d3c76403bf0abb}{%
+        {{hash=76f82702f07eff37a9b0b85d6e1ffaee}{%
            family={Wood},
            familyi={W\bibinitperiod},
            given={C.},
            giveni={C\bibinitperiod}}}%
       }
-      \strng{namehash}{1d9818e52a8938698ed296749f074f89}
-      \strng{fullhash}{1d9818e52a8938698ed296749f074f89}
-      \strng{bibnamehash}{1d9818e52a8938698ed296749f074f89}
-      \strng{authorbibnamehash}{1d9818e52a8938698ed296749f074f89}
-      \strng{authornamehash}{1d9818e52a8938698ed296749f074f89}
-      \strng{authorfullhash}{1d9818e52a8938698ed296749f074f89}
+      \strng{namehash}{ee1b847cf7583df42d7d2c5b2dda7b2f}
+      \strng{fullhash}{ee1b847cf7583df42d7d2c5b2dda7b2f}
+      \strng{authornamehash}{ee1b847cf7583df42d7d2c5b2dda7b2f}
+      \strng{authorfullhash}{ee1b847cf7583df42d7d2c5b2dda7b2f}
       \field{labelalpha}{FSW81}
       \field{sortinit}{F}
-      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Database Security and Integrity}
@@ -215,13 +203,11 @@
       }
       \strng{namehash}{220e8940797e44af8a50c3d3d438c505}
       \strng{fullhash}{220e8940797e44af8a50c3d3d438c505}
-      \strng{bibnamehash}{220e8940797e44af8a50c3d3d438c505}
-      \strng{authorbibnamehash}{220e8940797e44af8a50c3d3d438c505}
       \strng{authornamehash}{220e8940797e44af8a50c3d3d438c505}
       \strng{authorfullhash}{220e8940797e44af8a50c3d3d438c505}
       \field{labelalpha}{GL02}
       \field{sortinit}{G}
-      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{sortinithash}{618d986594b7198ba52cf8b00d348f3f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Brewer's Conjecture and the Feasibility of Consistent, Available,Partition-Tolerant Web Services}
@@ -235,13 +221,11 @@
       }
       \strng{namehash}{8b36e9207c24c76e6719268e49201d94}
       \strng{fullhash}{8b36e9207c24c76e6719268e49201d94}
-      \strng{bibnamehash}{8b36e9207c24c76e6719268e49201d94}
-      \strng{authorbibnamehash}{8b36e9207c24c76e6719268e49201d94}
       \strng{authornamehash}{8b36e9207c24c76e6719268e49201d94}
       \strng{authorfullhash}{8b36e9207c24c76e6719268e49201d94}
       \field{labelalpha}{Goo19}
       \field{sortinit}{G}
-      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{sortinithash}{618d986594b7198ba52cf8b00d348f3f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{https://trends.google.com/trends/explore?date=all\&geo=US\&q=bitcoin,Etherium,Litecoin}
@@ -255,13 +239,11 @@
       }
       \strng{namehash}{268fa15637cb26dadc1040a3d6e2150d}
       \strng{fullhash}{268fa15637cb26dadc1040a3d6e2150d}
-      \strng{bibnamehash}{268fa15637cb26dadc1040a3d6e2150d}
-      \strng{authorbibnamehash}{268fa15637cb26dadc1040a3d6e2150d}
       \strng{authornamehash}{268fa15637cb26dadc1040a3d6e2150d}
       \strng{authorfullhash}{268fa15637cb26dadc1040a3d6e2150d}
       \field{labelalpha}{Hyp16}
       \field{sortinit}{H}
-      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Linux Foundation’s Hyperledger Project Announces 30 Founding Members and Code Proposals To Advance Blockchain Technology}
@@ -277,13 +259,11 @@
       }
       \strng{namehash}{b3961ed140fda31878fc097a5e297cb5}
       \strng{fullhash}{b3961ed140fda31878fc097a5e297cb5}
-      \strng{bibnamehash}{b3961ed140fda31878fc097a5e297cb5}
-      \strng{authorbibnamehash}{b3961ed140fda31878fc097a5e297cb5}
       \strng{authornamehash}{b3961ed140fda31878fc097a5e297cb5}
       \strng{authorfullhash}{b3961ed140fda31878fc097a5e297cb5}
       \field{labelalpha}{Hoe08}
       \field{sortinit}{H}
-      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Distributed Double Spending Prevention}
@@ -297,13 +277,11 @@
       }
       \strng{namehash}{cbf44511d041dc6d1dd73cc0c033122c}
       \strng{fullhash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{bibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
-      \strng{authorbibnamehash}{cbf44511d041dc6d1dd73cc0c033122c}
       \strng{authornamehash}{cbf44511d041dc6d1dd73cc0c033122c}
       \strng{authorfullhash}{cbf44511d041dc6d1dd73cc0c033122c}
       \field{labelalpha}{IBM18}
       \field{sortinit}{I}
-      \field{sortinithash}{320bc8fe8101b9376f9f21cd507de0e8}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Hyperledger Fabric: A Distributed Operating System for Permissioned Blockchains}
@@ -311,22 +289,19 @@
     \endentry
     \entry{BlockChain}{misc}{}
       \name{author}{1}{}{%
-        {{hash=5f6f52cf6648e8089d86dc975e451ab1}{%
+        {{hash=8eb5688f293b940f446dc012b966fe44}{%
            family={Nakamoto},
            familyi={N\bibinitperiod},
            given={S.},
            giveni={S\bibinitperiod}}}%
       }
-      \strng{namehash}{5f6f52cf6648e8089d86dc975e451ab1}
-      \strng{fullhash}{5f6f52cf6648e8089d86dc975e451ab1}
-      \strng{bibnamehash}{5f6f52cf6648e8089d86dc975e451ab1}
-      \strng{authorbibnamehash}{5f6f52cf6648e8089d86dc975e451ab1}
-      \strng{authornamehash}{5f6f52cf6648e8089d86dc975e451ab1}
-      \strng{authorfullhash}{5f6f52cf6648e8089d86dc975e451ab1}
-      \field{extraname}{1}
+      \strng{namehash}{8eb5688f293b940f446dc012b966fe44}
+      \strng{fullhash}{8eb5688f293b940f446dc012b966fe44}
+      \strng{authornamehash}{8eb5688f293b940f446dc012b966fe44}
+      \strng{authorfullhash}{8eb5688f293b940f446dc012b966fe44}
       \field{labelalpha}{Nak08}
       \field{sortinit}{N}
-      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{sortinithash}{1163c28585427c673ad5a010cbf82f52}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{A peer-to-peer electronic cash system}
@@ -334,22 +309,19 @@
     \endentry
     \entry{Bitcoin}{misc}{}
       \name{author}{1}{}{%
-        {{hash=5f6f52cf6648e8089d86dc975e451ab1}{%
+        {{hash=8eb5688f293b940f446dc012b966fe44}{%
            family={Nakamoto},
            familyi={N\bibinitperiod},
            given={S.},
            giveni={S\bibinitperiod}}}%
       }
-      \strng{namehash}{5f6f52cf6648e8089d86dc975e451ab1}
-      \strng{fullhash}{5f6f52cf6648e8089d86dc975e451ab1}
-      \strng{bibnamehash}{5f6f52cf6648e8089d86dc975e451ab1}
-      \strng{authorbibnamehash}{5f6f52cf6648e8089d86dc975e451ab1}
-      \strng{authornamehash}{5f6f52cf6648e8089d86dc975e451ab1}
-      \strng{authorfullhash}{5f6f52cf6648e8089d86dc975e451ab1}
-      \field{extraname}{2}
+      \strng{namehash}{8eb5688f293b940f446dc012b966fe44}
+      \strng{fullhash}{8eb5688f293b940f446dc012b966fe44}
+      \strng{authornamehash}{8eb5688f293b940f446dc012b966fe44}
+      \strng{authorfullhash}{8eb5688f293b940f446dc012b966fe44}
       \field{labelalpha}{Nak09}
       \field{sortinit}{N}
-      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{sortinithash}{1163c28585427c673ad5a010cbf82f52}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Bitcoin: A Peer-to-Peer Electronic Cash System}
@@ -362,31 +334,29 @@
            familyi={N\bibinitperiod},
            given={Qassim},
            giveni={Q\bibinitperiod}}}%
-        {{hash=0495c92620a479ff10cd394f047d335b}{%
+        {{hash=e12fafab095a00334164f1d9d7a019da}{%
            family={Qasse},
            familyi={Q\bibinitperiod},
            given={Ilham\bibnamedelima A.},
            giveni={I\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=645222f31aa3c674adb3522294cb94dd}{%
+        {{hash=3389ec680fd03fac23514ae86da44674}{%
            family={Talib},
            familyi={T\bibinitperiod},
            given={Manar\bibnamedelima Abu},
            giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=915767c19b555ab6694960d4a53e14a3}{%
+        {{hash=408b29fc3cd61f6ccfc3cf0641899979}{%
            family={Nassif},
            familyi={N\bibinitperiod},
            given={Ali\bibnamedelima Bou},
            giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
       }
-      \strng{namehash}{7f5e9b1076a0098fda330e5e1bf338e9}
-      \strng{fullhash}{7f5e9b1076a0098fda330e5e1bf338e9}
-      \strng{bibnamehash}{7f5e9b1076a0098fda330e5e1bf338e9}
-      \strng{authorbibnamehash}{7f5e9b1076a0098fda330e5e1bf338e9}
-      \strng{authornamehash}{7f5e9b1076a0098fda330e5e1bf338e9}
-      \strng{authorfullhash}{7f5e9b1076a0098fda330e5e1bf338e9}
+      \strng{namehash}{8c8c21d777cd9833e5d0756303c4ebce}
+      \strng{fullhash}{8c8c21d777cd9833e5d0756303c4ebce}
+      \strng{authornamehash}{8c8c21d777cd9833e5d0756303c4ebce}
+      \strng{authorfullhash}{8c8c21d777cd9833e5d0756303c4ebce}
       \field{labelalpha}{NQT\textsuperscript {+}18}
       \field{sortinit}{N}
-      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{sortinithash}{1163c28585427c673ad5a010cbf82f52}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Performance Analysis of Hyperledger Fabric Platforms}
@@ -412,13 +382,11 @@
       }
       \strng{namehash}{38d440ddeba99fa93042cd0fb672884a}
       \strng{fullhash}{38d440ddeba99fa93042cd0fb672884a}
-      \strng{bibnamehash}{38d440ddeba99fa93042cd0fb672884a}
-      \strng{authorbibnamehash}{38d440ddeba99fa93042cd0fb672884a}
       \strng{authornamehash}{38d440ddeba99fa93042cd0fb672884a}
       \strng{authorfullhash}{38d440ddeba99fa93042cd0fb672884a}
       \field{labelalpha}{PST17}
       \field{sortinit}{P}
-      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{sortinithash}{24100cef455d7974167575052c29146e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Performance Analysis of Private BlockchainPlatforms in Varying Workloads}
@@ -444,13 +412,11 @@
       }
       \strng{namehash}{e41d971d89ce973bce0036131debd526}
       \strng{fullhash}{e41d971d89ce973bce0036131debd526}
-      \strng{bibnamehash}{e41d971d89ce973bce0036131debd526}
-      \strng{authorbibnamehash}{e41d971d89ce973bce0036131debd526}
       \strng{authornamehash}{e41d971d89ce973bce0036131debd526}
       \strng{authorfullhash}{e41d971d89ce973bce0036131debd526}
       \field{labelalpha}{SLC19}
       \field{sortinit}{S}
-      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Performance Comparision between Scaling of Virtual Machines and Containers using Cassandra NoSQL Database}
@@ -463,7 +429,7 @@
            familyi={T\bibinitperiod},
            given={Parth},
            giveni={P\bibinitperiod}}}%
-        {{hash=bfcaf3a4d26d2a658e8d4cbba727e8c0}{%
+        {{hash=146f5fbf7cb0efd7c8cf7ddda5cacbb2}{%
            family={N},
            familyi={N\bibinitperiod},
            given={Senthil\bibnamedelima Nathan},
@@ -474,21 +440,19 @@
            given={Balaji},
            giveni={B\bibinitperiod}}}%
       }
-      \strng{namehash}{115bed8bfb1969c3f389480a4d31e3aa}
-      \strng{fullhash}{115bed8bfb1969c3f389480a4d31e3aa}
-      \strng{bibnamehash}{115bed8bfb1969c3f389480a4d31e3aa}
-      \strng{authorbibnamehash}{115bed8bfb1969c3f389480a4d31e3aa}
-      \strng{authornamehash}{115bed8bfb1969c3f389480a4d31e3aa}
-      \strng{authorfullhash}{115bed8bfb1969c3f389480a4d31e3aa}
+      \strng{namehash}{33921897055d9983953622420a730aa0}
+      \strng{fullhash}{33921897055d9983953622420a730aa0}
+      \strng{authornamehash}{33921897055d9983953622420a730aa0}
+      \strng{authorfullhash}{33921897055d9983953622420a730aa0}
       \field{labelalpha}{TNV18}
       \field{sortinit}{T}
-      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Performance Benchmarking and Optimizing Hyperledger Fabric Blockchain Platform}
       \field{year}{2018}
     \endentry
-  \enddatalist
+  \endsortlist
   \missing{CasDesk}
 \endrefsection
 \endinput

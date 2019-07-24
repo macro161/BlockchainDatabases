@@ -45,7 +45,7 @@ kurios ir yra paremtos blokų grandinių technologija. Šią technologiją 2008 
 Nors, šiuo metu, žmonių susidomėjimas kripto valiutomis ir yra sumažėjęs \cite{Trends}, tačiau informacinių technologijų industrija 
 mato daugiau blokų grandinių panaudojimo atveju negu tik kriptovaliutos. Vienas iš blokų grandinių panaudojimo atvėjų yra 
 blokų grandinių duomenų bazės. Reliacinės ir dokumentų duomenų bazės ilgą laiką buvo pagrindinis duomenų saugojimo būdas. 
-Tačiau šios duomenų bazės turi ir savo trūkumų, saugant duomenis tradicinėsė duomenų bazėse kyla duomenų integralumo problemos \cite{Integrity}
+Tačiau šios duomenų bazės turi ir savo trūkumų, saugant duomenis relicinėse duomenų bazėse kyla duomenų integralumo problemos \cite{Integrity}
 . 
 Naudojant duomenų bazes financinėms transakcijoms sekti kyla dvigumo pinigų išleidimo problema\cite{Double}
 . Naudojantis tradicinėmis duomenų bazėmis 
@@ -56,7 +56,10 @@ bazės kopiją. Darant pakeitimus tokioje duomenų bazėje kiekvienas vartotojas
 dvigumo pinigų išleidimo problemą, nes kiekvienas mazgas blokų grandinėjės tinkle gali palyginti savo turimus duomenis su kitais mazgais. 
 Nors blokų grandinės išsprendžia išvardytas problemas, tačiau finansiniams duomenims taip pat svarbu greitis, duomenų pasiekiamumas ir sistemos galimybė išlikti funkcionaliai po tam tikrų trigdžių. 
 Yra nemaža aibė blokinių grandinių duomenų bazių(R3 Corda, BigChain DB), bei didelis pasirinkimas NoSQL duomenų bazių(Mongo DB, Redis, Neo4j) tačiau šiam darbui buvo pasirinktos
-Hyperledger Fabric ir Apache Cassandra, nes šios duomenų bazės yra naudojamos finansiniams duomenims saugoti \cite{BnkH} \cite{BnkC}. Šiuo darbu tikslas yra palyginti Hyperledger Fabric ir Apache Cassandra tranzakcijų praeinamum, vėlavimą, bei įvertinti kuriuos CAP teoremos punktus atitinka minėtos duomenų bazės.
+Hyperledger Fabric ir Apache Cassandra, nes šios duomenų bazės yra naudojamos finansiniams duomenims saugoti \cite{BnkH} \cite{BnkC}.
+
+\sectionnonum{Tikslas}
+	 Šiuo darbu tikslas yra palyginti Hyperledger Fabric ir Apache Cassandra tranzakcijų praeinamum, vėlavimą, bei įvertinti kuriuos CAP teoremos punktus atitinka minėtos duomenų bazės.
 
 \sectionnonum{Uždaviniai}
 	\begin{enumerate}
