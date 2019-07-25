@@ -22,7 +22,7 @@
 \papertype{Kursinis darbas}
 \title{Blokų grandinių duomenų bazės finansinių duomenų kaupimui}
 \titleineng{Blockchain Databases for Financial Data}
-\status{3 kurso 3 grupės studentas}
+\status{4 kurso 3 grupės studentas}
 \author{Matas Savickis}
 % \secondauthor{Vardonis Pavardonis}   % Pridėti antrą autorių
 \supervisor{dr. Vytautas Valaitis}
@@ -33,7 +33,9 @@
 \bibliography{bibliografija}
 
 \begin{document}
+
 \maketitle
+
 
 \tableofcontents
 
@@ -41,7 +43,7 @@
 Per pastaruosius keletą metų blokų grandinių technologija susilaukė didelio žmonių susidomėjimo. 
 Šis susidomėjimas daugiausiai kilo dėl išpopulerėjusių kriptovaliutų, tokių kaip Bitcoin, Etherium, Litecoin ir daugeliu kitų 
 kurios ir yra paremtos blokų grandinių technologija. Šią technologiją 2008 metais sukūrė Satošis Nakamoto  \cite{BlockChain}. 
-2009 metais Nakamoto implementavo blokų grandinių technologiją sukurdamas Bitcoin kriptovaliutą \cite{Bitcoin}. 
+2009 metais Nakamoto realizavo blokų grandinių technologiją sukurdamas Bitcoin kriptovaliutą \cite{Bitcoin}. 
 Nors, šiuo metu, žmonių susidomėjimas kripto valiutomis ir yra sumažėjęs \cite{Trends}, tačiau informacinių technologijų industrija 
 mato daugiau blokų grandinių panaudojimo atveju negu tik kriptovaliutos. Vienas iš blokų grandinių panaudojimo atvėjų yra 
 blokų grandinių duomenų bazės. Reliacinės ir dokumentų duomenų bazės ilgą laiką buvo pagrindinis duomenų saugojimo būdas. 
@@ -56,21 +58,38 @@ bazės kopiją. Darant pakeitimus tokioje duomenų bazėje kiekvienas vartotojas
 dvigumo pinigų išleidimo problemą, nes kiekvienas mazgas blokų grandinėjės tinkle gali palyginti savo turimus duomenis su kitais mazgais. 
 Nors blokų grandinės išsprendžia išvardytas problemas, tačiau finansiniams duomenims taip pat svarbu greitis, duomenų pasiekiamumas ir sistemos galimybė išlikti funkcionaliai po tam tikrų trigdžių. 
 Yra nemaža aibė blokinių grandinių duomenų bazių(R3 Corda, BigChain DB), bei didelis pasirinkimas NoSQL duomenų bazių(Mongo DB, Redis, Neo4j) tačiau šiam darbui buvo pasirinktos
-Hyperledger Fabric ir Apache Cassandra, nes šios duomenų bazės yra naudojamos finansiniams duomenims saugoti \cite{BnkH} \cite{BnkC}.
+Hyperledger Fabric ir Apache Cassandra, nes šios duomenų bazės yra naudojamos finansiniams duomenims saugoti \cite{BnkH} , \cite{BnkC}.
 
 \sectionnonum{Tikslas}
-	 Šiuo darbu tikslas yra palyginti Hyperledger Fabric ir Apache Cassandra tranzakcijų praeinamum, vėlavimą, bei įvertinti kuriuos CAP teoremos punktus atitinka minėtos duomenų bazės.
+	CAP teorema - teorema sakanti, kad paskirstytoje duomenų sistemoje neįmanoma užtikrinti daugiau dviejų punktų: Duomenų neprištaringumas, duomenų pasiekiamumas, particijų toleravimas \newline
+	
+	Šio darbo tikslas yra:
+	\begin{itemize}
+		\item{Palyginti Apache Cassandra ir Hyperledger Fabric pagal išskirtas metrikas}
+		\item{Palyginti Apache Cassandra ir Hyperledger Fabric pagal CAP teoremą}
+		
+	\end{itemize}
 
 \sectionnonum{Uždaviniai}
 	\begin{enumerate}
-		\item{Palyginti Apache Cassandra transakcijų praeinamumo greičius su Hyperledger Fabric blokų grandinių duomenų baze.}
-		\item{Palyginti Apache Cassandra transakcijų vėlavimą su Hyperledger Fabric blokų grandinių duomenų bazėmis.}
+		\item{Išskirti bendras metrikas, pagal kurias būtų galima palyginti Apache Cassandra ir Hyperledger Fabric duomenų bazes.}
+		\item{Palyginti Apache Cassandra ir Hyperledger Fabric pagal išskirtas metrikas.}
 		\item{Išskirti esamų tyrimų trūkumus ir galimas sritis ateities darbams.}
 		\item{Palyginti Apache Cassandra su Hyperledger Fabric pagal CAP teoremos punktus.}
 		
 	\end{enumerate}
 \pagebreak
 \section{Duomenų bazių greičių tyrimų literatūros analizė}
+
+	\subsection{Metrikos}
+		Šiame skyriuje bus apžvelgiami tyrimai, kuriuose buvo analizuotas ir vertintas Hyperledger Fabric \cite{IMBResearch},\cite{ThailandPerf},\cite{ShaFabPerf} ir Apache Cassandra \cite{BITCass},\cite{MonCas} veikimas. 
+		Šiuose darbuose buvo vertinamas: tranzakcijų praeinamumas. tranzakcijų vėlavimas, procesoriaus resursų sunaudojimas, mazgų skaičius paskirstytoje duomenų bazėje. \newline
+		Šiame darbe Hyperledger Fabric ir Apache Cassandra bus lyginama pagal:
+		\begin{itemize}
+			\item{Tranzakcijų praeinamumas - kiek tranzakcijų duomenų bazė gali apdoroti per sekundę.}
+			\item{Vėlavimas - kiek laiko užtrunka nuo tranzakcijos išsiuntimo iki jos patvirtinimo duomenų bazėje.}
+		\end{itemize}
+
 	\subsection{Hyperledger Fabric}
 		Hyperleadger yra atviro kodo blokų grandinės pradėtos kurti Linux fondo. Šio projekto tikslas yra gerinti tarpindustrini bendradarbiavimą kuriant blokų grandines kurios užtikrintų 
 		patikimą, greitą ir saugų finansinių duomenų perdavimą pagrindinėse technologijų, finansų ir produktų tiekimo kompanijose \cite{LinuxHyper}. Šiame skirsnyje bus apžvelgti 
