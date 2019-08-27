@@ -60,7 +60,7 @@ bazės kopiją. Darant pakeitimus tokioje duomenų bazėje kiekvienas vartotojas
 dvigumo pinigų išleidimo problemą, nes kiekvienas mazgas blokų grandinėjės tinkle gali palyginti savo turimus duomenis su kitais mazgais. 
 Nors blokų grandinės išsprendžia išvardytas problemas, tačiau finansiniams duomenims taip pat svarbu greitis, duomenų pasiekiamumas ir sistemos galimybė išlikti funkcionaliai po tam tikrų trigdžių. 
 Yra nemaža aibė blokinių grandinių duomenų bazių(R3 Corda, BigChain DB), bei didelis pasirinkimas NoSQL duomenų bazių(Mongo DB, Redis, Neo4j) tačiau šiam darbui buvo pasirinktos
-Hyperledger Fabric ir Apache Cassandra, nes šios duomenų bazės yra naudojamos finansiniams duomenims saugoti \cite{BnkH} , \cite{BnkC}.
+Hyperledger Fabric ir Apache Cassandra, nes šios duomenų bazės yra naudojamos finansiniams duomenims saugoti \cite{BnkH,BnkC}.
 \pagebreak
 
 
@@ -87,7 +87,7 @@ Hyperledger Fabric ir Apache Cassandra, nes šios duomenų bazės yra naudojamos
 \section{Duomenų bazių greičių tyrimų literatūros analizė}
 
 	\subsection{Metrikos}
-		Šiame skyriuje bus apžvelgiami tyrimai, kuriuose buvo analizuotas ir vertintas Hyperledger Fabric \cite{IMBResearch},\cite{ThailandPerf},\cite{ShaFabPerf} ir Apache Cassandra \cite{BITCass},\cite{MonCas} veikimas. 
+		Šiame skyriuje bus apžvelgiami tyrimai, kuriuose buvo analizuotas ir vertintas Hyperledger Fabric \cite{IMBResearch,ThailandPerf,ShaFabPerf} ir Apache Cassandra \cite{BITCass,MonCas} veikimas. 
 		Šiuose darbuose buvo vertinamas: tranzakcijų praeinamumas. tranzakcijų vėlavimas, procesoriaus resursų sunaudojimas, mazgų skaičius paskirstytoje duomenų bazėje. \newline
 		Šiame darbe Hyperledger Fabric ir Apache Cassandra bus lyginama pagal:
 		\begin{itemize}
@@ -186,7 +186,7 @@ būna verifikuojamas kiekvienam blokui, o perdavimo patvirtinimo parašas verifi
 			Didinant tranzakcijų skaičių nuo 10 iki 1000 vėlavimas pakilo nežymiai, nuo 0.1 sekundės iki 1 sekundės, tačiau padidinus tranzakcijų skaičių iki 10000 pastebėtas didelis vėlavimo pašokimas iki 10 sekundžių.
 			Šio darbo metodologija buvo paremta jau minėtu Tailando mokslininkų darbu \cite{ThailandPerf}
 		\subsubsection{Tyrimų rezultatų apibendrinimas}
-			Iš aukščiau aptartų darbų(\cite{IMBResearch}, \cite{ThailandPerf}, \cite{ShaFabPerf}) pastebima tendencija, kad didinant tranzakcijų skaičių iki 100 praeinamumas kilo tiesiškai, o didinant transakcijų skaičių toliau praeinamumas nebekilo arba net krito(\cite{ThailandPerf}).
+			Iš aukščiau aptartų darbų(\cite{IMBResearch,ThailandPerf,ShaFabPerf}) pastebima tendencija, kad didinant tranzakcijų skaičių iki 100 praeinamumas kilo tiesiškai, o didinant transakcijų skaičių toliau praeinamumas nebekilo arba net krito(\cite{ThailandPerf}).
 			\newline
 			Didinant tranzakcijas nuo 1 iki 1000 vėlavimas praktiškai nekyla, ir tada nuo 1000 iki 10000 vėlavimas smarkiai šoktelėja. 
 	\subsection{Apache Cassandra}
