@@ -35,11 +35,13 @@
 \begin{document}
 
 \maketitle
-
+\thispagestyle{empty} 
 
 \tableofcontents
 
 \sectionnonum{Įvadas}
+\setcounter{page}{1}
+\thispagestyle{empty} 
 Per pastaruosius keletą metų blokų grandinių technologija susilaukė didelio žmonių susidomėjimo. 
 Šis susidomėjimas daugiausiai kilo dėl išpopulerėjusių kriptovaliutų, tokių kaip Bitcoin, Etherium, Litecoin ir daugeliu kitų 
 kurios ir yra paremtos blokų grandinių technologija. Šią technologiją 2008 metais sukūrė Satošis Nakamoto  \cite{BlockChain}. 
@@ -59,8 +61,11 @@ dvigumo pinigų išleidimo problemą, nes kiekvienas mazgas blokų grandinėjės
 Nors blokų grandinės išsprendžia išvardytas problemas, tačiau finansiniams duomenims taip pat svarbu greitis, duomenų pasiekiamumas ir sistemos galimybė išlikti funkcionaliai po tam tikrų trigdžių. 
 Yra nemaža aibė blokinių grandinių duomenų bazių(R3 Corda, BigChain DB), bei didelis pasirinkimas NoSQL duomenų bazių(Mongo DB, Redis, Neo4j) tačiau šiam darbui buvo pasirinktos
 Hyperledger Fabric ir Apache Cassandra, nes šios duomenų bazės yra naudojamos finansiniams duomenims saugoti \cite{BnkH} , \cite{BnkC}.
+\pagebreak
+
 
 \sectionnonum{Tikslas}
+
 	CAP teorema - teorema sakanti, kad paskirstytoje duomenų sistemoje neįmanoma užtikrinti daugiau dviejų punktų: Duomenų neprištaringumas, duomenų pasiekiamumas, particijų toleravimas \newline
 	
 	Šio darbo tikslas yra:
@@ -346,6 +351,7 @@ pakeisti konfigūracija taip, kad rašymo operacija būtų laiko sėkminga tik t
 
 \pagebreak
 \section{Rezultatai ir išvados}
+\thispagestyle{empty} 
 	\subsection{Rezultatai}
 		\begin{enumerate}
 			\item{Šiame darbe buvo palygintas Cassandra ir Hyperledger Fabric tranzakcijų praeinamumas ir vėlavimas.}
@@ -370,6 +376,7 @@ pakeisti konfigūracija taip, kad rašymo operacija būtų laiko sėkminga tik t
 \pagebreak
 
 \section{Priedai}
+\thispagestyle{empty} 
 \subsection{Žodynas}
 \begin{itemize}
 	\item{Grandinės kodas(angl. chaincode) - programa parašyta Go, Java arba NodeJS kalbomis kuri vykdo
@@ -385,8 +392,8 @@ pakeisti konfigūracija taip, kad rašymo operacija būtų laiko sėkminga tik t
 
 \section{Padėka}
 	Noriu padėkoti savo darbo vadovui daktarui Vytautui Valaičiui už pagalbą, vadovavimą ir skirtą savo laisvą vasaros laiką padedant man rašyti šį darbą.
-
+\thispagestyle{empty} 
 
 \printbibliography[heading=bibintoc]  
-
+\thispagestyle{empty} 
 \end{document}
