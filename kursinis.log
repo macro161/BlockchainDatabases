@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.3.20)  27 AUG 2019 19:58
+This is XeTeX, Version 3.14159265-2.6-0.999991 (MiKTeX 2.9.7000 64-bit) (preloaded format=xelatex 2019.3.20)  1 SEP 2019 21:08
 entering extended mode
 **./kursinis.tex
 (kursinis.tex
@@ -1225,38 +1225,33 @@ Package biblatex Info: Reference segment=0 on input line 35.
 \tf@toc=\write4
 \openout4 = `kursinis.toc'.
 
- [1] [1]
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
-
- []
-
-[2] [3]
+ [1] [2] [1] [2] [3]
 File: img/MLP.png Graphic file (type bmp)
 <img/MLP.png>
  [4]
 File: img/Praein.png Graphic file (type bmp)
 <img/Praein.png>
 
-Overfull \hbox (33.33339pt too wide) in paragraph at lines 164--165
+Overfull \hbox (33.33339pt too wide) in paragraph at lines 159--160
  [][] 
  []
 
 File: img/Velav.png Graphic file (type bmp)
 <img/Velav.png>
 [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 197--200
+Underfull \hbox (badness 10000) in paragraph at lines 191--194
 []\TU/texgyretermes(0)/m/n/12 Apache Cassandra yra atviro kodo tarpusavio paski
 rstytoji duomenų bazė.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--200
+Underfull \hbox (badness 10000) in paragraph at lines 191--194
 \TU/texgyretermes(0)/m/n/12 Cassandra laikosi tarpusavio paskirstymo modelio. L
 aikantis šio modelio kiek-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--200
+Underfull \hbox (badness 10000) in paragraph at lines 191--194
 \TU/texgyretermes(0)/m/n/12 vienas tinklo mazgas turi tą pačią struktūrą kas pa
 lengvina Cassandra praplėtimą.
  []
@@ -1271,16 +1266,15 @@ File: img/CasTh.png Graphic file (type bmp)
 <img/CasTh.png>
 File: img/CasLat.png Graphic file (type bmp)
 <img/CasLat.png>
- [9]
 File: img/CasTp.png Graphic file (type bmp)
 <img/CasTp.png>
- [10]
+ [9] [10]
 File: img/CasHypLat.png Graphic file (type bmp)
 <img/CasHypLat.png>
 File: img/CasHypTp.png Graphic file (type bmp)
 <img/CasHypTp.png>
  [11] [12]
-Underfull \hbox (badness 6910) in paragraph at lines 313--317
+Underfull \hbox (badness 6910) in paragraph at lines 306--310
 \TU/texgyretermes(0)/m/n/12 Šios teoremos įrodymas pateikiamas Seth Gilbert ir 
 Nancy Lynch straipsnyje [GL02]
  []
@@ -1303,7 +1297,7 @@ Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 
 
 Package biblatex Warning: No driver for entry type 'mic'.
-(biblatex)                Using fallback driver on input line 397.
+(biblatex)                Using fallback driver on input line 387.
 
 
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
@@ -1321,13 +1315,12 @@ Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
-[17]
 
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
 
-Overfull \hbox (59.99147pt too wide) in paragraph at lines 397--397
+Overfull \hbox (59.99147pt too wide) in paragraph at lines 387--387
 []\TU/texgyretermes(0)/m/n/12 Google. Https://trends.google.com/trends/explore?
 date=all&geo=us&q=bitcoin,etherium,litecoin,
  []
@@ -1340,6 +1333,7 @@ Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
 
+[17]
 
 Package biblatex Warning: '\mkdaterangeiso8601' is deprecated.
 (biblatex)                Please use '\mkdaterangeiso'.
@@ -1383,6 +1377,6 @@ Here is how much of TeX's memory you used:
  29897 multiletter control sequences out of 15000+200000
  545272 words of font info for 91 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
- 67i,12n,96p,1163b,6127s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 67i,12n,96p,1162b,6131s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on kursinis.pdf (20 pages).
+Output written on kursinis.pdf (21 pages).

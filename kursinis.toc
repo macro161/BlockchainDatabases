@@ -2,11 +2,13 @@
 \defcounter {refsection}{0}\relax 
 \select@language {lithuanian}
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{Padėka}{2}% 
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{Įvadas}{1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Tikslas}{2}% 
+\contentsline {section}{Tikslas}{1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Uždaviniai}{2}% 
+\contentsline {section}{Uždaviniai}{1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.}Duomenų bazių greičių tyrimų literatūros analizė}{3}% 
 \defcounter {refsection}{0}\relax 
@@ -38,11 +40,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.3.2.}Testavimo metodologija}{9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.3.3.}Blekinge technologijų instituto tyrimo rezultatai}{11}% 
+\contentsline {subsubsection}{\numberline {1.3.3.}Blekinge technologijų instituto tyrimo rezultatai}{10}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.3.4.}Coimbra politechnikos instituto tyrimo rezultatai.}{11}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.}Grečių tyrimų apibendrinima}{12}% 
+\contentsline {subsection}{\numberline {1.4.}Greičių tyrimų apibendrinimas}{11}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.}Duomenų bazių palyginimas pagal CAP teoremą}{13}% 
 \defcounter {refsection}{0}\relax 
@@ -75,7 +77,5 @@
 \contentsline {section}{\numberline {4.}Priedai}{17}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.}Žodynas}{17}% 
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.}Padėka}{17}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Literatūra}{17}% 
