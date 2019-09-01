@@ -40,11 +40,11 @@
 \tableofcontents
 
 \sectionnonum{Padėka}
+\setcounter{page}{3}
 Noriu padėkoti savo darbo vadovui daktarui Vytautui Valaičiui už pagalbą, vadovavimą ir skirtą savo laisvą vasaros laiką padedant man rašyti šį darbą.
-\pagebreak
 
 \sectionnonum{Įvadas}
-\setcounter{page}{1}
+
 \thispagestyle{empty} 
 Per pastaruosius keletą metų blokų grandinių technologija susilaukė didelio žmonių susidomėjimo. 
 Šis susidomėjimas daugiausiai kilo dėl išpopulerėjusių kriptovaliutų, tokių kaip Bitcoin, Etherium, Litecoin ir daugeliu kitų 
@@ -73,6 +73,7 @@ CAP teorema - teorema sakanti, kad paskirstytoje duomenų sistemoje neįmanoma u
 \end{itemize}
 
 \sectionnonum{Uždaviniai}
+\thispagestyle{empty}
 \begin{enumerate}
 \item{Išskirti bendras metrikas, pagal kurias būtų galima palyginti Apache Cassandra ir Hyperledger Fabric duomenų bazes.}
 \item{Palyginti Apache Cassandra ir Hyperledger Fabric pagal išskirtas metrikas.}
@@ -156,13 +157,13 @@ CPU, 64 GB RAM, Ubuntu 16.04 \\
 \subsubsection{Tyrimų rezultatai}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.6]{img/Praein}
+\includegraphics[scale=0.8]{img/Praein}
 \caption{Transakcijų praeinamumas} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure} 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.6]{img/Velav}
+\includegraphics[scale=0.8]{img/Velav}
 \caption{Transakcijų vėlavimas} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure} 
@@ -190,7 +191,7 @@ Cassandra duomenų bazės našumo tyrimus.
 \subsubsection{Architektūra}
 Apache Cassandra yra atviro kodo tarpusavio paskirstytoji duomenų bazė. Cassandra laikosi tarpusavio paskirstymo modelio. Laikantis šio modelio kiekvienas tinklo mazgas turi tą pačią struktūrą kas palengvina Cassandra praplėtimą. 
 \linebreak
-Cassandra duomenų struktūrą sudaro: 
+Cassandra duomenų struktūrą (4 pav.) sudaro: 
 \begin{itemize}
 \item{Stulpelis - jį sudaro pavadinimas ir reikšmė.}
 \item{Laiko žyma - rodanti kada paskutinį kartą stulpelis buvo pakeistas.}
@@ -201,19 +202,19 @@ Cassandra duomenų struktūrą sudaro:
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{img/CasArch}
-\caption{Tranzakcijų vėlavimas} % Antraštė įterpiama po paveikslėlio
+\caption{Apache Cassandra duomenų struktūra} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
 
-` Replikavimas - darant užklausas galima pasirinkti replikavimo faktorių. Replikavimo faktorius nurodo per kiek klasterio mazgų užklausos duomenys bus kopijuojami. Didesnis replikavimo reiškia, kad duomenys klasteryje bus lengviau pasiekiami. Turint duomenis tik viename mazge ir praradus ryšį su tuo mazgu duomenys tinkle dings. Tačiau nustačius aukšta replikavimo faktorių Cassandra užtrunka daugiau laiko koordinuoti duomenis tinkle. 
+Replikavimas - darant užklausas galima pasirinkti replikavimo faktorių. Replikavimo faktorius nurodo per kiek klasterio mazgų užklausos duomenys bus kopijuojami. Didesnis replikavimo reiškia, kad duomenys klasteryje bus lengviau pasiekiami. Turint duomenis tik viename mazge ir praradus ryšį su tuo mazgu duomenys tinkle dings. Tačiau nustačius aukšta replikavimo faktorių Cassandra užtrunka daugiau laiko koordinuoti duomenis tinkle. 
 \par
 Skaidymas - nusako kaip duomenys bus paskirstyti mazguose. Šis funkcionalumas leidžia nurodyti kaip eilių raktai bus saugomi kas įtakoja kaip bus atliekamos užklausos į duomenų bazę.
 \par
-Paskalos - Cassandra naudoja ,,paskalų" protokolą kurio pagalba visi tinklo mazgai žino informaciją apie kitus tinklo mazgus. Mazgai seka informacija apie tai ar su kažkuriuo mazgu buvo užmegztas ryšys arba ar mazgas dingo iš tinklo. Jeigu mazgas dingsta iš tinklo kiti mazgai laiko įrašus savyje pasakančius kokius duomenis reiks nusiųsti dingusiam mazgui kai jis vėl atsiras tinkle. Paskalų algoritmas išsiunčia ,,širdies dūžio" žinutę kas sekundę, kad sužinotų visų mazgų būseną.
+Paskalos - Cassandra naudoja ,,paskalų" protokolą (5 pav.) kurio pagalba visi tinklo mazgai žino informaciją apie kitus tinklo mazgus. Mazgai seka informacija apie tai ar su kažkuriuo mazgu buvo užmegztas ryšys arba ar mazgas dingo iš tinklo. Jeigu mazgas dingsta iš tinklo kiti mazgai laiko įrašus savyje pasakančius kokius duomenis reiks nusiųsti dingusiam mazgui kai jis vėl atsiras tinkle. Paskalų algoritmas išsiunčia ,,širdies dūžio" žinutę kas sekundę, kad sužinotų visų mazgų būseną.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{img/Gos}
-\caption{Tranzakcijų vėlavimas} % Antraštė įterpiama po paveikslėlio
+\caption{Paskalų protokolo modelis} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
 
@@ -243,31 +244,31 @@ ir Cassandra version 1.2.4. \\
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/CasTh}
-\caption{Transakcijų vėlavimas} % Antraštė įterpiama po paveikslėlio
+\includegraphics[scale=0.8]{img/CasTh}
+\caption{Apache Cassandra praeinamumo palyginimas} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/CasLat}
-\caption{Transakcijų vėlavimas} % Antraštė įterpiama po paveikslėlio
+\includegraphics[scale=0.8]{img/CasLat}
+\caption{Apache Cassandra transakcijų vėlavimas palyginimas} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/CasTp}
-\caption{Transakcijų vėlavimas} % Antraštė įterpiama po paveikslėlio
+\includegraphics[scale=0.8]{img/CasTp}
+\caption{Apache Cassandra transakcijų praeinamumo palyginimas} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
 \subsubsection{Blekinge technologijų instituto tyrimo rezultatai}
-Blekinge technologijų instituto atliktame tyrime \cite{BITCass} buvo atliktas Cassandra duomenų bazės našumo palyginimas lyginant duomenų bazę veikiančia konteineriuose ir virtualioje mašinoje. Buvo lyginama transakcijų praeinamumas ir vėlavimas keičiant klasterių skaičių. Įvairioje apkrovoje virtualios mašinos praeinamumas laikėsi apie 100000 transakcijų per sekundę, rašymo apkrovoje apie 75000 transakcijų per sekundę, skaitymo apkrovoje apie 120000 transakcijų per sekundę.
+Blekinge technologijų instituto atliktame tyrime \cite{BITCass} buvo atliktas Cassandra duomenų bazės našumo palyginimas lyginant duomenų bazę veikiančia konteineriuose ir virtualioje mašinoje. Buvo lyginama transakcijų praeinamumas ir vėlavimas keičiant klasterių skaičių(6-7 pav.). Įvairioje apkrovoje virtualios mašinos praeinamumas laikėsi apie 100000 transakcijų per sekundę, rašymo apkrovoje apie 75000 transakcijų per sekundę, skaitymo apkrovoje apie 120000 transakcijų per sekundę.
 Įvairioje apkrovoje konteinerių praeinamumas buvo apie 127000 transakcijų per sekundę, rašymo apkrovoje apie 95000 transakcijų per sekundę, o skaitymo apkrovoje apie 180000 transakcijų per sekundę. Virtualiose mašinose didinant klasterių skaičių padidėjo praeinamumas didėjo su rašymo apkrova ir mažėjo su skaitymo apkrova. Tas pats buvo pastebėta ir konteineriuose.
 \newline
 Tyrime mažiausias vėlavimas buvo naudojant vieną Cassandrą klasterį su 40000 tranzakcijų apkrova, o didžiausias vėlavimas buvo pastebėtas naudojant keturis Cassandra klasterius veikiančius ant virtualių pašinų naudojant 120000 tranzakcijų apkrovą. 
 Viso tyrimo metu buvo pastebėtas vėlavimas intervale nuo 1 iki 11 milisekundžių.
 \subsubsection{Coimbra politechnikos instituto tyrimo rezultatai.}
 Coimbra politechnikos instituto atliktame tyrime \cite{MonCas} buvo lyginamos Cassandra ir MongoDB duomenų bazės. 
-Lyginimas buvo atliktas naudojant tik vieną mazgą todėl buvo lygintas tik įrašų(tranzakcijų) praeinamumas su skirtingomis apkrovomis. 
+Lyginimas buvo atliktas naudojant tik vieną mazgą todėl buvo lygintas tik įrašų(tranzakcijų) praeinamumas su skirtingomis apkrovomis (8 pav.). 
 Šio darbo tikslui žiūrėsime tik į rezultatus gautus apie Cassandra duomenų bazę. Pastebėta, kad didinant apkrovą tranzakcijų praeinamumas padidėjo. 
 Didžiausias praeinamumas buvo pasiektas kai buvo atlikta tik vieno tipo, o ne miksuotos duomenų operacijos.
 Aukšiausias duomenų pakeitimo praeinamumas buvo 700000 tranzakcijų per sekundę, o skaitymo praeinamumas buvo 35000 tranzakcijų per sekundę.
@@ -279,19 +280,19 @@ Ieškant literatūros šiam darbui kilo sunkumų surasti tyrimų kuriuose su ta 
 \subsection{Greičių tyrimų apibendrinimas}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/CasHypLat}
-\caption{Transakcijų vėlavimas} % Antraštė įterpiama po paveikslėlio
+\includegraphics[scale=0.6]{img/CasHypLat}
+\caption{Apache Cassandra ir Hyperledger Fabric palyginimas pagal vėlavimą} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/CasHypTp}
-\caption{Transakcijų vėlavimas} % Antraštė įterpiama po paveikslėlio
+\includegraphics[scale=0.6]{img/CasHypTp}
+\caption{Apache Cassandra ir Hyperledger Fabric palyginimas pagal praeinamumą} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
 
 Apžvelgtuose darbuose buvo matuojamos Apache Cassandra ir Hyperledger Fabric duomenų bazių praeinamumas ir vėlavimas.
-Palyginus rezultatus buvo aiškiai matoma, kad Cassandra praeinamumas buvo didesnis ir vėlavimas mažesnis. 
+Palyginus rezultatus(9-10 pav.) buvo aiškiai matoma, kad Cassandra praeinamumas buvo didesnis ir vėlavimas mažesnis. 
 Net ir palyginus prasčiausią Cassandra praeinamumo rezultatą (2325 transakcijų per sekundę) ir geriausią Fabric rezultatą (300 transakcijų per sekundę) Cassandra duomenų bazės praeinamumas buvo geresnis 775 procentais. Lyginant prasčiausią Cassandra ir geriausią Fabric vėlavimo rezultatą Cassandra vėlavimas buvo 1078 procentų mažesnis negu Fabric.
 \pagebreak
 
@@ -334,11 +335,11 @@ Cassandra duomenų bazė tenkina skaidinių toleravimo principą, nustojus veikt
 \begin{figure}[H]
 \centering
 \includegraphics[scale=1]{img/CAP}
-\caption{Transakcijų vėlavimas} % Antraštė įterpiama po paveikslėlio
+\caption{Duomenų bazės pagal CAP teoremą} % Antraštė įterpiama po paveikslėlio
 \label{img:mlp}
 \end{figure}
 
-Hyperledger Fabric ir Apache Cassandra duomenų bazės įgyvendina pasiekiamumo ir patricijų toleravimo kriterijus CAP teoremoje. Kuriant Cassandra duomenų bazę yra galimybė 
+Hyperledger Fabric ir Apache Cassandra duomenų bazės įgyvendina pasiekiamumo ir patricijų toleravimo kriterijus CAP teoremoje(11 pav.). Kuriant Cassandra duomenų bazę yra galimybė 
 pakeisti konfigūracija taip, kad rašymo operacija būtų laiko sėkminga tik tuomet, kai visiems klasterio mazgams yra padaroma replika, panašiai ir skaitant galima skaityti informacija iš visų tinklo mazgų ir pasirinkti tą informaciją, kuri yra didžiojoje daugumoje mazgų. Pasirinkus tokią konfigūraciją Cassandra labiau pradeda atitikti neprieštaringumo ir patricijų toleravimo savybes tačiau tokia konfigūracija reikalauja paaukoti transakcijų greitį. Hyperledger Fabric nesuteikia tokios konfigūravimo galimybės.
 
 \pagebreak
@@ -346,9 +347,9 @@ pakeisti konfigūracija taip, kad rašymo operacija būtų laiko sėkminga tik t
 \thispagestyle{empty} 
 \subsection{Rezultatai}
 \begin{enumerate}
-\item{Išskirtos dvi bendros metrikos pagal kurias galima palyginti Apache Cassandra ir Hyperledger Fabric : transakcijų }
-\item{Aprašytas transakcijų praeinamumo ir vėlavimo priklausomybė nuo mazgų skaičiaus tinkle.}
-\item{Išskirti Hyperledger Fabric parametrai kuriuos keičiant keičiasi sistemos veikimo greitis.}
+\item{Išskirtos dvi bendros metrikos pagal kurias galima palyginti Apache Cassandra ir Hyperledger Fabric : transakcijų greitis ir praeinamumas.}
+\item{Apache Cassandra palyginta su Hyperledger Fabric pagal išskirtas metrikas.}
+\item{Išskirti esamų tyrimų trūkumai.}
 \item{Įvertinta Cassandra ir Hyperledger architektūros atitikimas CAP teoremos principus.}
 \end{enumerate}
 \subsection{Išvados}

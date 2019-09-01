@@ -2,80 +2,80 @@
 \defcounter {refsection}{0}\relax 
 \select@language {lithuanian}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Padėka}{2}% 
+\contentsline {section}{Padėka}{3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Įvadas}{1}% 
+\contentsline {section}{Įvadas}{3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Tikslas}{1}% 
+\contentsline {section}{Tikslas}{3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Uždaviniai}{1}% 
+\contentsline {section}{Uždaviniai}{4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.}Duomenų bazių greičių tyrimų literatūros analizė}{3}% 
+\contentsline {section}{\numberline {1.}Duomenų bazių greičių tyrimų literatūros analizė}{5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.}Metrikos}{3}% 
+\contentsline {subsection}{\numberline {1.1.}Metrikos}{5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.}Hyperledger Fabric}{3}% 
+\contentsline {subsection}{\numberline {1.2.}Hyperledger Fabric}{5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.1.}Architektūra}{3}% 
+\contentsline {subsubsection}{\numberline {1.2.1.}Architektūra}{5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.2.}Tranzakcijų valdymas}{3}% 
+\contentsline {subsubsection}{\numberline {1.2.2.}Tranzakcijų valdymas}{5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.3.}Parametrai}{4}% 
+\contentsline {subsubsection}{\numberline {1.2.3.}Parametrai}{6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.4.}Testavimo metodologija}{5}% 
+\contentsline {subsubsection}{\numberline {1.2.4.}Testavimo metodologija}{7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.5.}Tyrimų rezultatai}{5}% 
+\contentsline {subsubsection}{\numberline {1.2.5.}Tyrimų rezultatai}{7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.6.}IBM tyrimo rezultatai}{6}% 
+\contentsline {subsubsection}{\numberline {1.2.6.}IBM tyrimo rezultatai}{8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.7.}Tailando ,,Kompiuterių technologijos centro" tyrimo rezultatai}{6}% 
+\contentsline {subsubsection}{\numberline {1.2.7.}Tailando ,,Kompiuterių technologijos centro" tyrimo rezultatai}{8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.8.}Sharjah universiteto tyrimo rezultatai}{6}% 
+\contentsline {subsubsection}{\numberline {1.2.8.}Sharjah universiteto tyrimo rezultatai}{8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.9.}Tyrimų rezultatų apibendrinimas}{7}% 
+\contentsline {subsubsection}{\numberline {1.2.9.}Tyrimų rezultatų apibendrinimas}{9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.}Apache Cassandra}{7}% 
+\contentsline {subsection}{\numberline {1.3.}Apache Cassandra}{9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.3.1.}Architektūra}{7}% 
+\contentsline {subsubsection}{\numberline {1.3.1.}Architektūra}{9}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.3.2.}Testavimo metodologija}{9}% 
+\contentsline {subsubsection}{\numberline {1.3.2.}Testavimo metodologija}{11}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.3.3.}Blekinge technologijų instituto tyrimo rezultatai}{10}% 
+\contentsline {subsubsection}{\numberline {1.3.3.}Blekinge technologijų instituto tyrimo rezultatai}{13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.3.4.}Coimbra politechnikos instituto tyrimo rezultatai.}{11}% 
+\contentsline {subsubsection}{\numberline {1.3.4.}Coimbra politechnikos instituto tyrimo rezultatai.}{13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.}Greičių tyrimų apibendrinimas}{11}% 
+\contentsline {subsection}{\numberline {1.4.}Greičių tyrimų apibendrinimas}{14}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.}Duomenų bazių palyginimas pagal CAP teoremą}{13}% 
+\contentsline {section}{\numberline {2.}Duomenų bazių palyginimas pagal CAP teoremą}{16}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.}CAP teorema}{13}% 
+\contentsline {subsection}{\numberline {2.1.}CAP teorema}{16}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.}Hyperledger Fabric pagal CAP teoremą}{13}% 
+\contentsline {subsection}{\numberline {2.2.}Hyperledger Fabric pagal CAP teoremą}{16}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.}Hyperledger Fabric neprieštaringumas}{14}% 
+\contentsline {subsection}{\numberline {2.3.}Hyperledger Fabric neprieštaringumas}{17}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.}Hyperledger Fabric pasiekiamumas}{14}% 
+\contentsline {subsection}{\numberline {2.4.}Hyperledger Fabric pasiekiamumas}{17}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.5.}Hyperledger Fabric skaidinių toleravimas}{14}% 
+\contentsline {subsection}{\numberline {2.5.}Hyperledger Fabric skaidinių toleravimas}{17}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.6.}Cassandra neprieštaringumas}{14}% 
+\contentsline {subsection}{\numberline {2.6.}Cassandra neprieštaringumas}{17}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.7.}Cassandra pasiekiamumas}{14}% 
+\contentsline {subsection}{\numberline {2.7.}Cassandra pasiekiamumas}{17}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.8.}Cassandra skaidinių toleravimas}{15}% 
+\contentsline {subsection}{\numberline {2.8.}Cassandra skaidinių toleravimas}{18}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.9.}Apibendrinimas}{15}% 
+\contentsline {subsection}{\numberline {2.9.}Apibendrinimas}{18}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.}Rezultatai ir išvados}{16}% 
+\contentsline {section}{\numberline {3.}Rezultatai ir išvados}{19}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.}Rezultatai}{16}% 
+\contentsline {subsection}{\numberline {3.1.}Rezultatai}{19}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.}Išvados}{16}% 
+\contentsline {subsection}{\numberline {3.2.}Išvados}{19}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.}Rekomendacijos ateities darbams}{16}% 
+\contentsline {subsection}{\numberline {3.3.}Rekomendacijos ateities darbams}{19}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.}Priedai}{17}% 
+\contentsline {section}{\numberline {4.}Priedai}{20}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.}Žodynas}{17}% 
+\contentsline {subsection}{\numberline {4.1.}Žodynas}{20}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literatūra}{17}% 
+\contentsline {section}{Literatūra}{20}% 
